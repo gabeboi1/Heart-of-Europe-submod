@@ -13,9 +13,29 @@ country_event = {
 	option = {
 	ai_chance = { factor = 100 }
 	name = hungary.1.a
+	trigger = { date < 2011.07.04 }
 	create_country_leader = {
 	name = "Otto von Habsburg"
 	picture = "ottothefirst.dds"
+	ideology = absolute_monarchist
+	}
+	set_politics = {
+	ruling_party = monarchist
+	elections_allowed = yes
+	}
+	set_party_name = { 
+    ideology = monarchist 
+    long_name = HUN_habsburg_long
+    name = Habsburgs
+	}
+	}
+	option = {
+	ai_chance = { factor = 100 }
+	name = hungary.1.a
+	trigger = { date > 2011.07.04 }
+	create_country_leader = {
+	name = "Georg von Habsburg"
+	picture = "georg.dds"
 	ideology = absolute_monarchist
 	}
 	set_politics = {
@@ -277,7 +297,7 @@ country_event = {
 	option = {
 	ai_chance = { factor = 50 }
 	name = hungary.11.a
-	HUN = {
+	AUS = {
 	annex_country = {
     target = CZE
     transfer_troops = yes
@@ -299,10 +319,7 @@ country_event = {
 	ai_chance = { factor = 50 }
 	name = hungary.12.a
 	HUN = {
-	annex_country = {
-    target = 
-    transfer_troops = yes
-	}
+
 	}
 	}
 		option = {
@@ -526,7 +543,8 @@ country_event = {
 	option = {
 	ai_chance = { factor = 1 }
 	name = hungary.18.a
-	increase_social_democrat_influence_by_2 = yes
+	increase_social_democrat_influence_by_3 = yes
+	decrease_conservative_influence_by_2 = yes
 }
 	}
 	
@@ -754,7 +772,357 @@ country_event = {
 	}
 	}
 			
+country_event = {
 
+		id = hungary.24
+        title = hungary.24.t
+        desc = hungary.24.d
+	fire_only_once = yes
+    mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+		option = {
+	ai_chance = { factor = 1 }
+	name = hungary.24.a
+		create_country_leader = {
+	name = "Viktor Orbán"
+	picture = "Viktor_Orban_2010.dds"
+	ideology = counter_progressive_democrat
+	}
+		create_country_leader = {
+	name = "Zsolt Semjén"
+	picture = "semjen_zsolt.dds"
+	ideology = christian_democrat
+	}
+		create_country_leader = {
+	name = "Dávid Kovács"
+	picture = "Kovacs_David.dds"
+	ideology = national_democrat
+	}
+	set_party_name = { 
+    ideology = reactionary
+    long_name = Fidesz-MIÉP
+    name = Fidesz-MIÉP
+	}
+		set_party_name = { 
+    ideology = conservative
+    long_name = HUN_kdnp_long
+    name = KDNP
+	}
+				set_party_name = { 
+    ideology = nationalist
+    long_name = HUN_jobbik_long
+    name = Jobbik
+	}
+
+		add_popularity = {
+	ideology = conservative
+	popularity = -0.15
+	}
+		add_popularity = {
+	ideology = nationalist
+	popularity = -0.05
+	}
+		add_popularity = {
+	ideology = reactionary
+	popularity = 0.15
+	}
+	}
+			option = {
+	ai_chance = { factor = 1 }
+	name = hungary.24.a
+		create_country_leader = {
+	name = "István Csurka"
+	picture = "Csurka_Istvan.dds"
+	ideology = national_democrat
+	}
+		create_country_leader = {
+	name = "Zsolt Semjén"
+	picture = "semjen_zsolt.dds"
+	ideology = christian_democrat
+	}
+	set_party_name = { 
+    ideology = nationalist
+    long_name = MIÉP-Fidesz
+    name = MIÉP-Fidesz
+	}
+		set_party_name = { 
+    ideology = conservative
+    long_name = HUN_kdnp_long
+    name = KDNP
+	}
+			add_popularity = {
+	ideology = conservative
+	popularity = -0.15
+	}
+		add_popularity = {
+	ideology = nationalist
+	popularity = 0.15
+	}
+		add_popularity = {
+	ideology = reactionary
+	popularity = -0.05
+	}
+	}
+	}
+	
+	
+	country_event = {
+
+		id = hungary.25
+        title = hungary.25.t
+        desc = hungary.25.d
+	fire_only_once = yes
+    mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+	
+		option = {
+	ai_chance = { factor = 1 }
+	name = hungary.25.a
+	create_country_leader = {
+	name = "Dávid Kovács"
+	picture = "Kovacs_David.dds"
+	ideology = national_democrat
+	}
+	set_party_name = { 
+    ideology = nationalist
+    long_name = hun_jobbik_long
+    name = Jobbik
+	}
+	add_popularity = { 
+	ideology = nationalist
+	popularity = 0.10
+	}
+	}
+	}
+	
+		country_event = {
+
+		id = hungary.26
+        title = hungary.26.t
+        desc = hungary.26.d
+	fire_only_once = yes
+    mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+	
+		option = {
+	ai_chance = { factor = 1 }
+	name = hungary.26.a
+	HUN = { puppet = SLO country_event = hungary.28 }
+
+	}
+			option = {
+	ai_chance = { factor = 1 }
+	name = hungary.26.b
+	HUN = { country_event = hungary.27 }
+
+	}
+	}
+	
+		country_event = {
+
+		id = hungary.27
+        title = hungary.27.t
+        desc = hungary.27.d
+	fire_only_once = yes
+    mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+	
+		option = {
+	ai_chance = { factor = 1 }
+	name = hungary.27.a
+
+	}
+			option = {
+	ai_chance = { factor = 1 }
+	name = hungary.27.b
+	HUN = { create_wargoal = { target = SLO type = annex_everything } }
+
+	}
+	}
+	
+			country_event = {
+
+		id = hungary.28
+        title = hungary.28.t
+        desc = hungary.28.d
+	fire_only_once = yes
+    mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+	
+		option = {
+	ai_chance = { factor = 1 }
+	name = hungary.28.a
+	HUN = { add_political_power = 120 SLO = { set_cosmetic_tag = SLO_HUN } }
+
+	}
+
+	}
+	
+			country_event = {
+
+		id = hungary.29
+        title = hungary.29.t
+        desc = hungary.29.d
+	fire_only_once = yes
+    mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+	trigger = {
+	HUN = {
+	controls_state = 922
+	controls_state = 76
+	controls_state = 919
+	has_war_with = ROM
+	}
+	
+	}
+	
+		option = {
+	ai_chance = { factor = 1 }
+	name = hungary.29.a
+	TRS = {
+	add_state_core = 82
+	add_state_core = 937
+	add_state_core = 84
+	add_state_core = 83
+	add_state_core = 919
+	add_state_core = 76
+	add_state_core = 922
+}
+	}
+			option = {
+	ai_chance = { factor = 1 }
+	name = hungary.29.b
+	HUN = { add_state_claim = 82 add_state_claim = 83 add_state_claim = 84 add_state_claim = 937 }
+
+	}
+	}
+	
+				country_event = {
+
+		id = hungary.30
+        title = hungary.30.t
+        desc = hungary.30.d
+	fire_only_once = yes
+    mean_time_to_happen = { days = 2 }
+	is_triggered_only = yes
+	
+		option = {
+	ai_chance = { factor = 1 }
+	name = hungary.30.a
+	TRS = {
+	add_state_core = 82
+	add_state_core = 937
+	add_state_core = 84
+	add_state_core = 83
+	add_state_core = 919
+	add_state_core = 76
+	add_state_core = 922
+	transfer_state = 84
+	transfer_state = 83
+	transfer_state = 82
+	transfer_state = 937
+	transfer_state = 76
+	transfer_state = 922
+	set_cosmetic_tag = TRS_HUN
+	}
+	HUN = { puppet = TRS }
+	}
+			option = {
+	ai_chance = { factor = 1 }
+	name = hungary.30.b
+	TRS = {
+	add_state_core = 82
+	add_state_core = 937
+	add_state_core = 84
+	add_state_core = 83
+	transfer_state = 84
+	transfer_state = 83
+	transfer_state = 82
+	transfer_state = 937
+	set_cosmetic_tag = TRS_HUN
+	}
+	HUN = { puppet = TRS  add_state_core = 76 transfer_state = 922 transfer_state = 76 transfer_state = 919 }
+	TRS = { set_cosmetic_tag = TRS_HUN }
+	}
+				option = {
+	ai_chance = { factor = 1 }
+	name = hungary.30.c
+	HUN = { add_state_core = 76
+	transfer_state = 84
+	transfer_state = 83
+	transfer_state = 82
+	transfer_state = 937
+	transfer_state = 919
+	transfer_state = 76
+	transfer_state = 922 }
+	}
+	
+	}
+	
+	
+			country_event = {
+
+		id = hungary.31
+        title = hungary.31.t
+        desc = hungary.31.d
+	fire_only_once = yes
+    mean_time_to_happen = { days = 1 }
+	is_triggered_only = no
+	trigger = { tag = HUN HUN = { has_civil_war = yes } HUN = { has_government = communist } }
+	
+		option = {
+	ai_chance = { factor = 1 }
+	name = hungary.31.a
+	create_country_leader = {
+	name = "Gyula Thürmer"
+	picture = "Thurmer_Gyula_uniform.dds"
+	ideology = leninist
+	}
+	}
+	}
+	
+				country_event = {
+
+		id = hungary.32
+        title = hungary.32.t
+        desc = hungary.32.d
+	fire_only_once = yes
+    mean_time_to_happen = { days = 1 }
+	is_triggered_only = no
+	trigger = { tag = HUN HUN = { has_civil_war = no } HUN = { has_government = communist } }
+	
+		option = {
+	ai_chance = { factor = 1 }
+	name = hungary.32.a
+	create_country_leader = {
+	name = "Gyula Thürmer"
+	picture = "Thurmer_Gyula.dds"
+	ideology = leninist
+	}
+	}
+	}
+	
+					country_event = {
+
+		id = hungary.33
+        title = hungary.33.t
+        desc = hungary.33.d
+	fire_only_once = yes
+    mean_time_to_happen = { days = 1 }
+	is_triggered_only = no
+	trigger = { tag = HUN date > 2001.06.01 }
+	
+		option = {
+	ai_chance = { factor = 1 }
+	name = hungary.32.a
+	create_country_leader = {
+	name = "Gábor Kuncze"
+	picture = "Kuncze_Gabor.dds"
+	ideology = libertarian
+	}
+	}
+	}
+	
 
 add_namespace = hungary_election_2002
 
