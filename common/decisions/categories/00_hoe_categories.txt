@@ -45,3 +45,19 @@ OR = {
 	tag = ROM
      } }
 }
+puppets = {
+     icon = generic_prospect_for_resources
+     available = {
+ }
+}
+ukr_antiseparatist = {
+     icon = generic_prospect_for_resources
+     available = {
+	 tag = UKR
+ }
+}
+balkan = {
+     icon = generic_prospect_for_resources
+     available = {
+ }
+}

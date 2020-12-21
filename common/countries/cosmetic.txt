@@ -65,6 +65,51 @@ CARP = {
 	color_ui = rgb { 229 141 15 }
 }
 
+SLO_HUN = {
+	color = rgb { 127 172 83 }
+	color_ui = rgb { 105 244 67 }
+}
+
+TRS_AUS = {
+	color = rgb { 194 198 215 }
+	color_ui = rgb { 255 255 255 }
+}
+
+TRS_HUN = {
+	color = rgb { 127 172 83 }
+	color_ui = rgb { 105 244 67 }
+}
+
+HUN_AUS = {
+	color = rgb { 194 198 215 }
+	color_ui = rgb { 255 255 255 }
+}
+
+SLV_AUS = {
+	color = rgb { 194 198 215 }
+	color_ui = rgb { 255 255 255 }
+}
+
+CZE_AUS = {
+	color = rgb { 194 198 215 }
+	color_ui = rgb { 255 255 255 }
+}
+
+MRV_AUS = {
+	color = rgb { 194 198 215 }
+	color_ui = rgb { 255 255 255 }
+}
+
+HUNPOL = {
+	color = rgb { 166 110 153 }
+	color_ui = rgb { 196 142 234 }
+}
+
+BALKAN = {
+	color = rgb { 73 114 167 }
+	color_ui = rgb { 107 129 146 }
+}
+
 AUS_NOT_WHITE = {	
 	color = rgb { 249 126 98 }
 	color_ui = rgb { 255 164 127 }

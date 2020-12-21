@@ -1,0 +1,84 @@
+focus_tree = {
+	id = liberland_1
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = LBR
+		}
+	}
+	
+	
+	#Focus for 
+	focus = {
+		id = LBR_birth
+		icon = GFX_goal_unknown
+		x = 8
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 300
+		}
+	}
+
+	#Focus for 
+	focus = {
+		id = LBR_diplomacy
+		icon = GFX_goal_unknown
+		x = 14
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = LBR_birth }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	
+		#Focus for 
+	focus = {
+		id = LBR_microstates1
+		icon = GFX_goal_unknown
+		x = 14
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = LBR_diplomacy }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_faction = "Liberty League"
+		}
+	}
+	
+	#Focus for 
+	focus = {
+		id = LBR_microstates2
+		icon = GFX_goal_unknown
+		x = 14
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = LBR_microstates1 }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_to_faction = MOC
+			add_to_faction = AND
+			add_to_faction = SAM
+			add_to_faction = LIC
+		}
+	}
+
+#End of focuses 
+ }

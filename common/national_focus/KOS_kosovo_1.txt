@@ -115,7 +115,7 @@ focus_tree = {
 			focus = KOS_territory_swap 
 			focus = KOS_expatriatriation 
 		}
-		mutually_exclusive = { focus = KOS_without_serbian_consent }
+		mutually_exclusive = { focus = KOS_no_negotiations }
 		ai_will_do = {
 			factor = 1
 		}

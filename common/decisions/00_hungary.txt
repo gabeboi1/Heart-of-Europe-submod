@@ -14,6 +14,7 @@ set_province_name = {
     id = 11679
     name = VICTORY_POINTS_HUN_komarno
 	}
+	931 = { set_state_name = "Upper Hungary" }
 	SLO = { remove_state_core = 664
 			remove_state_core = 931 }
 	
@@ -59,22 +60,306 @@ set_province_name = {
 	}
 	}
 
-sekelyland_name = 
-	{ fire_only_once = yes
+}
+
+hun_political_actions = {
+
+jobbik_leader = {
+	 fire_only_once = yes
 	 available =
-	{ OR = { tag = HUN HUN = { has_full_control_of_state = 919 } { tag = SEK SEK = { has_full_control_of_state = 919 } } }
-	visible = { OR = { tag = HUN HUN = { has_full_control_of_state = 919 } { tag = SEK SEK = { has_full_control_of_state = 919 } } }
-	 complete_effect = { 
+	{ tag = HUN }
+	visible = { tag = HUN }
+	 complete_effect = {
+create_country_leader = {
+	name = "Gábor Vona"
+	picture = "Gabor_Vona.dds"
+	ideology = fascist_ideology
+	}
+
+}
+
+}
+
+}
+
+
+hun_reintegrate_transylvania = {
+
+	sekelyland_name = 
+		{ fire_only_once = yes
+	 available =
+	{ OR =  { HUN = { has_full_control_of_state = 919 } SEK = { has_full_control_of_state = 919 } } }
+	visible = { OR = { tag = HUN tag = SEK } }
+	complete_effect = { 
 	 set_province_name = {
     id = 9670
     name =  VICTORY_POINTS_9670_hun
 	}
 
-	
+	add_state_core = 919
 	}	
 	}
-	}
+	
+}
 
+
+hun_poland_hungary = {
+
+reunite_luis_kingdoms = {
+fire_only_once = yes
+available = { HUN = { is_neighbor_of = POL has_opinion = {
+    target = POL
+    value > 20
+} } }
+visible = { tag = HUN }
+cost = 200
+complete_effect = {
+annex_country = { target = POL transfer_troops = yes } set_cosmetic_tag = HUNPOL
+add_state_core = 98
+add_state_core = 66
+add_state_core = 97
+add_state_core = 86
+add_state_core = 87
+add_state_core = 10
+add_state_core = 67
+add_state_core = 90
+add_state_core = 92
+add_state_core = 88
+add_state_core = 5
+add_state_core = 85
+add_state_core = 63
+add_state_core = 743
+add_state_core = 742
+ }
+
+}
 
 
 }
+
+hun_war_effort = {
+
+hold_transylvania = {
+allowed = { tag = HUN 
+	}
+activation = { has_war_with = ROM 	
+	controls_state = 922
+	controls_state = 76
+	controls_state = 919
+	controls_state = 82
+	controls_state = 83
+	controls_state = 84
+	controls_state = 937  }
+is_good = yes
+selectable_mission = no
+
+available = { HUN = { NOT = { 
+	OR = { 	
+	controls_state = 922
+	controls_state = 76
+	controls_state = 919
+	controls_state = 82
+	controls_state = 83
+	controls_state = 84
+	controls_state = 937 }
+	}
+	}
+	}
+days_mission_timeout = 90
+timeout_effect = { white_peace = ROM country_event = hungary.30 }
+complete_effect = { }
+}
+
+}
+
+hun_cross_border = {
+zakarpattia_language_1_slow = 
+		{ fire_only_once = no
+		 cost = 35
+	 available =
+	  { 73 = { is_owned_by = UKR NOT = { has_state_flag = hun_influence_1 has_state_flag = hun_influence_2 has_state_flag = hun_influence_3 } } }
+	visible = { tag = HUN 73 = { NOT = { has_state_flag = hun_influence_1 has_state_flag = hun_influence_2 has_state_flag = hun_influence_3 } } }
+	on_map_mode = yes
+	highlight_states = { state = 73 }
+	remove_effect = { 
+	73 = {
+	set_state_flag = hun_influence_1
+	}
+	}
+		days_remove = 120
+	}
+	zakarpattia_language_1_medium = 
+		{ fire_only_once = no
+		 cost = 60
+	 available =
+	  { 73 = { is_owned_by = UKR NOT = { has_state_flag = hun_influence_1 has_state_flag = hun_influence_2 has_state_flag = hun_influence_3 } } }
+	visible = { tag = HUN 73 = { NOT = { has_state_flag = hun_influence_1 has_state_flag = hun_influence_2 has_state_flag = hun_influence_3 } } }
+	on_map_mode = yes
+	highlight_states = { state = 73 }
+	remove_effect = { 
+	73 = {
+	set_state_flag = hun_influence_1
+	}
+	}
+		days_remove = 85
+	}
+	zakarpattia_language_1_fast = 
+		{ fire_only_once = no
+		 cost = 95
+	 available =
+	  { 73 = { is_owned_by = UKR NOT = { has_state_flag = hun_influence_1 has_state_flag = hun_influence_2 has_state_flag = hun_influence_3 } } }
+	visible = { tag = HUN 73 = { NOT = { has_state_flag = hun_influence_1 has_state_flag = hun_influence_2 has_state_flag = hun_influence_3 } } }
+	on_map_mode = yes
+	highlight_states = { state = 73 }
+	remove_effect = { 
+	73 = {
+	set_state_flag = hun_influence_1
+	}
+	}
+		days_remove = 45
+	}
+	
+	
+	
+zakarpattia_language_2_slow = 
+		{ fire_only_once = no
+		 cost = 60
+	 available =
+	  { 73 = { has_state_flag = hun_influence_1 } }
+	visible = { tag = HUN 73 = { has_state_flag = hun_influence_1 } }
+	remove_effect = { 
+	73 = {
+	clr_state_flag = hun_influence_1
+	set_state_flag = hun_influence_2
+	}
+	}
+days_remove = 160	
+	}
+	
+		zakarpattia_language_2_medium = 
+		{ fire_only_once = no
+		 cost = 105
+	 available =
+	  { 73 = { has_state_flag = hun_influence_1 } }
+	visible = { tag = HUN 73 = { has_state_flag = hun_influence_1 } }
+	remove_effect = { 
+	73 = {
+	clr_state_flag = hun_influence_1
+	set_state_flag = hun_influence_2
+	}
+	}
+days_remove = 125
+	}
+	zakarpattia_language_2_fast = 
+		{ fire_only_once = no
+		 cost = 155
+	 available =
+	  { 73 = { has_state_flag = hun_influence_1 } }
+	visible = { tag = HUN 73 = { has_state_flag = hun_influence_1 } }
+	remove_effect = { 
+	73 = {
+	clr_state_flag = hun_influence_1
+	set_state_flag = hun_influence_2
+	}
+	}
+days_remove = 95	
+	}
+	
+	
+	
+zakarpattia_language_3_slow = 
+		{ fire_only_once = no
+		 cost = 95
+	 available =
+	  { 73 = { has_state_flag = hun_influence_2 } }
+	visible = { tag = HUN 73 = { has_state_flag = hun_influence_2 } }
+	on_map_mode = yes
+	highlight_states = { state = 73 }
+	remove_effect = { 
+	73 = {
+	clr_state_flag = hun_influence_2
+	set_state_flag = hun_influence_3
+	}
+	}
+		days_remove = 210
+	}
+			zakarpattia_language_3_medium = 
+		{ fire_only_once = no
+		 cost = 145
+	 available =
+	  { 73 = { has_state_flag = hun_influence_2 } }
+	visible = { tag = HUN 73 = { has_state_flag = hun_influence_2 } }
+	on_map_mode = yes
+	highlight_states = { state = 73 }
+	remove_effect = { 
+	73 = {
+	clr_state_flag = hun_influence_2
+	set_state_flag = hun_influence_3
+	}
+	}
+		days_remove = 160
+	}
+		zakarpattia_language_3_fast = 
+		{ fire_only_once = no
+		 cost = 210
+	 available =
+	  { 73 = { has_state_flag = hun_influence_2 } }
+	visible = { tag = HUN 73 = { has_state_flag = hun_influence_2 } }
+	on_map_mode = yes
+	highlight_states = { state = 73 }
+	remove_effect = { 
+	73 = {
+	clr_state_flag = hun_influence_2
+	set_state_flag = hun_influence_3
+	}
+	}
+		days_remove = 120
+	}
+	
+zakarpattia_language_4 = 
+		{ fire_only_once = no
+		 cost = 155
+	 available =
+	  { 73 = { has_state_flag = hun_influence_3 } }
+	visible = { tag = HUN 73 = { has_state_flag = hun_influence_3 } }
+	on_map_mode = yes
+	highlight_states = { state = 73 }
+	remove_effect = { 
+	73 = {
+	clr_state_flag = hun_influence_3
+	UKR = { release = RUT }
+	}
+	}
+days_remove = 210	
+	}
+	
+	annex_ruthenia = 
+		{ fire_only_once = no
+		 cost = 14
+	 available =
+	  { 73 = { is_owned_by = RUT } }
+	visible = { tag = HUN 73 = { is_owned_by = RUT } }
+	on_map_mode = yes
+	highlight_states = { state = 73 }
+	remove_effect = { 
+	73 = {
+	HUN =  { annex_country = {
+    target = RUT
+    transfer_troops = yes
+}
+	}
+	}
+	}
+days_remove = 14	
+	}
+
+	
+
+
+}
+
+
+
+
+
+

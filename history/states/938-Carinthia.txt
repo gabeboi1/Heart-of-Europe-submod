@@ -3,15 +3,14 @@ state={
 	id=938
 	name="STATE_938"
 
-history={
+	history={
 		owner = AUS
 		add_core_of = AUS
-		
 		victory_points = {
 			11666 10 
 		}
-			victory_points = {
-			3673 5
+		victory_points = {
+			3673 5 
 		}
 		buildings = {
 			infrastructure = 7
@@ -22,8 +21,9 @@ history={
 		}
 
 	}
+
 	provinces={
-		3673 6673 11612 13262
+		3673 6673 11612 13262 13263 
 	}
 	manpower=556104
 	buildings_max_level_factor=1.000

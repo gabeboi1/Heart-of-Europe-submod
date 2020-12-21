@@ -101,7 +101,7 @@ DEN = {
 	color_ui = rgb { 199 151 121 }
 }
 BUL = {
-	color = rgb { 51 155 0 }
+	color = rgb { 74 146 112 }
 	color_ui = rgb { 210 147 217 }
 }
 POR = {
@@ -311,7 +311,7 @@ RAJ = {
 }
 
 CRO = {
-	color = rgb { 245  70  180 }
+	color = rgb { 206 106 214 }
 	color_ui = rgb { 255 255 122 }
 }
 
@@ -351,7 +351,7 @@ SYR = {
 }
 
 SER = {
-	color = rgb { 90 80 110 }
+	color = rgb { 158 108 108 }
 	color_ui = rgb { 90 80 110 }
 }
 
@@ -361,7 +361,7 @@ ICE = {
 }
 
 BOS = {
-	color = rgb { 0  255  120 }
+	color = rgb { 195 192 93  }
 	color_ui = rgb { 0  240  100 }
 }
 BLR = {
@@ -369,7 +369,7 @@ BLR = {
 	color_ui = rgb { 230  90  40 }
 }
 MAC = {
-	color = rgb { 255  80  0 }
+	color = rgb { 163 67 1 }
 	color_ui = rgb { 220  60  0 }
 }
 MDV = {
@@ -377,7 +377,7 @@ MDV = {
 	color_ui = rgb { 210 150 0 }
 }
 SLV = {
-	color = rgb { 0  255  255 }
+	color = rgb { 102 227 215 }
 	color_ui = rgb { 0  180  240 }
 }
 UKR = {
@@ -385,11 +385,11 @@ UKR = {
 	color_ui = rgb { 230  230  50 }
 }
 KOS = {
-	color = rgb { 0 0 240 }
+	color = rgb { 46 92 172 }
 	color_ui = rgb { 0 0 240 }
 }
 MNT = {
-	color = rgb { 255 210 50 }
+	color = rgb { 119 93 93 }
 	color_ui = rgb { 255 210 50 } 
 }
 ALG = {
@@ -979,7 +979,7 @@ SRP = {
 }
 
 LBR = {
-	color = rgb { 171 190 152 }
+	color = rgb { 226 233 80 }
 	color_ui = rgb { 222 247 198 }
 }
 

@@ -1,0 +1,156 @@
+ukr_antiseparatist = {
+		zakarpattia_separatism_1_slow = 
+		{ fire_only_once = no
+		 cost = 15
+	 available =
+	  { 73 = { is_owned_by = UKR has_state_flag = hun_influence_1 } has_army_experience > 15 }
+	visible = { tag = UKR 73 = { has_state_flag = hun_influence_1 } }
+	on_map_mode = yes
+	highlight_states = { state = 73 }
+	remove_effect = { 
+	army_experience = -15
+	73 = {
+	clr_state_flag = hun_influence_1
+	}
+	}
+		days_remove = 120
+	}
+	zakarpattia_separatism_1_medium = 
+		{ fire_only_once = no
+		 cost = 30
+	 available =
+	  { 73 = { is_owned_by = UKR has_state_flag = hun_influence_1  } has_army_experience > 30 }
+	visible = { tag = UKR 73 = { has_state_flag = hun_influence_1 } }
+	on_map_mode = yes
+	highlight_states = { state = 73 }
+	remove_effect = { 
+	73 = {
+	clr_state_flag = hun_influence_1
+	}
+		army_experience = -30
+	}
+		days_remove = 85
+	}
+		zakarpattia_separatism_1_fast = 
+		{ fire_only_once = no
+		 cost = 95
+	 available =
+	  { 73 = { is_owned_by = UKR has_state_flag = hun_influence_1  } }
+	visible = { tag = UKR 73 = { has_state_flag = hun_influence_1 } }
+	on_map_mode = yes
+	highlight_states = { state = 73 }
+	remove_effect = { 
+	73 = {
+	clr_state_flag = hun_influence_1
+	}
+	}
+		days_remove = 45
+	}
+		zakarpattia_separatism_2_slow = 
+		{ fire_only_once = no
+		 cost = 60
+	 available =
+	  { 73 = { has_state_flag = hun_influence_2 } }
+	visible = { tag = UKR 73 = { has_state_flag = hun_influence_2 } }
+	on_map_mode = yes
+	highlight_states = { state = 73 }
+	remove_effect = { 
+	73 = {
+	clr_state_flag = hun_influence_2
+	set_state_flag = hun_influence_1
+	}
+	}
+		days_remove = 160
+	}
+	
+	zakarpattia_separatism_2_medium = 
+		{ fire_only_once = no
+		 cost = 105
+	 available =
+	  { 73 = { has_state_flag = hun_influence_2 } }
+	visible = { tag = UKR 73 = { has_state_flag = hun_influence_2 } }
+	on_map_mode = yes
+	highlight_states = { state = 73 }
+	remove_effect = { 
+	73 = {
+	clr_state_flag = hun_influence_2
+	set_state_flag = hun_influence_1
+	}
+	}
+		days_remove = 125
+	}
+	
+		zakarpattia_separatism_2_fast = 
+		{ fire_only_once = no
+		 cost = 155
+	 available =
+	  { 73 = { has_state_flag = hun_influence_2 } }
+	visible = { tag = UKR 73 = { has_state_flag = hun_influence_2 } }
+	on_map_mode = yes
+	highlight_states = { state = 73 }
+	remove_effect = { 
+	73 = {
+	clr_state_flag = hun_influence_2
+	set_state_flag = hun_influence_1
+	}
+	}
+		days_remove = 95
+	}
+			zakarpattia_separatism_3_slow = 
+		{ fire_only_once = no
+		 cost = 95
+	 available =
+	  { 73 = { has_state_flag = hun_influence_3 } }
+	visible = { tag = UKR 73 = { has_state_flag = hun_influence_3 } }
+	on_map_mode = yes
+	highlight_states = { state = 73 }
+	remove_effect = { 
+	73 = {
+	clr_state_flag = hun_influence_3
+	set_state_flag = hun_influence_2
+	}
+	}
+		days_remove = 210
+	}
+		zakarpattia_separatism_3_medium = 
+		{ fire_only_once = no
+		 cost = 145
+	 available =
+	  { 73 = { has_state_flag = hun_influence_3 } }
+	visible = { tag = UKR 73 = { has_state_flag = hun_influence_3 } }
+	on_map_mode = yes
+	highlight_states = { state = 73 }
+	remove_effect = { 
+	73 = {
+	clr_state_flag = hun_influence_3
+	set_state_flag = hun_influence_2
+	}
+	}
+		days_remove = 160
+	}
+			zakarpattia_separatism_3_fast = 
+		{ fire_only_once = no
+		 cost = 210
+	 available =
+	  { 73 = { has_state_flag = hun_influence_3 } }
+	visible = { tag = UKR 73 = { has_state_flag = hun_influence_3 } }
+	on_map_mode = yes
+	highlight_states = { state = 73 }
+	remove_effect = { 
+	73 = {
+	clr_state_flag = hun_influence_3
+	set_state_flag = hun_influence_2
+	}
+	}
+		days_remove = 120
+	}
+	
+	
+
+	
+	
+	
+	
+	
+	
+}

@@ -1,5 +1,10 @@
 SpriteTypes = {	
 
+
+	spriteType = {
+		name = "GFX_idea_language"
+		texturefile = "gfx/interface/ideas/language.dds"
+	}
 	spriteType = {
 		name = "GFX_idea_otto_von_habsburg"
 		texturefile = "gfx/interface/ideas/hungary/hun_otto_von.dds"
@@ -31,5 +36,9 @@ SpriteTypes = {
 	spriteType = {
 		name = "GFX_idea_communism_fade"
 		texturefile = "gfx/interface/ideas/communism_fade.dds"
-	}	
+	}
+	spriteType = {
+		name = "GFX_idea_szekelyland"
+		texturefile = "gfx/interface/ideas/szekelyland.dds"
+	}		
 }	

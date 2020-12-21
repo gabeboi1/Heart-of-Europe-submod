@@ -1,5 +1,56 @@
-spriteTypes = { 
-	
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_hun_horde"
+	texturefile = "gfx/interface/goals/releasethehorde.dds"
+	}
+	SpriteType = {
+	name = "GFX_homophobia"
+	texturefile = "gfx/interface/goals/homophobia.dds"
+	}
+	SpriteType = {
+	name = "GFX_fash_industry"
+	texturefile = "gfx/interface/goals/fash_industry.dds"
+	}
+	SpriteType = {
+	name = "GFX_hun_united"
+	texturefile = "gfx/interface/goals/hungary_united.dds"
+	}
+	SpriteType = {
+	name = "GFX_hun_fascism"
+	texturefile = "gfx/interface/goals/hun_fascism.dds"
+	}
+	SpriteType = {
+	name = "GFX_agreement"
+	texturefile = "gfx/interface/goals/agreement.dds"
+	}
+	SpriteType = {
+	name = "GFX_hunchristian"
+	texturefile = "gfx/interface/goals/christian_fanaticism.dds"
+	}
+	SpriteType = {
+	name = "GFX_modern_hussars"
+	texturefile = "gfx/interface/goals/modern_hussar.dds"
+	}
+	SpriteType = {
+	name = "GFX_taltosism"
+	texturefile = "gfx/interface/goals/taltosism.dds"
+	}
+	SpriteType = {
+	name = "GFX_honfoglalas"
+	texturefile = "gfx/interface/goals/honfoglalas.dds"
+	}
+	SpriteType = {
+	name = "GFX_army1"
+	texturefile = "gfx/interface/goals/army_placeholder.dds"
+	}
+	SpriteType = {
+	name = "GFX_turul"
+	texturefile = "gfx/interface/goals/turul.dds"
+	}
+	SpriteType = {
+	name = "GFX_transylvania"
+	texturefile = "gfx/interface/goals/transylvania.dds"
+	}
 	SpriteType = {
 	name = "GFX_gypsies"
 	texturefile = "gfx/interface/goals/gypsies.dds"
@@ -119,6 +170,10 @@ spriteTypes = {
 	SpriteType = {
 	name = "GFX_election"
 	texturefile = "gfx/interface/goals/election.dds"
+	}
+	SpriteType = {
+	name = "GFX_elections_suspended"
+	texturefile = "gfx/interface/goals/elections_suspended.dds"
 	}
 	SpriteType = {
 	name = "GFX_fidesz"

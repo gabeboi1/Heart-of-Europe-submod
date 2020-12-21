@@ -15,7 +15,7 @@ country_event = {
 		name = sek.1.a
 			add_ideas = idea_sek_nationalism
 			create_country_leader = {
-				name = "Bela Marko"
+				name = SEK_bela_marko
 				picture = "marko_bela.dds"
 				ideology = counter_progressive_democrat
 						}

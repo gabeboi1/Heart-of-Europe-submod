@@ -92,9 +92,11 @@
  test_decisions:0 "Test Decisions"
  test_decision:0 "Test Decision"
  #Hungary Descisions
+ hun_political_actions:0 "Political Decisions"
  reintegrate_slovakia:0 "Reintegrate Slovakia"
  south_slovakia:0 "Request Adjustments to Borders"
- south_slovakia_name:0 "Reintegrate South Slovakia"
+ south_slovakia_name:0 "Reintegrate South Slovakia" 
+ jobbik_leader:0 "Elect Vona as President"
  #Zapadoslava Descisions
  zapadoslava:0 "Proclaim the formation Zapadoslavia"
  #Yugoslav reunification

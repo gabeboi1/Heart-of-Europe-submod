@@ -2,11 +2,11 @@ capital = 45
 
 oob = "LBR_2000"
 
-set_research_slots = 3
+set_research_slots = 5
 set_convoys = 100
 set_stability = 0.65
 
-set_country_flag = country_language_english
+set_country_flag = country_language_czech
 
 set_technology = {
 	infantry_weapons = 1
@@ -83,7 +83,6 @@ set_technology = {
 add_ideas = {
 	population_growth_decline
 	free_trade
-	idea_multiethnic_state
 	
 }
 
@@ -94,6 +93,7 @@ set_politics = {
 	elections_allowed = yes
 }
 
+
 set_popularities = {
     conservative = 0
     social_democrat = 0
@@ -101,4 +101,10 @@ set_popularities = {
     market_liberal = 100
     nationalist = 0
     communist = 0
+}
+
+create_country_leader = {
+	name = "Vít Jedlička"
+	ideology = libertarian
+	picture = "liberfuhrer.dds"
 }

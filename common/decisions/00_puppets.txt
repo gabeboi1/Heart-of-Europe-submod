@@ -1,0 +1,122 @@
+puppets = {
+
+slovak_puppet_hun = {
+	fire_only_once = yes
+	available = {
+	OR = {
+	tag = HUN
+SLO = { is_subject_of = HUN }
+	}
+
+	}
+visible = { OR = { tag = HUN } }
+
+complete_effect = { 
+SLO = { set_cosmetic_tag = SLO_HUN }
+ }
+	
+	
+	
+	}
+	
+transylvania_puppet_aus = {
+	fire_only_once = yes
+	available = {
+	OR = {
+	tag = AUS
+TRS = { is_subject_of = AUS }
+	}
+
+	}
+visible = { OR = { tag = AUS } }
+
+complete_effect = { 
+TRS = { set_cosmetic_tag = TRS_AUS }
+ }
+	
+	
+	
+	}
+	
+	
+transylvania_puppet_hun = {
+	fire_only_once = yes
+	available = {
+	OR = {
+	tag = HUN
+TRS = { is_subject_of = HUN }
+	}
+
+	}
+visible = { OR = { tag = HUN } }
+
+complete_effect = { 
+TRS = { set_cosmetic_tag = TRS_HUN }
+ }
+	
+	
+	
+	}
+	
+hungary_puppet_aus = {
+	fire_only_once = yes
+	available = {
+	OR = {
+	tag = AUS
+HUN = { is_subject_of = AUS }
+	}
+
+	}
+visible = { OR = { tag = AUS } }
+
+complete_effect = { 
+HUN = { set_cosmetic_tag = HUN_AUS }
+ }
+	
+	
+	
+	}
+	
+slovenia_puppet_aus = {
+	fire_only_once = yes
+	available = {
+	OR = {
+	tag = AUS
+SLV = { is_subject_of = AUS }
+	}
+
+	}
+visible = { OR = { tag = AUS } }
+
+complete_effect = { 
+SLV = { set_cosmetic_tag = SLV_AUS }
+ }
+	
+	}
+	
+czechia_puppet_aus = {
+	fire_only_once = yes
+	available = {
+	OR = {
+	tag = AUS
+CZE = { is_subject_of = AUS }
+	}
+
+	}
+visible = { OR = { tag = AUS } }
+
+complete_effect = { 
+CZE = { set_cosmetic_tag = CZE_AUS }
+MRV = { add_state_core = 72
+		add_state_core = 74
+		add_state_core = 75
+		add_state_core = 946
+		 }
+CZE = { release = MRV }
+MRV = { set_cosmetic_tag = MRV_AUS }
+AUS = { puppet = MRV }
+ }
+	
+	}
+	
+}

@@ -1,3 +1,4 @@
+
 state={
 	id=944
 	name="STATE_944"
@@ -5,23 +6,24 @@ state={
 		steel=22.000
 		oil=4.000
 	}
-history={
 
+	history={
 		owner = AUS
 		add_core_of = AUS
-
 		buildings = {
 			infrastructure = 8
 			industrial_complex = 2
 			arms_factory = 1
+
 		}
-			victory_points = {
-			9648 12
+		victory_points = {
+			9648 12 
 		}
-	
+
 	}
+
 	provinces={
-		653 6687 6691 9646 9648 9650 9679 13263
+		653 6687 6691 9646 9648 9650 9679 13264 
 	}
 	manpower=1201348
 	buildings_max_level_factor=1.000
