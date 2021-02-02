@@ -1,0 +1,306 @@
+romania_civil_war = {
+secure_brasov = 
+		{ 
+		icon = "GFX_decision_iron_guard"
+		fire_only_once = yes
+		 cost = 75
+	 available =
+	  { 84 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } check_variable = { rom_secured_states < 4 } } 
+	visible = { tag = ROM 84 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } }
+	on_map_mode = yes
+	highlight_states = { state = 84 }
+	complete_effect = { add_to_variable = {
+	var = rom_secured_states
+	value = 1
+} }
+	remove_effect = { 
+	84 = {
+	set_state_flag = rom_state_secured
+	} 
+	}
+		days_remove = 14
+	}
+secure_alba = 
+		{ fire_only_once = yes
+		icon = "GFX_decision_iron_guard"
+		 cost = 75
+	 available =
+	  { 937 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } check_variable = { rom_secured_states < 4 } }
+	 visible = 	  { tag = ROM 937 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } }
+	on_map_mode = yes
+	highlight_states = { state = 937 }
+	complete_effect = { add_to_variable = {
+	var = rom_secured_states
+	value = 1
+} }
+	remove_effect = { 
+	937 = {
+	set_state_flag = rom_state_secured
+	}
+add_to_variable = {
+	var = rom_secured_states
+	value = 1
+} 
+	}
+		days_remove = 14
+	}
+	
+secure_banat = 
+		{ fire_only_once = yes
+		icon = "GFX_decision_iron_guard"
+		 cost = 75
+	 available =
+	  { 82 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } check_variable = { rom_secured_states < 4 } }
+	visible = { tag = ROM 82 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } }
+	on_map_mode = yes
+	highlight_states = { state = 82 }
+	complete_effect = { add_to_variable = {
+	var = rom_secured_states
+	value = 1
+} }
+	remove_effect = { 
+	82 = {
+	set_state_flag = rom_state_secured
+	}
+	}
+		days_remove = 14
+	}
+secure_crisania = 
+		{ fire_only_once = yes
+		icon = "GFX_decision_iron_guard"
+		 cost = 75
+	 available =
+	  { 83 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } check_variable = { rom_secured_states < 4 } }
+	visible = { tag = ROM 83 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } }
+	on_map_mode = yes
+	highlight_states = { state = 83 }
+	complete_effect = { add_to_variable = {
+	var = rom_secured_states
+	value = 1
+} }
+	remove_effect = { 
+	83 = {
+	set_state_flag = rom_state_secured
+	}
+add_to_variable = {
+	var = rom_secured_states
+	value = 1
+} 
+	}
+		days_remove = 14
+	}
+
+secure_oltenia = 
+		{ fire_only_once = yes
+		icon = "GFX_decision_iron_guard"
+		 cost = 75
+	 available =
+	  { 81 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } check_variable = { rom_secured_states < 4 } }
+	visible = { tag = ROM 81 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } }
+	on_map_mode = yes
+	highlight_states = { state = 81 }
+	complete_effect = { add_to_variable = {
+	var = rom_secured_states
+	value = 1
+} }
+	remove_effect = { 
+	81 = {
+	set_state_flag = rom_state_secured
+	}
+
+	}
+		days_remove = 14
+	}
+
+secure_partium = 
+		{ fire_only_once = yes
+		icon = "GFX_decision_iron_guard"
+		 cost = 75
+	 available =
+	  { 922 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } check_variable = { rom_secured_states < 4 } }
+	visible = { tag = ROM 922 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } }
+	on_map_mode = yes
+	highlight_states = { state = 922 }
+	complete_effect = { add_to_variable = {
+	var = rom_secured_states
+	value = 1
+} }
+	remove_effect = { 
+	922 = {
+	set_state_flag = rom_state_secured
+	}
+
+	}
+		days_remove = 14
+	}
+secure_cluj = 
+		{ fire_only_once = yes
+		icon = "GFX_decision_iron_guard"
+		 cost = 75
+	 available =
+	  { 76 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } check_variable = { rom_secured_states < 4 } }
+	 visible = { tag = ROM 76 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } }
+	on_map_mode = yes
+	highlight_states = { state = 76 }
+	complete_effect = { add_to_variable = {
+	var = rom_secured_states
+	value = 1
+} }
+	remove_effect = { 
+	76 = {
+	set_state_flag = rom_state_secured
+	}
+	}
+		days_remove = 14
+	}
+secure_secuimea = 
+		{ fire_only_once = yes
+		icon = "GFX_decision_iron_guard"
+		 cost = 75
+	 available =
+	  { 919 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } check_variable = { rom_secured_states < 4 } }
+	visible = { tag = ROM 919 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } }
+	on_map_mode = yes
+	highlight_states = { state = 919 }
+	complete_effect = { add_to_variable = {
+	var = rom_secured_states
+	value = 1
+} }
+	remove_effect = { 
+	919 = {
+	set_state_flag = rom_state_secured
+	}
+
+	}
+		days_remove = 14
+	}
+
+secure_bukovina = 
+		{ fire_only_once = yes
+		icon = "GFX_decision_iron_guard"
+		 cost = 75
+	 available =
+	  { 927 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } check_variable = { rom_secured_states < 4 } }
+	visible = { tag = ROM 927 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } }
+	on_map_mode = yes
+	highlight_states = { state = 927 }
+	complete_effect = { add_to_variable = {
+	var = rom_secured_states
+	value = 1
+} }
+	remove_effect = { 
+	927 = {
+	set_state_flag = rom_state_secured
+	}
+
+	}
+		days_remove = 14
+	}
+	
+secure_northern_moldavia = 
+		{ fire_only_once = yes
+		icon = "GFX_decision_iron_guard"
+		 cost = 75
+	 available =
+	  { 79 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } check_variable = { rom_secured_states < 4 } }
+	visible = { tag = ROM 79 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } }
+	on_map_mode = yes
+	highlight_states = { state = 79 }
+	complete_effect = { add_to_variable = {
+	var = rom_secured_states
+	value = 1
+} }
+	remove_effect = { 
+	79 = {
+	set_state_flag = rom_state_secured
+	}
+
+	}
+		days_remove = 14
+	}
+
+secure_southern_moldavia = 
+		{ fire_only_once = yes
+		icon = "GFX_decision_iron_guard"
+		 cost = 75
+	 available =
+	  { 929 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } check_variable = { rom_secured_states < 4 } }
+	visible = { tag = ROM 929 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } }
+	on_map_mode = yes
+	highlight_states = { state = 929 }
+	complete_effect = { add_to_variable = {
+	var = rom_secured_states
+	value = 1
+} }
+	remove_effect = { 
+	929 = {
+	set_state_flag = rom_state_secured
+	}
+
+	}
+		days_remove = 14
+	}
+
+enemy_capital = 
+		{ fire_only_once = yes
+		icon = "GFX_decision_star"
+	 available =
+	  { always = no 46 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } check_variable = { rom_secured_states < 4 } }
+	visible = { tag = ROM 46 = { is_owned_by = ROM NOT = { has_state_flag = rom_state_secured } } }
+	on_map_mode = yes
+	highlight_states = { state = 46 }
+	complete_effect = { add_to_variable = {
+	var = rom_secured_states
+	value = 1
+} }
+	remove_effect = { 
+	929 = {
+	set_state_flag = rom_state_secured
+	}
+
+	}
+		days_remove = 14
+	}
+	
+our_capital = 
+		{ fire_only_once = yes
+		icon = "GFX_decision_ourstar"
+	 available =
+	  { always = no 899 = { is_owned_by = ROM } check_variable = { rom_secured_states < 4 } }
+	visible = { tag = ROM 899 = { is_owned_by = ROM } }
+	on_map_mode = yes
+	highlight_states = { state = 899 }
+	complete_effect = { add_to_variable = {
+	var = rom_secured_states
+	value = 1
+} }
+	remove_effect = { 
+	929 = {
+	set_state_flag = rom_state_secured
+	}
+
+	}
+		days_remove = 14
+	}
+	
+guaranteed_state = 
+		{ fire_only_once = yes
+		icon = "GFX_decision_ourstar"
+	 available =
+	  { always = no 928 = { is_owned_by = ROM } check_variable = { rom_secured_states < 4 } }
+	visible = { tag = ROM 928 = { is_owned_by = ROM } }
+	on_map_mode = yes
+	highlight_states = { state = 928 }
+	complete_effect = { add_to_variable = {
+	var = rom_secured_states
+	value = 1
+} }
+	remove_effect = { 
+	929 = {
+	set_state_flag = rom_state_secured
+	}
+
+	}
+		days_remove = 14
+	}
+	

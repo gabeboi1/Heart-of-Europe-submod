@@ -1,7 +1,7 @@
 #reload countrycolors
 
 GER = {
-	color = rgb { 115 115 115 }
+	color = rgb { 136 145 158 }
 	color_ui = rgb { 115 115 115 }
 }
 ENG = {
@@ -365,15 +365,15 @@ BOS = {
 	color_ui = rgb { 0  240  100 }
 }
 BLR = {
-	color = rgb { 250  100  50 }
-	color_ui = rgb { 230  90  40 }
+	color = rgb { 194 231 206 }
+	color_ui = rgb { 196 174 201 }
 }
 MAC = {
 	color = rgb { 163 67 1 }
 	color_ui = rgb { 220  60  0 }
 }
 MDV = {
-	color = rgb { 255 190 0 }
+	color = rgb { 203 175 27 }
 	color_ui = rgb { 210 150 0 }
 }
 SLV = {
@@ -381,7 +381,7 @@ SLV = {
 	color_ui = rgb { 0  180  240 }
 }
 UKR = {
-	color = rgb { 0  90  185 }
+	color = rgb { 76 85 162 }
 	color_ui = rgb { 230  230  50 }
 }
 KOS = {
@@ -777,7 +777,7 @@ SRI = {
 	color_ui = rgb { 240 170 5 }
 }
 MLD = {
-	color = rgb { 200 210 110 }
+	color = rgb { 203 175 27 }
 	color_ui = rgb { 190 200 100 }
 }
 TRA = {
@@ -981,6 +981,11 @@ SRP = {
 LBR = {
 	color = rgb { 226 233 80 }
 	color_ui = rgb { 222 247 198 }
+}
+
+XXY = {
+	color = rgb { 198 133 45 }
+	color_ui = rgb { 198 133 45 }
 }
 
 D01 = {

@@ -230,6 +230,11 @@ create_corps_commander = {
 	skill = 1
 }
 
+IF = { 
+    limit = { NOT = { BOS = { owns_state = 848 owns_state = 849 owns_state = 850 } } }
+    set_cosmetic_tag = BOS_FED
+}
+
 2006.1.1 = {
 	add_ideas = {
 		volunteer_only

@@ -1,5 +1,41 @@
 spriteTypes = {
 	SpriteType = {
+	name = "GFX_turanism"
+	texturefile = "gfx/interface/goals/turanism.dds"
+	}
+	SpriteType = {
+	name = "GFX_arpadsav"
+	texturefile = "gfx/interface/goals/carpathia.dds"
+	}
+	SpriteType = {
+	name = "GFX_hadur"
+	texturefile = "gfx/interface/goals/hun_hadur.dds"
+	}
+	SpriteType = {
+	name = "GFX_ancap"
+	texturefile = "gfx/interface/goals/ancap.dds"
+	}
+	SpriteType = {
+	name = "GFX_szdsz"
+	texturefile = "gfx/interface/goals/szdsz.dds"
+	}
+	SpriteType = {
+	name = "GFX_austria_conquest"
+	texturefile = "gfx/interface/goals/austria_conquer.dds"
+	}
+	SpriteType = {
+	name = "GFX_csodaszarvas"
+	texturefile = "gfx/interface/goals/csodaszarvas.dds"
+	}
+	SpriteType = {
+	name = "GFX_christian_shcool"
+	texturefile = "gfx/interface/goals/religious_school.dds"
+	}
+	SpriteType = {
+	name = "GFX_conscription"
+	texturefile = "gfx/interface/goals/hoe_conscription.dds"
+	}
+	SpriteType = {
 	name = "GFX_hun_horde"
 	texturefile = "gfx/interface/goals/releasethehorde.dds"
 	}

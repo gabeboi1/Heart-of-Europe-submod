@@ -1,0 +1,7 @@
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_focus_ironguard"
+	texturefile = "gfx/interface/goals/rom_ironguard.dds"
+	}
+	
+ }

@@ -1,0 +1,26 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_decision_unknown"
+		texturefile = "gfx/interface/decisions/generic_decision.dds"
+	}
+
+	
+	#romania
+	
+	spriteType = {
+		name = "GFX_decision_iron_guard"
+		texturefile = "gfx/interface/decisions/romania/ironguard.dds"
+	}
+
+	spriteType = {
+		name = "GFX_decision_star"
+		texturefile = "gfx/interface/decisions/romania/star.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_decision_ourstar"
+		texturefile = "gfx/interface/decisions/romania/ourstar.dds"
+	}
+	
+}

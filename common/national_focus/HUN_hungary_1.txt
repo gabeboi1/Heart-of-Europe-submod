@@ -332,7 +332,7 @@ bypass = { HUN = { has_government = social_democrat } }
  #Focus for Support SZDSZ
 focus = { 
 id = HUN_electszdsz
-icon = GFX_mszp
+icon = GFX_szdsz
 x = 6
 y = 5
 cost = 10
@@ -352,7 +352,7 @@ bypass = { HUN = { has_government = market_liberal } }
  #Focus for Support SZDSZ
 focus = { 
 id = HUN_freshstart
-icon = GFX_mszp
+icon = GFX_szdsz
 x = 4
 y = 6
 cost = 10
@@ -372,7 +372,7 @@ ai_will_do = {
  # Focus for Privatisation
 focus = { 
 id = HUN_privatisation1
-icon = GFX_hunprivatisation
+icon = GFX_ancap
 x = 8
 y = 6
 cost = 10
@@ -396,7 +396,7 @@ add_ideas = { idea_hun_privatisation }
  # Focus for ANCAP
 focus = { 
 id = HUN_market_anarchism_1
-icon = GFX_hunprivatisation
+icon = GFX_ancap
 x = 7
 y = 7
 cost = 10
@@ -420,7 +420,7 @@ add_ideas = { idea_hun_privatisation }
  # Focus for ANCAP
 focus = { 
 id = HUN_market_anarchism_2
-icon = GFX_hunprivatisation
+icon = GFX_ancap
 x = 9
 y = 7
 cost = 10
@@ -444,7 +444,7 @@ add_ideas = { idea_hun_privatisation }
  # Focus for ANCAP
 focus = { 
 id = HUN_market_anarchism_3
-icon = GFX_hunprivatisation
+icon = GFX_ancap
 x = 8
 y = 8
 cost = 10
@@ -627,6 +627,7 @@ available_if_capitulated = yes
 prerequisite = { focus = HUN_immigration }
 prerequisite = { focus = HUN_gaymarriage }
 prerequisite = { focus = HUN_drugs }
+prerequisite = { focus = HUN_eu1 }
 
 available = { }
 
@@ -2440,7 +2441,7 @@ x = 12
 y = 9
 cost = 30
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_100dayprogram2 }
+prerequisite = { focus = HUN_100dayprogram2 focus = HUN_market_anarchism_3 }
 ai_will_do = { 
  factor = 1
  } 
@@ -2704,14 +2705,15 @@ add_political_power = 50
 focus = { 
 id = HUN_euro
 icon = GFX_generic_euro
-x = 14
-y = 11
+x = 8
+y = 10
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_welfarestate }
+prerequisite = { focus = HUN_eu1 }
 ai_will_do = { 
  factor = 1
- } 
+ }
+available = { HUN = { has_idea = welfare_state } }
  completion_reward = {
 add_political_power = 50
 add_ideas = { the_euro }
@@ -3096,7 +3098,7 @@ elections_allowed = no
 focus = { 
 id = HUN_secretpolice
 icon = GFX_communism
-x = 64
+x = 65
 y = 8
 cost = 10
 available_if_capitulated = yes 
@@ -3115,18 +3117,69 @@ add_stability = 0.15
 focus = { 
 id = HUN_statemedia
 icon = GFX_communism
-x = 64
-y = 7
+x = 67
+y = 8
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_comreforms } 
+prerequisite = { focus = HUN_oneparty } 
 ai_will_do = { 
  factor = 1
  } 
 completion_reward = {
 add_stability = 0.20
 }
+ }
+ 
+         # Focus for State Media
+focus = { 
+id = HUN_suppression
+icon = GFX_communism
+x = 66
+y = 9
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_statemedia focus = HUN_secretpolice } 
+ai_will_do = { 
+ factor = 1
  } 
+completion_reward = {
+add_stability = 0.20
+}
+ }
+ 
+         # Focus for State Media
+focus = { 
+id = HUN_outlawunemployment
+icon = GFX_communism
+x = 62
+y = 11
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_absolutecontrol focus = HUN_neokadarism } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.20
+}
+ }
+
+         # Focus for Absolute control
+focus = { 
+id = HUN_absolutecontrol
+icon = GFX_communism
+x = 60
+y = 10
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_collectivisation2 } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.20
+}
+ }  
  
           # Focus for collectivisation
 focus = { 
@@ -3156,11 +3209,12 @@ add_building_construction = {
 focus = { 
 id = HUN_collectivisation2
 icon = GFX_comindustry
-x = 62
+x = 61
 y = 9
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_collectivisation } 
+mutually_exclusive = { focus = HUN_socialistmarketeconomy } 
 ai_will_do = { 
  factor = 1
  } 
@@ -3176,6 +3230,55 @@ add_building_construction = {
 }
  }
  
+           # Focus for collectivisation2
+focus = { 
+id = HUN_socialistmarketeconomy
+icon = GFX_comindustry
+x = 63
+y = 9
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_collectivisation } 
+mutually_exclusive = { focus = HUN_collectivisation2 }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+random_owned_controlled_state = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+    type = industrial_complex
+    level = 3
+    instant_build = yes
+}
+}
+}
+ }
+
+           # Focus for collectivisation2
+focus = { 
+id = HUN_neokadarism
+icon = GFX_comindustry
+x = 64
+y = 10
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_socialistmarketeconomy } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+random_owned_controlled_state = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+    type = industrial_complex
+    level = 3
+    instant_build = yes
+}
+}
+}
+ } 
+ 
             # Focus for collectivisation3
 focus = { 
 id = HUN_collectivisation3
@@ -3184,7 +3287,7 @@ x = 62
 y = 10
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_collectivisation2 } 
+prerequisite = { focus = HUN_collectivisation2 focus = HUN_socialistmarketeconomy } 
 ai_will_do = { 
  factor = 1
  } 
@@ -3421,6 +3524,7 @@ y = 5
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_2002election focus = HUN_fideszmiep }
+mutually_exclusive = { focus = HUN_electfascist }
 ai_will_do = { 
  factor = 1
  } 
@@ -3433,12 +3537,13 @@ add_political_power = 120
                    # Empire reunited
 focus = { 
 id = HUN_electfascist
-icon = GFX_hun_nationalist
+icon = GFX_hun_fascism
 x = 38
 y = 5
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_2002election focus = HUN_jobbik }
+mutually_exclusive = { focus = HUN_electnationalist }
 ai_will_do = { 
  factor = 1
  } 
@@ -3610,7 +3715,7 @@ add_ideas = idea_hun_homogen_nation
                       # National Unity
 focus = { 
 id = HUN_christianvalues
-icon = GFX_turul
+icon = GFX_hunchristian
 x = 37
 y = 6
 cost = 10
@@ -3628,7 +3733,7 @@ add_ideas = idea_radical_christianity
                       # National Unity
 focus = { 
 id = HUN_neopaganism
-icon = GFX_taltosism
+icon = GFX_csodaszarvas
 x = 39
 y = 6
 cost = 10
@@ -3665,7 +3770,7 @@ army_experience = 50
                       # National Unity
 focus = { 
 id = HUN_schoolprayer
-icon = GFX_turul
+icon = GFX_christian_shcool
 x = 37
 y = 8
 cost = 10
@@ -3683,7 +3788,7 @@ decrease_progressive_influence_by_2 = yes
                        # National Unity
 focus = { 
 id = HUN_conscription
-icon = GFX_turul
+icon = GFX_conscription
 x = 40
 y = 9
 cost = 10
@@ -3821,7 +3926,7 @@ swap_ideas = {
                         # National Unity
 focus = { 
 id = HUN_worshiphadur
-icon = GFX_taltosism
+icon = GFX_hadur
 x = 39
 y = 8
 cost = 10
@@ -3841,7 +3946,7 @@ swap_ideas = {
                    # National Unity
 focus = { 
 id = HUN_turks
-icon = GFX_
+icon = GFX_turanism
 x = 35
 y = 12
 cost = 10
@@ -3852,7 +3957,7 @@ ai_will_do = {
  } 
 completion_reward = {
 add_stability = 0.03
-add_political_power = 100
+set_cosmetic_tag = HUN_TURAN
 }
  }
  
@@ -3965,7 +4070,7 @@ set_cosmetic_tag = HUN_GREATER
                     # National Unity
 focus = { 
 id = HUN_turanism
-icon = GFX_turul
+icon = GFX_turanism
 x = 35
 y = 8
 cost = 10
@@ -4001,7 +4106,7 @@ create_wargoal = { type = annex_everything target = SLO }
                          # National Unity
 focus = { 
 id = HUN_danubianhegemony
-icon = GFX_turul
+icon = GFX_austria_conquest
 x = 38
 y = 11
 cost = 10
@@ -4018,7 +4123,7 @@ create_wargoal = { type = annex_everything target = AUS }
                           # National Unity
 focus = { 
 id = HUN_karpatia
-icon = GFX_turul
+icon = GFX_arpadsav
 x = 39
 y = 12
 cost = 10
@@ -4062,6 +4167,241 @@ completion_reward = {
 	add_state_core = 78
 	add_state_core = 80
 	add_state_core = 89
+
+	set_cosmetic_tag = CARP
+}
+ }
+
+                          # National Unity
+focus = { 
+id = HUN_divideetimpera
+icon = GFX_arpadsav
+x = 38
+y = 13
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_karpatia }
+mutually_exclusive = { focus = HUN_rulebyfear }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+
+	set_cosmetic_tag = CARP
+}
+ } 
+
+                          # National Unity
+focus = { 
+id = HUN_dividemoldavia
+icon = GFX_arpadsav
+x = 37
+y = 14
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_divideetimpera }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+
+	set_cosmetic_tag = CARP
+}
+ } 
+ 
+                           # National Unity
+focus = { 
+id = HUN_integratemoldavia
+icon = GFX_arpadsav
+x = 37
+y = 15
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_dividemoldavia }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+
+	set_cosmetic_tag = CARP
+}
+ } 
+ 
+                           # National Unity
+focus = { 
+id = HUN_csango
+icon = GFX_arpadsav
+x = 37
+y = 16
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_integratemoldavia }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+
+	set_cosmetic_tag = CARP
+}
+ }  
+                          # National Unity
+focus = { 
+id = HUN_dividewallachia
+icon = GFX_arpadsav
+x = 39
+y = 14
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_divideetimpera }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+
+	set_cosmetic_tag = CARP
+}
+ }
+
+                          # National Unity
+focus = { 
+id = HUN_integratewallachia
+icon = GFX_arpadsav
+x = 39
+y = 15
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_dividewallachia }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+
+	set_cosmetic_tag = CARP
+}
+ }
+ 
+                           # National Unity
+focus = { 
+id = HUN_resturcturebucharest
+icon = GFX_arpadsav
+x = 39
+y = 16
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_integratewallachia }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+
+	set_cosmetic_tag = CARP
+}
+ }
+ 
+                            # National Unity
+focus = { 
+id = HUN_magyarization
+icon = GFX_arpadsav
+x = 38
+y = 17
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_resturcturebucharest }
+prerequisite = { focus = HUN_csango }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+
+	set_cosmetic_tag = CARP
+}
+ }
+                          # National Unity
+focus = { 
+id = HUN_rulebyfear
+icon = GFX_arpadsav
+x = 41
+y = 13
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_karpatia }
+mutually_exclusive = { focus = HUN_divideetimpera }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+
+	set_cosmetic_tag = CARP
+}
+ }  
+ 
+                           # National Unity
+focus = { 
+id = HUN_bansymbols
+icon = GFX_arpadsav
+x = 41
+y = 14
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_rulebyfear }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+
+	set_cosmetic_tag = CARP
+}
+ } 
+
+                           # National Unity
+focus = { 
+id = HUN_oppressionbyforce
+icon = GFX_arpadsav
+x = 41
+y = 15
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_bansymbols }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+
+	set_cosmetic_tag = CARP
+}
+ }  
+ 
+                            # National Unity
+focus = { 
+id = HUN_banlanguage
+icon = GFX_arpadsav
+x = 41
+y = 16
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_oppressionbyforce }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+
+	set_cosmetic_tag = CARP
+}
+ }  
+ 
+                            # National Unity
+focus = { 
+id = HUN_aggressiveintegration
+icon = GFX_arpadsav
+x = 41
+y = 17
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_banlanguage }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
 
 	set_cosmetic_tag = CARP
 }

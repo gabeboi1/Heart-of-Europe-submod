@@ -1,0 +1,414 @@
+add_namespace = romania
+
+country_event = {
+	id = romania.1
+        title = romania.1.t
+        desc = romania.1.d
+
+	fire_only_once = yes
+        mean_time_to_happen = { days = 20 }
+	is_triggered_only = yes
+	
+	option = {
+	ai_chance = { factor = 100 }
+	name = romania.1.a
+set_capital = 899
+start_civil_war = {
+    ruling_party = fascist
+    ideology = ROOT
+    size = 1.0
+    capital = 46
+    states = { 46 76 79 81 82 83 84 919 922 927 929 937 }
+    keep_political_leader = yes
+}
+division_template = {
+	name = "Iron Guard"
+	template_counter = 4
+	regiments = {
+		light_mechanized = { x = 0 y = 0 }
+		light_mechanized = { x = 0 y = 1 }
+		light_mechanized = { x = 0 y = 2 }
+	}
+	support = {
+		field_hospital = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+	}
+}
+899 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+    owner = ROM
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+    owner = ROM
+} }
+928 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+} }
+if = { 
+limit = { 76 = { has_state_flag = rom_state_secured } }
+transfer_state = 76
+76 = {
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+}
+ }
+ }
+if = { 
+limit = { 937 = { has_state_flag = rom_state_secured } }
+transfer_state = 937
+937 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+} }
+ }
+ 
+if = { 
+limit = { 84 = { has_state_flag = rom_state_secured } }
+transfer_state = 84
+84 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+} }
+ }
+ 
+if = { 
+limit = { 82 = { has_state_flag = rom_state_secured } }
+transfer_state = 82
+82 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+} }
+ }
+ 
+if = { 
+limit = { 83 = { has_state_flag = rom_state_secured } }
+transfer_state = 83
+83 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+} }
+ }
+ 
+if = { 
+limit = { 81 = { has_state_flag = rom_state_secured } }
+transfer_state = 81
+81 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+} }
+ }
+ 
+if = { 
+limit = { 922 = { has_state_flag = rom_state_secured } }
+transfer_state = 922
+922 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+} }
+ }
+ 
+if = { 
+limit = { 919 = { has_state_flag = rom_state_secured } }
+transfer_state = 919
+919 = {
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+} }
+ }
+ 
+if = { 
+limit = { 927 = { has_state_flag = rom_state_secured } }
+transfer_state = 927
+927 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+} }
+ }
+ 
+if = { 
+limit = { 79 = { has_state_flag = rom_state_secured } }
+transfer_state = 79
+79 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+} }
+ }
+ 
+if = { 
+limit = { 929 = { has_state_flag = rom_state_secured } }
+transfer_state = 929
+929 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = ROM
+} } 
+ }
+ 
+XXY = {
+
+division_template = {
+	name = "Iron Guard"
+	template_counter = 4
+	regiments = {
+		light_mechanized = { x = 0 y = 0 }
+		light_mechanized = { x = 0 y = 1 }
+		light_mechanized = { x = 0 y = 2 }
+	}
+	support = {
+		field_hospital = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+	}
+}
+
+if = { 
+limit = { 937 = { NOT = { has_state_flag = rom_state_secured } } }
+transfer_state = 937
+937 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+} }
+ }
+ 
+if = { 
+limit = { 84 = { NOT = { has_state_flag = rom_state_secured } } }
+transfer_state = 84
+84 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+} }
+ }
+ 
+if = { 
+limit = { 82 = { NOT = { has_state_flag = rom_state_secured } } }
+transfer_state = 82
+82 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+} }
+ }
+ 
+if = { 
+limit = { 83 = { NOT = { has_state_flag = rom_state_secured } } }
+transfer_state = 83
+83 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+} }
+ }
+ 
+if = { 
+limit = { 81 = { NOT = { has_state_flag = rom_state_secured } } }
+transfer_state = 81
+81 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+} }
+ }
+ 
+if = { 
+limit = { 922 = { NOT = { has_state_flag = rom_state_secured } } }
+transfer_state = 922
+922 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+} }
+ }
+ 
+if = { 
+limit = { 919 = { NOT = { has_state_flag = rom_state_secured } } }
+transfer_state = 919
+919 = {
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+} }
+ }
+ 
+if = { 
+limit = { 927 = {  NOT = { has_state_flag = rom_state_secured } } }
+transfer_state = 927
+927 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+} }
+ }
+ 
+if = { 
+limit = { 79 = { NOT = { has_state_flag = rom_state_secured } } }
+transfer_state = 79
+79 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+} }
+ }
+ 
+if = { 
+limit = { 929 = { NOT = { has_state_flag = rom_state_secured } } }
+transfer_state = 929
+929 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+} } 
+ }
+if = { 
+limit = { NOT = { 76 = { has_state_flag = rom_state_secured } } }
+transfer_state = 76
+76 = {
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+    owner = XXY
+}
+ }
+ }
+
+}
+
+XXY = { 
+transfer_state = 46
+declare_war_on = {
+    target = ROM
+    type = civil_war
+}
+
+}
+46 = { create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+    owner = ROM
+}
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+    owner = ROM
+} 
+create_unit = {
+    division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+    owner = ROM
+}
+}
+
+	}
+	
+	}
+	
+	country_event = {
+	id = romania.2
+        title = romania.2.t
+        desc = romania.2.d
+
+	fire_only_once = yes
+        mean_time_to_happen = { days = 20 }
+	is_triggered_only = yes
+	
+	option = {
+	ai_chance = { factor = 20 }
+	name = romania.2.a
+	custom_effect_tooltip = 11_ROM_tt
+	hidden_effect = {
+	ROM = { 	
+set_country_flag = vadim_alive }
+	}
+	}
+	
+	option = {
+	ai_chance = { factor = 20 }
+	name = romania.2.b
+	hidden_effect = {
+	ROM = { random_list = { 30 = {	
+	country_event = romania.3 } 70 = { country_event = romania.4 } } }
+	}
+	}
+	}

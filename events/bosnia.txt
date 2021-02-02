@@ -1,0 +1,19 @@
+add_namespace = bos
+
+			country_event = {
+
+		id = bos.1
+        title = bos.1.t
+        desc = bos.1.d
+	fire_only_once = yes
+    mean_time_to_happen = { days = 1 }
+	is_triggered_only = no
+	trigger = { NOT = { BOS = { owns_state = 848 owns_state = 849 owns_state = 850 } } }
+		option = {
+	ai_chance = { factor = 1 }
+	name = bos.1.a
+	BOS = { set_cosmetic_tag = BOS_FED }
+	
+	}
+
+	}
