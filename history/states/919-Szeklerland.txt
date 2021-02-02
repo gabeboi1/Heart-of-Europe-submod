@@ -12,6 +12,7 @@ history={
 			9670 5 
 		}
 		add_core_of = SEK
+		add_core_of = ROM
 
 	}
 
