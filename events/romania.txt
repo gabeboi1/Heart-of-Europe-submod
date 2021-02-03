@@ -196,7 +196,7 @@ create_unit = {
  }
  
 XXY = {
-
+add_state_core = 46
 division_template = {
 	name = "Iron Guard"
 	template_counter = 4
@@ -214,6 +214,7 @@ division_template = {
 if = { 
 limit = { 937 = { NOT = { has_state_flag = rom_state_secured } } }
 transfer_state = 937
+add_state_core = 937
 937 = { create_unit = {
     division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
     owner = XXY
@@ -221,12 +222,14 @@ transfer_state = 937
 create_unit = {
     division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
     owner = XXY
-} }
+} 
+}
  }
  
 if = { 
 limit = { 84 = { NOT = { has_state_flag = rom_state_secured } } }
 transfer_state = 84
+add_state_core = 84
 84 = { create_unit = {
     division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
     owner = XXY
@@ -240,6 +243,7 @@ create_unit = {
 if = { 
 limit = { 82 = { NOT = { has_state_flag = rom_state_secured } } }
 transfer_state = 82
+add_state_core = 82
 82 = { create_unit = {
     division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
     owner = XXY
@@ -266,6 +270,7 @@ create_unit = {
 if = { 
 limit = { 81 = { NOT = { has_state_flag = rom_state_secured } } }
 transfer_state = 81
+add_state_core = 81
 81 = { create_unit = {
     division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
     owner = XXY
@@ -279,6 +284,7 @@ create_unit = {
 if = { 
 limit = { 922 = { NOT = { has_state_flag = rom_state_secured } } }
 transfer_state = 922
+add_state_core = 922
 922 = { create_unit = {
     division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
     owner = XXY
@@ -292,6 +298,7 @@ create_unit = {
 if = { 
 limit = { 919 = { NOT = { has_state_flag = rom_state_secured } } }
 transfer_state = 919
+add_state_core = 919
 919 = {
 create_unit = {
     division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
@@ -306,6 +313,7 @@ create_unit = {
 if = { 
 limit = { 927 = {  NOT = { has_state_flag = rom_state_secured } } }
 transfer_state = 927
+add_state_core = 927
 927 = { create_unit = {
     division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
     owner = XXY
@@ -319,6 +327,7 @@ create_unit = {
 if = { 
 limit = { 79 = { NOT = { has_state_flag = rom_state_secured } } }
 transfer_state = 79
+add_state_core = 79
 79 = { create_unit = {
     division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
     owner = XXY
@@ -332,6 +341,7 @@ create_unit = {
 if = { 
 limit = { 929 = { NOT = { has_state_flag = rom_state_secured } } }
 transfer_state = 929
+add_state_core = 929
 929 = { create_unit = {
     division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
     owner = XXY
@@ -344,6 +354,7 @@ create_unit = {
 if = { 
 limit = { NOT = { 76 = { has_state_flag = rom_state_secured } } }
 transfer_state = 76
+add_state_core = 76
 76 = {
 create_unit = {
     division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
