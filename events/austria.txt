@@ -17,6 +17,9 @@ country_event = {
 		stability_weekly = 0.01
 		set_politics = {
 			ruling_party = conservative
+			last_election = "2000.2.4"
+			election_frequency = 48
+			elections_allowed = yes
 		}
 	}
-}
+} 
