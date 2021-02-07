@@ -1,6 +1,6 @@
 ideologies = {
 
-	fascist = {
+	national_socialist = {
 		
 		types = {
 		

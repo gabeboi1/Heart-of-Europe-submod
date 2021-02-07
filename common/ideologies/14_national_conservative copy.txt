@@ -1,6 +1,6 @@
 ideologies = {
 
-	conservative = {
+	national_conservative = {
 		
 		types = {
 		
