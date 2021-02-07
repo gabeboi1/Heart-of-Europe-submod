@@ -1,0 +1,22 @@
+add_namespace = aus
+
+country_event = {
+
+	id = aus.1
+    title = aus.1.t
+    desc = aus.1.d
+
+	fire_only_once = no
+	is_triggered_only = yes
+	trigger = { 
+		has_completed_focus = AUS_new_government_one
+	}
+	option = {
+		ai_chance = { factor = 1 }
+		name = aus.1.a
+		stability_weekly = 0.01
+		set_politics = {
+			ruling_party = conservative
+		}
+	}
+}

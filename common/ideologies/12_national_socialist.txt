@@ -1,0 +1,48 @@
+ideologies = {
+
+	fascist = {
+		
+		types = {
+		
+			national_socialist_ideology = {	
+			}		
+
+			catholic_national_socialism = {
+			}
+
+			neo_pagan_national_socialism = {
+			}
+
+			Strasserism = {
+			}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_NATIONALSOCIALIST_1"
+			"FACTION_NAME_NATIONALSOCIALIST_2"
+			"FACTION_NAME_NATIONALSOCIALIST_3"
+			"FACTION_NAME_NATIONALSOCIALIST_4"
+			"FACTION_NAME_NATIONALSOCIALIST_5"
+			"FACTION_NAME_NATIONALSOCIALIST_6"
+		}
+		
+		color = { 159 80 40 }
+		
+		war_impact_on_world_tension = 1
+		faction_impact_on_world_tension = 1
+		
+		rules = {
+			can_guarantee_other_ideologies = yes
+			can_force_government = yes
+			can_send_volunteers = yes
+			can_puppet = yes
+			can_lower_tension = yes
+		}
+		
+		modifiers = {
+			join_faction_tension = 0.25
+		}
+		
+	}
+
+}

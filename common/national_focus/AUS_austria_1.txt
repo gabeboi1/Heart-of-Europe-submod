@@ -1,0 +1,173 @@
+focus_tree = { 
+    id = austria_1
+    
+    country = { 
+        factor = 0 
+        modifier = { 
+            add = 10 
+            tag = AUS
+        } 
+    }       
+
+default = no
+
+continuous_focus_position = { x = 50 y = 1000}
+
+
+#Focus where the new Chancelor and national council gets elected
+    focus = { 
+        id = AUS_new_government_one
+        icon = GFX_goal_tripartite_pact
+        x = 25
+        y = 4
+
+        cost = 4.9
+
+        available_if_capitulated = no
+       
+        ai_will_do = { 
+            factor = 1
+        } 
+        
+        completion_reward = { 
+            
+            AUS = {
+                country_event = aus.1
+            }        
+        } 
+    } 
+
+#Political Effort focus 
+    focus = { 
+        id = AUS_political_effort
+        icon = GFX_goal_tripartite_pact
+        x = 25
+        y = 5
+
+        cost = 10
+                
+        available_if_capitulated = no
+       
+        ai_will_do = { 
+            factor = 1
+        } 
+        
+        prerequisite = {
+            focus = AUS_new_government_one
+        }
+
+        completion_reward = { 
+            add_political_power = 50
+        } 
+    } 
+
+    #Conservative Route 
+    focus = { 
+        id = AUS_conservative_path
+        icon = GFX_goal_tripartite_pact
+        x = 29
+        y = 6.5 
+
+        cost = 10
+                
+        available_if_capitulated = no
+       
+        ai_will_do = { 
+            factor = 3
+        } 
+        
+        prerequisite = {
+            focus = AUS_political_effort
+        }
+
+        mutually_exclusive = {
+		focus = AUS_liberalsocial_path
+	    }
+
+        completion_reward = { 
+            add_political_power = 50
+        } 
+    } 
+    
+    #More liberal/social Path
+    focus = { 
+        id = AUS_liberalsocial_path
+        icon = GFX_goal_tripartite_pact
+        x = 21
+        y = 6.5 
+
+        cost = 10
+                
+        available_if_capitulated = no
+       
+        ai_will_do = { 
+            factor = 1
+        } 
+        
+        prerequisite = {
+            focus = AUS_political_effort
+        }
+
+         mutually_exclusive = {
+		focus = AUS_conservative_path
+	    }
+
+        completion_reward = { 
+            
+        } 
+    } 
+
+    #agricultural empowerment
+    focus = { 
+        id = AUS_agricultural_empowerment
+        icon = GFX_goal_tripartite_pact
+        x = 31.5
+        y = 7.5 
+
+        cost = 10
+                
+        available_if_capitulated = no
+       
+        ai_will_do = { 
+            factor = 1
+        } 
+        
+        prerequisite = {
+            focus = AUS_conservative_path	
+        }
+
+       
+
+        completion_reward = { 
+            
+        } 
+    } 
+
+    #Argricultural subsidies 
+    focus = { 
+        id = AUS_deregulation_socialsystem
+        icon = GFX_goal_tripartite_pact
+        x = 29
+        y = 7.5 
+
+        cost = 10
+                
+        available_if_capitulated = no
+       
+        ai_will_do = { 
+            factor = 1
+        } 
+        
+        prerequisite = {
+            focus = AUS_conservative_path	
+        }
+
+       
+
+        completion_reward = { 
+            
+        } 
+    } 
+}
+
+

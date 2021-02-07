@@ -1,0 +1,13 @@
+ideas = {
+
+	popularity_farmers = { 
+
+		picture = islam3
+		allowed = {
+			always = no
+		}
+		modifier = [
+			
+		]
+	}
+}
