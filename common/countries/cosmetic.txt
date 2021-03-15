@@ -110,6 +110,26 @@ BALKAN = {
 	color_ui = rgb { 107 129 146 }
 }
 
+MOL_CARP = {
+	color = rgb { 161 112 80 }
+	color_ui = rgb { 229 141 15 }
+}
+
+MOL_CSANGO = {
+	color = rgb { 161 112 80 }
+	color_ui = rgb { 229 141 15 }
+}
+
+WLL_ROM = {
+	color = rgb { 140 148 157 }
+	color_ui = rgb { 140 148 157 }
+}
+
+HUN_GYPSY = {
+	color = rgb { 205 92 92 }
+	color_ui = rgb { 205 92 92 }
+}
+
 AUS_NOT_WHITE = {	
 	color = rgb { 249 126 98 }
 	color_ui = rgb { 255 164 127 }

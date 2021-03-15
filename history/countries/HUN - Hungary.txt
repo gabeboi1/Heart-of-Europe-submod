@@ -84,6 +84,8 @@ set_technology = {
 add_ideas = {
 	population_growth_decline
 	free_trade
+	arpad_goncz
+	mdf_scandal
 	idea_hun_corruption
 	idea_hun_ongoingreforms
 	visegrad_group_member
@@ -99,11 +101,12 @@ set_politics = {
 
 set_popularities = {
     conservative = 38.4
+national_conservative = 4.4
     social_democrat = 34.7
     reactionary = 12.4
-    market_liberal = 10.2
-    nationalist = 4.1
-    communist = 0.2
+    market_liberal = 6.2
+    nationalist = 3.6
+    communist = 0.3
 }
 
 add_opinion_modifier = {
@@ -159,23 +162,93 @@ create_country_leader = {
 }
 
 
+create_country_leader = {
+	name = "Ibolya Dávid"
+	ideology = national_conservative_ideology
+	picture = "David_Ibolya.dds"
+}
 
 2016.1.1 = {
 	oob = "HUN_2000"
 	set_politics = {		
-		ruling_party = conservative
-		last_election = "1998.5.24"
+		ruling_party = national_conservative
+		last_election = "2014.5.24"
 		election_frequency = 48
 		elections_allowed = yes
 }
 
     set_popularities = {
-        conservative = 30
-        social_democrat = 25
-        reactionary = 20
-        nationalist = 10
-        social_liberal = 5
-        market_liberal = 5
-        communist = 5
+        national_conservative = 36.9
+		conservative = 12.1
+        social_democrat = 14
+        nationalist = 20
+        social_liberal = 8
+        market_liberal = 2
+		progressive = 4
+        communist = 2
+		misc = 1
+		
     }
+	
+	create_country_leader = {
+	name = "Viktor Orbán"
+	ideology = national_conservative_ideology
+	picture = "Orban_Viktor.dds"
+}
+
+	create_country_leader = {
+	name = "Attila Mesterházy"
+	ideology = social_democrat_ideology
+	picture = "attila_mesterhazy.dds"
+}
+
+	create_country_leader = {
+	name = "Gábor Vona"
+	ideology = national_conservative
+	picture = "Gabor_Vona.dds"
+}
+
+	create_country_leader = {
+	name = "Ferenc Gyurcsány"
+	ideology = liberalist
+	picture = "Ferenc_Gyurcsany_old.dds"
+}
+
+	create_country_leader = {
+	name = "András Schiffer"
+	ideology = green
+	picture = "Andras_Schiffer.dds"
+}
+		create_country_leader = {
+	name = "Zsolt Semjén"
+	ideology = christian_democrat
+	picture = "semjen_zsolt.dds"
+}
+
+set_party_name = {
+ideology = conservative
+name = "KDNP"
+long_name = "HUN_kdnp_long"
+}
+set_party_name = {
+ideology = national_conservative
+name = "Fidesz-MPSz"
+long_name = "HUN_fidesz_long"
+}
+set_party_name = {
+ideology = nationalist
+name = "Jobbik"
+long_name = "Jobbik"
+}
+set_party_name = {
+ideology = progressive
+name = "LMP"
+long_name = "HUN_lmp_long"
+}
+set_party_name = {
+ideology = social_liberal
+name = "DK"
+long_name = "dk_long"
+}
+}
 }

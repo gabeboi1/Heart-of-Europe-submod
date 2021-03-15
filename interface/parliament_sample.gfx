@@ -8,7 +8,7 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_Parliament_Seat"
 		textureFile = "/gfx/interface/parliament_sample/parliament_seat.dds"
-		noOfFrames = 4
+		noOfFrames = 13
 	}
 
 }

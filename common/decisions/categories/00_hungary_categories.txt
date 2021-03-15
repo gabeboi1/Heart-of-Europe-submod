@@ -19,6 +19,13 @@ hun_reintegrate_transylvania = {
      }
 }
 
+hun_reintegrate_vojvodina = {
+     icon = generic_prospect_for_resources
+     available = { 
+	 tag = HUN
+     }
+}
+
 hun_political_actions = {
      icon = generic_prospect_for_resources
      available = { 

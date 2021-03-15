@@ -1,6 +1,20 @@
-SpriteTypes = {	
-
-
+SpriteTypes = {
+		spriteType = {
+		name = "GFX_idea_admin_reform"
+		texturefile = "gfx/interface/ideas/admin_reform.dds"
+	}	
+		spriteType = {
+		name = "GFX_idea_mdf"
+		texturefile = "gfx/interface/ideas/hungary/mdf.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_madl"
+		texturefile = "gfx/interface/ideas/hungary/madl.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_goncz"
+		texturefile = "gfx/interface/ideas/hungary/goncz.dds"
+	}
 	spriteType = {
 		name = "GFX_idea_language"
 		texturefile = "gfx/interface/ideas/language.dds"

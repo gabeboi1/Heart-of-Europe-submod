@@ -83,4 +83,47 @@ set_cosmetic_tag = DAC
 	
 	}
 
+wallachia_debug = {
+	fire_only_once = yes
+	available = {
+	OR = {
+	tag = ROM
+	}
+
+	}
+visible = { tag = ROM }
+
+complete_effect = { 
+
+WLL = {
+add_state_core = 46
+add_state_core = 928
+add_state_core = 81
+add_state_core = 899
+ROM = { release = WLL }
+WLL = { set_cosmetic_tag = WLL_ROM }
+ } }
+	
+	
+	
+	}
+	
+please_dont = {
+	fire_only_once = yes
+	available = {
+	OR = {
+	tag = HUN
+	}
+
+	}
+visible = { tag = HUN }
+
+complete_effect = { 
+set_cosmetic_tag = HUN_GYPSY
+ }
+	
+	
+	
+	}
+
 }

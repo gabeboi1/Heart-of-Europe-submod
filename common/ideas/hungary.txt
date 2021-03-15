@@ -10,24 +10,23 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_factor = -0.1
-				stability_factor = -0.1
-				production_speed_buildings_factor = -0.1
-				industrial_capacity_factory = -0.2
-				local_resources_factor = -0.10
+				stability_factor = -0.05
+				production_speed_buildings_factor = -0.08
+				local_resources_factor = -0.08
 			}
 		}
 		
 		idea_hun_ongoingreforms = {
-			picture = high_society
+			picture = admin_reform
 		
 			allowed = { always = yes }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
 			
 			modifier = {
-				political_power_factor = -0.1
-				stability_factor = -0.1
+				political_power_gain = -0.15
+				stability_factor = -0.08
+				political_advisor_cost_factor = 2
 			}
 				}
 		idea_hun_inflation = {
@@ -54,7 +53,7 @@ ideas = {
 				political_power_factor = -0.08
 				stability_factor = -0.1
 				production_speed_buildings_factor = -0.1
-				industrial_capacity_factory = -0.2
+				industrial_capacity_factory = -0.12
 				local_resources_factor = -0.10
 			}
 				}
@@ -111,11 +110,16 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_factor = 0.35
+				industrial_capacity_factory = 0.08
+				opinion_gain_monthly_factor = 0.5
+				political_power_gain = 0.35
 				stability_factor = 0.07
-				reactionary_drift = 0.03
-				monarchist_drift = 0.03
+				conservative_drift = 0.03
+				monarchist_drift = 0.04
+				communist_drift = -0.09
+				fascism_drift = -0.1
 			}
+			
 				}
 				
 					idea_hun_privatisation = {
@@ -242,7 +246,7 @@ ideas = {
 				stability_factor = -0.05
 				political_power_factor = -0.05
 				production_speed_buildings_factor = -0.07
-				industrial_capacity_factory = -0.10
+				industrial_capacity_factory = -0.07
 				
 			}
 				}
@@ -256,7 +260,7 @@ ideas = {
 				stability_factor = -0.02
 				political_power_factor = -0.02
 				production_speed_buildings_factor = -0.03
-				industrial_capacity_factory = -0.06
+				industrial_capacity_factory = -0.03
 				
 			}
 				}
@@ -387,6 +391,64 @@ ideas = {
 			conservative_drift = -0.1
 			reactionary_drift = -0.1
 				
+			}
+				}
+				
+									fkgp_lead = {
+			picture = fkgp
+		
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			
+			modifier = {
+			reactionary_drift = 0.10
+			conservative_drift = -0.10
+			national_conservative_drift = -0.02
+				
+			}
+				}
+	
+			
+						arpad_goncz = {
+			picture = goncz
+		
+			allowed = { has_government = conservative }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			
+			modifier = {
+			market_liberal_drift = 0.12
+			research_speed_factor = 0.03
+			opinion_gain_monthly_factor = 0.1
+			enemy_declare_war_tension = 0.2
+			}
+				}
+			
+									ferenc_madl = {
+			picture = madl
+		
+			allowed = { has_government = conservative }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			
+			modifier = {
+			conservative_drift = 0.04
+			research_speed_factor = 0.05
+			political_power_gain = 0.15
+			stability_factor = 0.1
+			}
+				}
+												mdf_scandal = {
+			picture = mdf
+		
+			allowed = { has_government = conservative }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			
+			modifier = {
+			social_democrat_drift = 0.08
+			market_liberal_drift = 0.03
 			}
 				}
 		}

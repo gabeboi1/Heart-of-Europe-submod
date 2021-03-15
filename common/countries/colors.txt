@@ -988,6 +988,12 @@ XXY = {
 	color_ui = rgb { 198 133 45 }
 }
 
+
+WLL = {
+	color = rgb { 161 112 80 }
+	color_ui = rgb { 229 141 15 }
+}
+
 D01 = {
 	color = rgb { 200 100 31 }
 	color_ui = rgb { 245 123 38 }

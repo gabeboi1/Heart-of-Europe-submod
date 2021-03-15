@@ -1,6 +1,6 @@
 parliament_sample_category = {
 	icon = generic_political_actions
-	
+	scripted_gui = parliament_sample_scripted_gui
 	priority = 100
 
 	allowed = {

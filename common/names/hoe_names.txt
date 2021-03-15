@@ -1,0 +1,54 @@
+﻿
+HUN = {
+	male = {
+		names = { 
+			Alajos Attila Albert András Arisztid Béla Benedek Benjamin
+			Bertalan Dániel Dávid Ernő Ferenc Gábor Gáspár
+			György Gyula Ignác Imre István János József Kálmán
+			Károly Kelemen Krisztián Lajos László Mihály Miklós
+			Ödön Ottó Péter Rafael Sándor Simon Tivadar Vilmos Zsigmond
+		}
+	}
+	female = {
+		names = { Anna Borbála Bernadett Csilla Dóra Eszter Erzsébet Fruzsina Gertrúd Hajnal Krisztina Judit }
+	}
+	surnames = { 
+		Vajlok Andrássy Apponyi Aulich Bacher Baross Batthyány Beöthy Bothmer Damjanich Dessewffy
+		Egressy Farkas Goldziher Gungl Hauszmann Heller Izsó
+		Joseffy Katona Kaufman Kéler Kiss Knezich Kogutowicz Lahner Lázár 
+		Liszt Mikszáth Molnár Nagy-Sándor Österreicher Ottinger Perczel Poeltenberg Reményi
+		Rohr Schweidel Széchenyi Szemere Szlávic Tóth Török Varga Vécsey Nagy Szabó Kovács Varga 
+		Horváth Kiss Molnár Németh Farkas Takács Balogh Papp Juhász Szilágyi Mészáros Somin Szűcs Fekete Rácz Oláh
+	}
+	callsigns = { }
+}
+
+TRS = {
+	male = {
+		names = { 
+			Alajos Attila Albert András Béla Benedek Benjamin
+			Bertalan Dániel Dávid Ernő Ferenc Gábor
+			György Gyula Imre István János József Kálmán
+			Károly Lajos László Mihály Miklós
+			 Péter Rafael Sándor Simon Tivadar Vilmos Zsigmond 
+			Andrei Alexandru bogdan Constantin Nicolae Alucard Mihai
+			Matei Ioan Lucian Alin Tudor Vlad Rus Velkan Ianis Dorin
+		}
+	}
+	female = {
+		names = { Anna Borbála Bernadett Csilla Dóra Eszter Erzsébet Fruzsina Gertrúd Hajnal Krisztina Judit }
+	}
+	surnames = { 
+		Vajlok Andrássy Apponyi Aulich Bacher Baross Batthyány Beöthy Bothmer Damjanich Dessewffy
+		Egressy Farkas Goldziher Gungl Hauszmann Heller Horthy Izsó
+		Joseffy Katona Kaufman Kéler Kiss Knezich Kogutowicz Lahner Lázár 
+		Liszt Mikszáth Molnár Nagy-Sándor Österreicher Ottinger Perczel Poeltenberg Reményi
+		Rohr Schweidel Széchenyi Szemere Szlávic Tóth Török Varga Vécsey Nagy Szabó Kovács Varga 
+		Horváth Kiss Molnár Németh Farkas Takács Balogh Papp Juhász Szilágyi Mészáros Somin Szűcs Fekete Rácz Oláh 
+		Adamache Adamescu Adameșteanu Agarici Albu Aldulescu Alecsandri Alexandrescu Barbu Bărbulescu 
+		Bârlădeanu Barna Bărnuțiu Bejan Beldiceanu Bengescu Benzar Berceanu Berindei Blaga Boboc Bodiu 
+		Boerescu Bogdan Bogza Bolohan Borcea Bordeianu Borza Bostan
+
+	}
+	callsigns = { }
+}

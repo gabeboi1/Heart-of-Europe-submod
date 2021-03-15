@@ -27,6 +27,7 @@ banat = {
      available = {
 OR = { 
 	tag = ROM  
+	tag = WLL
 	tag = HUN
      } }
 }

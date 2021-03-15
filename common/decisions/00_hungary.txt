@@ -100,6 +100,24 @@ hun_reintegrate_transylvania = {
 	}	
 	}
 	
+		bihar_name = 
+		{ fire_only_once = yes
+	 available =
+	{ HUN = { has_full_control_of_state = 922 } }
+	visible = { OR = { tag = HUN tag = SEK } }
+	complete_effect = { 
+	 set_province_name = {
+    id = 3696
+    name =  "Nagyvárad"
+	}
+	 set_province_name = {
+    id = 713
+    name =  "Szatmárnémeti"
+	}
+	add_state_core = 922
+	}	
+	}
+	
 	sekelyland_uprising = 
 		{ fire_only_once = yes
 	 available =
@@ -157,6 +175,25 @@ create_unit = {
 	}	
 	}
 	
+}
+
+hun_reintegrate_vojvodina = {
+subotica_name = {
+fire_only_once = yes
+	 available =
+	{ HUN = { has_full_control_of_state = 948 } }
+	visible = { tag = HUN }
+	complete_effect = { 
+	 set_province_name = {
+    id = 9621
+    name = "Szabadka"
+	}
+
+	add_state_core = 948
+	}	
+
+}
+
 }
 	
 

@@ -1,29 +1,136 @@
 # Allocate a random number of seats to Parties 1, 2, 3 and 4
 SAMPLE_generate_random_party_seats = {
-	set_variable = { SAMPLE_party1_seats = random }
-	set_variable = { SAMPLE_party2_seats = random }
-	set_variable = { SAMPLE_party3_seats = random }
-	set_variable = { SAMPLE_party4_seats = random }
+	
+	set_variable = { SAMPLE_party1_seats = party_popularity@misc }
+	if = {
+	limit = { misc < 0.019 }
+	set_variable = { SAMPLE_party1_seats = 0 }
+	}
+	set_variable = { SAMPLE_party2_seats = party_popularity@communist }
+	if = {
+	limit = { communist < 0.019 }
+	set_variable = { SAMPLE_party2_seats = 0 }
+	}
+	set_variable = { SAMPLE_party3_seats = party_popularity@progressive }
+	if = {
+	limit = { progressive < 0.019 }
+	set_variable = { SAMPLE_party3_seats = 0 }
+	}
+	set_variable = { SAMPLE_party4_seats = party_popularity@democratic_socialist }
+	if = {
+	limit = { democratic_socialist < 0.019 }
+	set_variable = { SAMPLE_party4_seats = 0 }
+	}
+	set_variable = { SAMPLE_party5_seats = party_popularity@social_democrat }
+	if = {
+	limit = { social_democrat < 0.019 }
+	set_variable = { SAMPLE_party5_seats = 0 }
+	}
+	set_variable = { SAMPLE_party6_seats = party_popularity@market_liberal }
+	if = {
+	limit = { market_liberal < 0.019 }
+	set_variable = { SAMPLE_party6_seats = 0 }
+	}
+	set_variable = { SAMPLE_party7_seats = party_popularity@social_liberal }
+	if = {
+	limit = { social_liberal < 0.019 }
+	set_variable = { SAMPLE_party7_seats = 0 }
+	}
+	set_variable = { SAMPLE_party8_seats = party_popularity@conservative }
+	if = {
+	limit = { conservative < 0.019 }
+	set_variable = { SAMPLE_party8_seats = 0 }
+	}
+	set_variable = { SAMPLE_party9_seats = party_popularity@national_conservative }
+	if = {
+	limit = { national_conservative < 0.019 }
+	set_variable = { SAMPLE_party9_seats = 0 }
+	}
+	set_variable = { SAMPLE_party10_seats = party_popularity@reactionary }
+	if = {
+	limit = { reactionary < 0.019 }
+	set_variable = { SAMPLE_party10_seats = 0 }
+	}
+	set_variable = { SAMPLE_party11_seats = party_popularity@nationalist }
+	if = {
+	limit = { nationalist < 0.019 }
+	set_variable = { SAMPLE_party11_seats = 0 }
+	}
+	set_variable = { SAMPLE_party12_seats = party_popularity@fascist }
+	if = {
+	limit = { fascist < 0.019 }
+	set_variable = { SAMPLE_party12_seats = 0 }
+	}
+	set_variable = { SAMPLE_party13_seats = party_popularity@islamist }
+	if = {
+	limit = { islamist < 0.019 }
+	set_variable = { SAMPLE_party13_seats = 0 }
+	}
 
 	set_temp_variable = { total = SAMPLE_party1_seats }
 	add_to_temp_variable = { total = SAMPLE_party2_seats }
 	add_to_temp_variable = { total = SAMPLE_party3_seats }
 	add_to_temp_variable = { total = SAMPLE_party4_seats }
+	add_to_temp_variable = { total = SAMPLE_party5_seats }
+	add_to_temp_variable = { total = SAMPLE_party6_seats }
+	add_to_temp_variable = { total = SAMPLE_party7_seats }
+	add_to_temp_variable = { total = SAMPLE_party8_seats }
+	add_to_temp_variable = { total = SAMPLE_party9_seats }
+	add_to_temp_variable = { total = SAMPLE_party10_seats }
+	add_to_temp_variable = { total = SAMPLE_party11_seats }
+	add_to_temp_variable = { total = SAMPLE_party12_seats }
+	add_to_temp_variable = { total = SAMPLE_party13_seats }
 	divide_variable = { SAMPLE_party1_seats = total }
 	divide_variable = { SAMPLE_party2_seats = total }
 	divide_variable = { SAMPLE_party3_seats = total }
+	divide_variable = { SAMPLE_party4_seats = total }
+	divide_variable = { SAMPLE_party5_seats = total }
+	divide_variable = { SAMPLE_party6_seats = total }
+	divide_variable = { SAMPLE_party7_seats = total }
+	divide_variable = { SAMPLE_party8_seats = total }
+	divide_variable = { SAMPLE_party9_seats = total }
+	divide_variable = { SAMPLE_party10_seats = total }
+	divide_variable = { SAMPLE_party11_seats = total }
+	divide_variable = { SAMPLE_party12_seats = total }
 
 	multiply_variable = { SAMPLE_party1_seats = 300 }
 	multiply_variable = { SAMPLE_party2_seats = 300 }
 	multiply_variable = { SAMPLE_party3_seats = 300 }
+	multiply_variable = { SAMPLE_party4_seats = 300 }
+	multiply_variable = { SAMPLE_party5_seats = 300 }
+	multiply_variable = { SAMPLE_party6_seats = 300 }
+	multiply_variable = { SAMPLE_party7_seats = 300 }
+	multiply_variable = { SAMPLE_party8_seats = 300 }
+	multiply_variable = { SAMPLE_party9_seats = 300 }
+	multiply_variable = { SAMPLE_party10_seats = 300 }
+	multiply_variable = { SAMPLE_party11_seats = 300 }
+	multiply_variable = { SAMPLE_party12_seats = 300 }
+	
 	round_variable = SAMPLE_party1_seats
 	round_variable = SAMPLE_party2_seats
 	round_variable = SAMPLE_party3_seats
+	round_variable = SAMPLE_party4_seats
+	round_variable = SAMPLE_party5_seats
+	round_variable = SAMPLE_party6_seats
+	round_variable = SAMPLE_party7_seats
+	round_variable = SAMPLE_party9_seats
+	round_variable = SAMPLE_party10_seats
+	round_variable = SAMPLE_party11_seats
+	round_variable = SAMPLE_party12_seats
 
-	set_variable = { SAMPLE_party4_seats = 300 }
-	subtract_from_variable = { SAMPLE_party4_seats = SAMPLE_party1_seats }
-	subtract_from_variable = { SAMPLE_party4_seats = SAMPLE_party2_seats }
-	subtract_from_variable = { SAMPLE_party4_seats = SAMPLE_party3_seats }
+	set_variable = { SAMPLE_party13_seats = 300 }
+	subtract_from_variable = { SAMPLE_party13_seats = SAMPLE_party1_seats }
+	subtract_from_variable = { SAMPLE_party13_seats = SAMPLE_party2_seats }
+	subtract_from_variable = { SAMPLE_party13_seats = SAMPLE_party3_seats }
+	subtract_from_variable = { SAMPLE_party13_seats = SAMPLE_party4_seats }
+	subtract_from_variable = { SAMPLE_party13_seats = SAMPLE_party5_seats }
+	subtract_from_variable = { SAMPLE_party13_seats = SAMPLE_party6_seats }
+	subtract_from_variable = { SAMPLE_party13_seats = SAMPLE_party7_seats }
+	subtract_from_variable = { SAMPLE_party13_seats = SAMPLE_party8_seats }
+	subtract_from_variable = { SAMPLE_party13_seats = SAMPLE_party9_seats }
+	subtract_from_variable = { SAMPLE_party13_seats = SAMPLE_party10_seats }
+	subtract_from_variable = { SAMPLE_party13_seats = SAMPLE_party11_seats }
+	subtract_from_variable = { SAMPLE_party13_seats = SAMPLE_party12_seats }
 }
 
 SAMPLE_init_parliament = {
@@ -32,12 +139,30 @@ SAMPLE_init_parliament = {
 	# Generate partial sums t1 = (P1), t2 = (P1 + P2), t3 = (P1 + P2 + P3)
 	# so that we can use resize_array to fill our array with the right number of seats for each party
 	set_temp_variable = { t1 = SAMPLE_party1_seats }
-	set_temp_variable = { t2 = SAMPLE_party1_seats }
+	set_temp_variable = { t2 = SAMPLE_party2_seats }
 	set_temp_variable = { t3 = SAMPLE_party3_seats }
-	set_temp_variable = { t4 = 300 }
+	set_temp_variable = { t4 = SAMPLE_party4_seats }
+	set_temp_variable = { t5 = SAMPLE_party5_seats }
+	set_temp_variable = { t6 = SAMPLE_party6_seats }
+	set_temp_variable = { t7 = SAMPLE_party7_seats }
+	set_temp_variable = { t8 = SAMPLE_party8_seats }
+	set_temp_variable = { t9 = SAMPLE_party9_seats }
+	set_temp_variable = { t10 = SAMPLE_party10_seats }
+	set_temp_variable = { t11 = SAMPLE_party11_seats }
+	set_temp_variable = { t12 = SAMPLE_party12_seats }
+	set_temp_variable = { t13 = 300 }
 
 	add_to_temp_variable = { t2 = t1 }
 	add_to_temp_variable = { t3 = t2 }
+	add_to_temp_variable = { t4 = t3 }
+	add_to_temp_variable = { t5 = t4 }
+	add_to_temp_variable = { t6 = t5 }
+	add_to_temp_variable = { t7 = t6 }
+	add_to_temp_variable = { t8 = t7 }
+	add_to_temp_variable = { t9 = t8 }
+	add_to_temp_variable = { t10 = t9 }
+	add_to_temp_variable = { t11 = t10 }
+	add_to_temp_variable = { t12 = t11 }
 
 
 	clear_array = SAMPLE_seat_frame
@@ -65,6 +190,60 @@ SAMPLE_init_parliament = {
 		array = SAMPLE_seat_frame
 		value = 4
 		size = t4
+	}
+		# Resize array to all 300 seats, setting remaining frame numbers to 4 (Party 4 color)
+	resize_array = {
+		array = SAMPLE_seat_frame
+		value = 5
+		size = t5
+	}
+		# Resize array to all 300 seats, setting remaining frame numbers to 4 (Party 4 color)
+	resize_array = {
+		array = SAMPLE_seat_frame
+		value = 6
+		size = t6
+	}
+	# Resize array to all 300 seats, setting remaining frame numbers to 4 (Party 4 color)
+	resize_array = {
+		array = SAMPLE_seat_frame
+		value = 7
+		size = t7
+	}
+		# Resize array to all 300 seats, setting remaining frame numbers to 4 (Party 4 color)
+	resize_array = {
+		array = SAMPLE_seat_frame
+		value = 8
+		size = t8
+	}
+			# Resize array to all 300 seats, setting remaining frame numbers to 4 (Party 4 color)
+	resize_array = {
+		array = SAMPLE_seat_frame
+		value = 9
+		size = t9
+	}
+			# Resize array to all 300 seats, setting remaining frame numbers to 4 (Party 4 color)
+	resize_array = {
+		array = SAMPLE_seat_frame
+		value = 10
+		size = t10
+	}
+			# Resize array to all 300 seats, setting remaining frame numbers to 4 (Party 4 color)
+	resize_array = {
+		array = SAMPLE_seat_frame
+		value = 11
+		size = t11
+	}
+			# Resize array to all 300 seats, setting remaining frame numbers to 4 (Party 4 color)
+	resize_array = {
+		array = SAMPLE_seat_frame
+		value = 12
+		size = t12
+	}
+		# Resize array to all 300 seats, setting remaining frame numbers to 4 (Party 4 color)
+	resize_array = {
+		array = SAMPLE_seat_frame
+		value = 13
+		size = t13
 	}
 
 	# Setup positions (ideally only done once in a history file or game-start event, this is inefficient)

@@ -2,15 +2,12 @@ guiTypes = {
 	containerWindowType = {
 		name = "parliament_sample_gui"
 		position = { x = 0 y = 0}	
-		size = { width = 450 height= 250 }
+		size = { width = 450 height= 300 }
 		orientation = center
 		origo = center
 		moveable = yes
 		
-		background = {
-			name = "background"		
-			quadTextureSprite = "GFX_Parliament_Background"
-		}
+
 
 		gridboxtype = {
 			name = "parliament_diagram"
@@ -23,15 +20,21 @@ guiTypes = {
 
 		# Utility buttons for demo, not needed for parliament diagram
 		buttonType = {
-			name = "close_button"
-			spriteType = "GFX_closebutton"
-			position = { x = 398 y = 20 }
-			pdx_tooltip = "parliament_test"
-		}
-		buttonType = {
 			name = "refresh_button"
 			spriteType = "GFX_browser_refresh"
 			position = { x = 16 y = 16 }
+		}
+		
+			instantTextboxType = {
+			name = "ruling_party_text"
+			position = { x = 200 y = 250 }
+			font = "hoi_22tech"
+			text = "Ruling_Party"
+			maxWidth = 300
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+			fixedsize = yes
 		}
 	}
 	containerWindowType = {
@@ -44,4 +47,6 @@ guiTypes = {
 			pdx_tooltip = "SAMPLE_seat_tt"
 		}
 	}
+	
+
 }
