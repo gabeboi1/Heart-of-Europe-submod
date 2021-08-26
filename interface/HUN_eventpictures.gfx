@@ -5,3 +5,9 @@ spriteType = {
 		texturefile = "gfx/event_pictures/hungary/2006_tank.dds"
 	}		
 }	
+
+spriteType = {
+		name = "GFX_kaposvar_uni"
+		texturefile = "gfx/event_pictures/hungary/kaposvar_uni.dds"
+	}		
+}

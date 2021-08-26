@@ -4,12 +4,39 @@ spriteTypes = {
 	texturefile = "gfx/interface/goals/oppression.dds"
 	}
 	SpriteType = {
+	name = "GFX_comeurope"
+	texturefile = "gfx/interface/goals/comeurope.dds"
+	}
+	SpriteType = {
+	name = "GFX_hunlang"
+	texturefile = "gfx/interface/goals/hun_lang.dds"
+	}
+	SpriteType = {
+	name = "GFX_redworld"
+	texturefile = "gfx/interface/goals/redworld.dds"
+	}
+	SpriteType = {
+	name = "GFX_comindustry2"
+	texturefile = "gfx/interface/goals/comindustry2.dds"
+	}
+	SpriteType = {
+	name = "GFX_comwelfare"
+	texturefile = "gfx/interface/goals/comwelfare.dds"
+	}
+	SpriteType = {
+	name = "GFX_highway"
+	texturefile = "gfx/interface/goals/highway.dds"
+	}
+	SpriteType = {
 	name = "GFX_turanism"
 	texturefile = "gfx/interface/goals/turanism.dds"
 	}
 	SpriteType = {
 	name = "GFX_arpadsav"
 	texturefile = "gfx/interface/goals/carpathia.dds"
+	}
+	name = "GFX_lgbt_flag"
+	texturefile = "gfx/interface/goals/lgbt_flag.dds"
 	}
 	SpriteType = {
 	name = "GFX_hadur"
@@ -142,6 +169,106 @@ spriteTypes = {
 	SpriteType = {
 	name = "GFX_hun_landowners"
 	texturefile = "gfx/interface/goals/landowner.dds"
+	}
+	SpriteType = {
+	name = "GFX_fegyverbe"
+	texturefile = "gfx/interface/goals/fegyverbe.dds"
+	}
+	SpriteType = {
+	name = "GFX_communist_soldier"
+	texturefile = "gfx/interface/goals/communist_soldier.dds"
+	}
+	SpriteType = {
+	name = "GFX_withoutmszp"
+	texturefile = "gfx/interface/goals/withoutmszp.dds"
+	}
+		SpriteType = {
+	name = "GFX_marx_hoe"
+	texturefile = "gfx/interface/goals/marx_hoe.dds"
+	}
+	SpriteType = {
+	name = "GFX_bank"
+	texturefile = "gfx/interface/goals/bank.dds"
+	}
+	SpriteType = {
+	name = "GFX_communist_garda"
+	texturefile = "gfx/interface/goals/communist_guard.dds"
+	}
+	SpriteType = {
+	name = "GFX_mszmp"
+	texturefile = "gfx/interface/goals/mszmp.dds"
+	}
+	SpriteType = {
+	name = "GFX_2006_crackdown"
+	texturefile = "gfx/interface/goals/2006_crackdown.dds"
+	}
+	SpriteType = {
+	name = "GFX_communist_reform"
+	texturefile = "gfx/interface/goals/communist_reform.dds"
+	}
+	SpriteType = {
+	name = "GFX_communist_housing"
+	texturefile = "gfx/interface/goals/communist_house.dds"
+	}
+	SpriteType = {
+	name = "GFX_communist_uprising"
+	texturefile = "gfx/interface/goals/communist_uprising.dds"
+	}
+	SpriteType = {
+	name = "GFX_bribery"
+	texturefile = "gfx/interface/goals/bribery.dds"
+	}
+	SpriteType = {
+	name = "GFX_kisz"
+	texturefile = "gfx/interface/goals/kisz.dds"
+	}
+	SpriteType = {
+	name = "GFX_mergetheparties"
+	texturefile = "gfx/interface/goals/merge_the_parties.dds"
+	}
+	SpriteType = {
+	name = "GFX_com_media"
+	texturefile = "gfx/interface/goals/media123.dds"
+	}
+	SpriteType = {
+	name = "GFX_hun_socialist_dawn"
+	texturefile = "gfx/interface/goals/hunsocialistdawn.dds"
+	}
+	SpriteType = {
+	name = "GFX_hun_unificationtalks"
+	texturefile = "gfx/interface/goals/unificationtalks.dds"
+	}
+	SpriteType = {
+	name = "GFX_hun_popular_support"
+	texturefile = "gfx/interface/goals/popular_support.dds"
+	}
+	SpriteType = {
+	name = "GFX_communist_factories"
+	texturefile = "gfx/interface/goals/commiefactories.dds"
+	}
+	SpriteType = {
+	name = "GFX_communist_food"
+	texturefile = "gfx/interface/goals/communist_food.dds"
+	}
+	SpriteType = {
+	name = "GFX_communist_buildings"
+	texturefile = "gfx/interface/goals/communist_buildings.dds"
+	}
+	SpriteType = {
+	name = "GFX_imprison_rebels"
+	texturefile = "gfx/interface/goals/prison_rebels.dds"
+	}
+	SpriteType = {
+	name = "GFX_banfascist"
+	texturefile = "gfx/interface/goals/fascism_denied.dds"
+	}
+	SpriteType = {
+	name = "GFX_com_press"
+	texturefile = "gfx/interface/goals/communist_news.dds"
+	}
+	SpriteType = {
+	name = "GFX_hoe_communist_science"
+	texturefile = "gfx/interface/goals/communist_science.dds"
 	}
 	SpriteType = {
 	name = GFX_eupay

@@ -1,0 +1,7 @@
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_focus_uneasy_alliance"
+	texturefile = "gfx/interface/goals/szekelys_and_vadim.dds"
+	}
+	
+ }

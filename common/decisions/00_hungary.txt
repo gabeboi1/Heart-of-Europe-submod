@@ -103,18 +103,14 @@ hun_reintegrate_transylvania = {
 		bihar_name = 
 		{ fire_only_once = yes
 	 available =
-	{ HUN = { has_full_control_of_state = 922 } }
+	{ HUN = { has_full_control_of_state = 950 } }
 	visible = { OR = { tag = HUN tag = SEK } }
 	complete_effect = { 
-	 set_province_name = {
-    id = 3696
-    name =  "Nagyvárad"
-	}
 	 set_province_name = {
     id = 713
     name =  "Szatmárnémeti"
 	}
-	add_state_core = 922
+	add_state_core = 950
 	}	
 	}
 	

@@ -33,10 +33,7 @@ OR = {
 }
 zapadoslava = {
      icon = generic_prospect_for_resources
-     available = {
-OR = { 
-	tag = POL
-     } }
+     available = { }
 }
 carpathia = {
      icon = generic_prospect_for_resources

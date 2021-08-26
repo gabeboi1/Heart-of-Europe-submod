@@ -1454,6 +1454,22 @@ add_namespace = habsburg_collapse
 	}
 	}
 	
+add_namespace = hungary_news
 
+						country_event = {
+	id = hungary_news.1
+		title = hungary_news.1.t
+		desc = hungary_news.1.d
+		picture = kaposvar_uni
+	fire_only_once = yes
+		mean_time_to_happen = { days = 1 }
+	is_triggered_only = no
+	trigger = { tag = HUN }
+	option = {
+	ai_chance = { factor = 1 }
+	name = hungary_news.1.a
+	HUN = { add_political_power = 50 add_stability = 0.03 }
+	}
+	}
 	
 	

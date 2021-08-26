@@ -377,7 +377,7 @@ MDV = {
 	color_ui = rgb { 210 150 0 }
 }
 SLV = {
-	color = rgb { 102 227 215 }
+	color = rgb { 127 151 184 }
 	color_ui = rgb { 0  180  240 }
 }
 UKR = {
@@ -984,8 +984,8 @@ LBR = {
 }
 
 XXY = {
-	color = rgb { 198 133 45 }
-	color_ui = rgb { 198 133 45 }
+	color = rgb { 177 51 40 }
+	color_ui = rgb { 190 86 86 }
 }
 
 

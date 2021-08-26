@@ -15,4 +15,51 @@ parliament_sample_category = {
 			SAMPLE_init_parliament = yes
 		}
 	}
+	
+
+	coalition_reactionary = {
+		icon = generic_industry
+
+		visible = {
+			NOT = { has_country_flag = reactionary_coalition }
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			Coalition_Reactionary = yes
+			set_country_flag = reactionary_coalition
+		}
+	}
+	coalition_national_conservative = {
+		icon = generic_industry
+
+		visible = {
+			NOT = { has_country_flag = national_conservative_coalition }
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+		Coalition_National_Conservative = yes
+		set_country_flag = national_conservative_coalition
+		}
+	}
+	coalition_nationalist = {
+		icon = generic_industry
+
+		visible = {
+			NOT = { has_country_flag = nationalist_coalition }
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+		Coalition_Nationalist = yes
+		set_country_flag = nationalist_coalition
+		}
+	}
 }

@@ -137,6 +137,13 @@ create_country_leader = {
 	picture = "kovacs_laszlo.dds"
 }
 
+
+create_country_leader = {
+	name = "István Horthy"
+	ideology = absolute_monarchist
+	picture = "horthy_suit.dds"
+}
+
 create_country_leader = {
 	name = "József Torgyán"
 	ideology = counter_progressive_democrat
@@ -193,7 +200,7 @@ create_country_leader = {
 	create_country_leader = {
 	name = "Viktor Orbán"
 	ideology = national_conservative_ideology
-	picture = "Orban_Viktor.dds"
+	picture = "Viktor_Orban_2010.dds"
 }
 
 	create_country_leader = {
@@ -205,7 +212,7 @@ create_country_leader = {
 	create_country_leader = {
 	name = "Gábor Vona"
 	ideology = national_conservative
-	picture = "Gabor_Vona.dds"
+	picture = "Gabor_Vona_2010.dds"
 }
 
 	create_country_leader = {
@@ -223,6 +230,12 @@ create_country_leader = {
 	name = "Zsolt Semjén"
 	ideology = christian_democrat
 	picture = "semjen_zsolt.dds"
+}
+
+		create_country_leader = {
+	name = "Ottó Heinek"
+	ideology = minority_party
+	picture = "ottoheinek.dds"
 }
 
 set_party_name = {

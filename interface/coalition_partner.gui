@@ -1,0 +1,79 @@
+guiTypes = {
+	containerWindowType = {
+		name = "coalition_partner_gui"
+		position = { x = 0 y = 0}	
+		size = { width = 450 height= 250 }
+		orientation = center
+		origo = center
+		fade_time = 100
+		fade_type = linear
+		click_to_front = no
+		clipping = no
+		moveable = no
+		background = {
+		name = "Coalition_Background"
+		quadTextureSprite = "GFX_Parliament_Background"
+		}
+
+		buttonType = {
+			name = "close_window_button"
+			spriteType = "GFX_browser_back"
+			position = { x = 10 y = 10 }
+		}
+		
+		
+					buttonType = {
+			name = "communist_coalition_button"
+			spriteType = "GFX_browser_refresh"
+			position = { x = 15 y = 50 }
+		}
+		
+			instantTextboxType = {
+			name = "ruling_party_text"
+			position = { x = 170 y = 20 }
+			font = "hoi_18"
+			text = "Ruling_Party"
+			maxWidth = 300
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+			fixedsize = yes
+		}
+			instantTextboxType = {
+			name = "num_of_seats_text"
+			position = { x = 170 y = 40 }
+			font = "hoi_18"
+			text = "num_of_seats_coalition"
+			maxWidth = 300
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+			fixedsize = yes
+		}
+			instantTextboxType = {
+			name = "num_of_seats_text"
+			position = { x = 170 y = 40 }
+			font = "hoi_18"
+			text = "num_of_seats_coalition"
+			maxWidth = 300
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+			fixedsize = yes
+		}
+				
+			instantTextboxType = {
+			name = "communist_coalition_text"
+			position = { x = 0 y = 60 }
+			font = "hoi_22tech"
+			text = "communist_coalition"
+			maxWidth = 300
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+			fixedsize = yes
+		}
+	}
+	
+
+}

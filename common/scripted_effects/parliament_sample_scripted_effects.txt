@@ -92,6 +92,7 @@ SAMPLE_generate_random_party_seats = {
 	divide_variable = { SAMPLE_party10_seats = total }
 	divide_variable = { SAMPLE_party11_seats = total }
 	divide_variable = { SAMPLE_party12_seats = total }
+	divide_variable = { SAMPLE_party13_seats = total }
 
 	multiply_variable = { SAMPLE_party1_seats = 300 }
 	multiply_variable = { SAMPLE_party2_seats = 300 }
@@ -105,6 +106,7 @@ SAMPLE_generate_random_party_seats = {
 	multiply_variable = { SAMPLE_party10_seats = 300 }
 	multiply_variable = { SAMPLE_party11_seats = 300 }
 	multiply_variable = { SAMPLE_party12_seats = 300 }
+	multiply_variable = { SAMPLE_party13_seats = 300 }
 	
 	round_variable = SAMPLE_party1_seats
 	round_variable = SAMPLE_party2_seats
@@ -117,6 +119,8 @@ SAMPLE_generate_random_party_seats = {
 	round_variable = SAMPLE_party10_seats
 	round_variable = SAMPLE_party11_seats
 	round_variable = SAMPLE_party12_seats
+	round_variable = SAMPLE_party13_seats
+	
 
 	set_variable = { SAMPLE_party13_seats = 300 }
 	subtract_from_variable = { SAMPLE_party13_seats = SAMPLE_party1_seats }
@@ -131,6 +135,9 @@ SAMPLE_generate_random_party_seats = {
 	subtract_from_variable = { SAMPLE_party13_seats = SAMPLE_party10_seats }
 	subtract_from_variable = { SAMPLE_party13_seats = SAMPLE_party11_seats }
 	subtract_from_variable = { SAMPLE_party13_seats = SAMPLE_party12_seats }
+	
+	
+	
 }
 
 SAMPLE_init_parliament = {
@@ -851,4 +858,121 @@ SAMPLE_init_parliament = {
 	add_to_array = { SAMPLE_seat_y = 160 }
 	add_to_array = { SAMPLE_seat_x = 360 }
 	add_to_array = { SAMPLE_seat_y = 160 }
+if = { 
+limit = { has_government = misc }
+set_variable = {
+	var = coalition1_variable
+	value = SAMPLE_party1_seats
+}
+}
+if = { 
+limit = { has_government = communist }
+set_variable = {
+	var = coalition1_variable
+	value = SAMPLE_party2_seats
+}
+}
+if = { 
+limit = { has_government = progressive }
+set_variable = {
+	var = coalition1_variable
+	value = SAMPLE_party3_seats
+}
+}
+if = { 
+limit = { has_government = democratic_socialist }
+set_variable = {
+	var = coalition1_variable
+	value = SAMPLE_party4_seats
+}
+}
+if = { 
+limit = { has_government = social_democrat }
+set_variable = {
+	var = coalition1_variable
+	value = SAMPLE_party5_seats
+}
+}	
+if = { 
+limit = { has_government = market_liberal }
+set_variable = {
+	var = coalition1_variable
+	value = SAMPLE_party6_seats
+}
+}
+if = { 
+limit = { has_government = social_liberal }
+set_variable = {
+	var = coalition1_variable
+	value = SAMPLE_party7_seats
+}
+}
+if = { 
+limit = { has_government = conservative }
+set_variable = {
+	var = coalition1_variable
+	value = SAMPLE_party8_seats
+}
+}
+if = { 
+limit = { has_government = national_conservative }
+set_variable = {
+	var = coalition1_variable
+	value = SAMPLE_party9_seats
+}
+}
+if = { 
+limit = { has_government = reactionary }
+set_variable = {
+	var = coalition1_variable
+	value = SAMPLE_party10_seats
+}
+}
+if = { 
+limit = { has_government = nationalist }
+set_variable = {
+	var = coalition1_variable
+	value = SAMPLE_party11_seats
+}
+}
+if = { 
+limit = { has_government = fascist }
+set_variable = {
+	var = coalition1_variable
+	value = SAMPLE_party12_seats
+}
+}
+if = { 
+limit = { has_government = islamist }
+set_variable = {
+	var = coalition1_variable
+	value = SAMPLE_party13_seats
+}
+}
+ }
+
+
+
+Coalition_Reactionary = {
+add_to_variable = { coalition1_variable = SAMPLE_party10_seats }
+
+ }
+
+Coalition_National_Conservative = {
+
+add_to_variable = { coalition1_variable = SAMPLE_party9_seats }
+
+ }
+
+Coalition_Conservative = {
+
+add_to_variable = { coalition1_variable = SAMPLE_party8_seats }
+
+ }
+ 
+ Coalition_Nationalist = {
+
+add_to_variable = { coalition1_variable = SAMPLE_party11_seats }
+
+ }
 }

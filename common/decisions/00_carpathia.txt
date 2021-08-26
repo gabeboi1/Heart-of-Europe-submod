@@ -75,7 +75,7 @@ carpathia = {
 	add_state_core = 80
 	add_state_core = 89
 
-	set_cosmetic_tag = CARP
+	set_cosmetic_tag = CARP_ROM
 	}	
 	}
 

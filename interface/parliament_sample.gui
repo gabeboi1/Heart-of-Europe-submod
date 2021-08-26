@@ -36,6 +36,26 @@ guiTypes = {
 			alwaystransparent = yes
 			fixedsize = yes
 		}
+			instantTextboxType = {
+			name = "num_of_seats_text"
+			position = { x = 200 y = 280 }
+			font = "hoi_22tech"
+			text = "num_of_seats_coalition"
+			maxWidth = 300
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+			fixedsize = yes
+		}
+
+	
+			buttonType = {
+			name = "open_window_button"
+			spriteType = "GFX_open_menu"
+			position = { x = 250 y = 235 }
+		}
+		
+	
 	}
 	containerWindowType = {
 		name = "SAMPLE_parliament_seat"

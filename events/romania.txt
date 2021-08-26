@@ -285,6 +285,8 @@ if = {
 limit = { 922 = { NOT = { has_state_flag = rom_state_secured } } }
 transfer_state = 922
 add_state_core = 922
+transfer_state = 950
+add_state_core = 950
 922 = { create_unit = {
     division = "name = \"Iron Guard\" division_template = \"Iron Guard\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
     owner = XXY
@@ -369,11 +371,11 @@ create_unit = {
 
 }
 
-XXY = { 
+ROM = { 
 transfer_state = 46
 declare_war_on = {
-    target = ROM
-    type = civil_war
+    target = XXY
+    type = annex_everything
 }
 
 }
@@ -419,7 +421,98 @@ set_country_flag = vadim_alive }
 	name = romania.2.b
 	hidden_effect = {
 	ROM = { random_list = { 30 = {	
-	country_event = romania.3 } 70 = { country_event = romania.4 } } }
+	country_event = romania.5 } 70 = { country_event = romania.6 } } }
 	}
 	}
 	}
+	
+country_event = {
+	id = romania.3
+        title = sek.2.t
+        desc = sek.2.d
+
+	fire_only_once = yes
+        mean_time_to_happen = { days = 1 }
+	is_triggered_only = no
+	trigger = { tag = ROM ROM = { has_country_flag = vadim_alive has_war_with = XXY } }
+	
+		option = {
+		ai_chance = { factor = 1 }
+		name = romania.3.a
+			SEK = { transfer_state = 919 transfer_state = 76 add_state_core = 76 }
+		    SEK = { change_tag_from = ROOT }
+			SEK = { create_country_leader = {
+				name = "Corneliu Vadim Tudor"
+				picture = "vadim_with_shades.dds"
+				ideology = oligarchist
+						}
+			 set_cosmetic_tag = TRS_TUDOR
+			load_focus_tree = { tree = tudor_1 keep_completed = no } }
+	division_template = {
+	name = "Székely Militia"
+	template_counter = 4
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+	}
+	support = {
+		field_hospital = { x = 0 y = 0 }
+	}
+
+}
+
+ SEK = { country_event = { id = sek.4 days = 4 } country_event = { id = sek.7 days = 2 } } }
+ 
+ 		option = {
+		ai_chance = { factor = 1 }
+		name = romania.3.b 
+			SEK = { transfer_state = 919 transfer_state = 76 add_state_core = 76 }
+			SEK = { create_country_leader = {
+				name = "Corneliu Vadim Tudor"
+				picture = "vadim_with_shades.dds"
+				ideology = oligarchist
+						}
+			 set_cosmetic_tag = TRS_TUDOR
+			load_focus_tree = { tree = tudor_1 keep_completed = no } }
+	division_template = {
+	name = "Székely Militia"
+	template_counter = 4
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+	}
+	support = {
+		field_hospital = { x = 0 y = 0 }
+	}
+
+}
+
+ SEK = { country_event = { id = sek.4 days = 5 } country_event = { id = sek.7 days = 2 } } }
+	
+		}
+		
+	country_event = {
+	id = romania.4
+        title = romania.4.t
+        desc = romania.4.d
+
+	fire_only_once = no
+	trigger = { 	
+tag = ROM country_exists = XXY XXY = { NOT = { has_war_with = ROM } } }
+        mean_time_to_happen = { days = 1 }
+	is_triggered_only = no
+	
+	option = {
+	ai_chance = { factor = 20 }
+	name = romania.4.a
+
+	ROM = { annex_country = { target = XXY transfer_troops = no } }
+}
+
+}
+
+}

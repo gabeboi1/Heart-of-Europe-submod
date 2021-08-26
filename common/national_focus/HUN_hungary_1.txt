@@ -13,10 +13,9 @@ focus = {
 id = HUN_strengthenvisegrad
 icon = GFX_goal_tripartite_pact
 x = 25
-y = 12
+y = 15
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_drawclosertobrussels focus = HUN_eufriends }
 ai_will_do = { 
  factor = 1
  } 
@@ -37,114 +36,16 @@ modifier = medium_increase
 
  } 
 
-#Focus for Visegrad1
-focus = { 
-id = HUN_eufriends
-icon = GFX_goal_generic_forceful_treaty
-x = 32
-y = 11
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_easternopening } 
-ai_will_do = { 
- factor = 1
- } 
 
-completion_reward = { 
- } 
-
- }
   
  
-
-#Focus for join Russia
-focus = { 
-id = HUN_internationale
-icon = GFX_hunrussia
-x = 69
-y = 6
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_peoplesrepublic } 
-mutually_exclusive = { focus = HUN_neutrality }  
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { 
-create_faction = "Internationale"
-
- }
-
-} 
-
-#Focus for join Russia
-focus = { 
-id = HUN_compoland
-icon = GFX_hunrussia
-x = 69
-y = 7
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_internationale } 
- 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { 
-POL = { add_timed_idea = {
-    idea = idea_hun_communism
-    days = 360
-} }
-
-CZE = { add_timed_idea = {
-    idea = idea_hun_communism
-    days = 360
-} }
-
-SLO = { add_timed_idea = {
-    idea = idea_hun_communism
-    days = 360
-} }
-
-ROM = { add_timed_idea = {
-    idea = idea_hun_communism
-    days = 360
-} }
-
-BUL = { add_timed_idea = {
-    idea = idea_hun_communism
-    days = 360
-} }
-
- }
-
- }
- 
-#Focus for join Russia
-focus = { 
-id = HUN_easternbloc
-icon = GFX_hunrussia
-x = 69
-y = 8
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_compoland } 
-
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { 
-POL = { country_event = hungary_communist.1 }
-
- }
- }
 
 #Focus for Draw closer to Russia
 focus = { 
 id = HUN_drawclosertorussia
 icon = GFX_hunrussia
-x = 34
-y = 11
+x = 86
+y = 1
 cost = 10
 available_if_capitulated = yes   
 prerequisite = { focus = HUN_easternopening }  
@@ -184,7 +85,7 @@ focus = {
 id = HUN_commongoals
 icon = GFX_goal_generic_national_unity
 x = 25
-y = 14
+y = 16
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_strengthenvisegrad } 
@@ -200,12 +101,12 @@ SLO = {add_political_power= 50}
 
  } 
 
-#Focus for Visergrad propaganda
+#Focus for Visegrad propaganda
 focus = { 
-id = HUN_visergradpropaganda
+id = HUN_visegradpropaganda
 icon = GFX_goal_generic_radar
-x = 26
-y = 13
+x = 27
+y = 16
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_strengthenvisegrad } 
@@ -229,6 +130,7 @@ cost = 10
 available_if_capitulated = yes 
 available = { always = no }
 prerequisite = { focus = HUN_2002election } 
+prerequisite = { focus = HUN_fideszleads }
 ai_will_do = { 
  factor = 1
  } 
@@ -243,13 +145,214 @@ bypass = { HUN = { has_government = reactionary } }
 
  } 
  
+#Focus for Support Fkgp
+focus = { 
+id = HUN_supportfkgp
+icon = GFX_fkgp
+x = 36
+y = 5
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_2002election } 
+prerequisite = { focus = HUN_fkgpleads }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+bypass = { HUN = { has_government = reactionary } }
+
+ }
+
+#Focus for Support Fkgp
+focus = { 
+id = HUN_torgyan
+icon = GFX_fkgp
+x = 42
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_supportfkgp } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+ 
+#Focus for Support Fkgp
+focus = { 
+id = HUN_agriculture
+icon = GFX_fkgp
+x = 38
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_torgyan } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+ 
+  
+#Focus for Support Fkgp
+focus = { 
+id = HUN_peace
+icon = GFX_fkgp
+x = 41
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_torgyan } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+ 
+#Focus for Support Fkgp
+focus = { 
+id = HUN_war
+icon = GFX_fkgp
+x = 43
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_torgyan } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+ 
+#Focus for Support Fkgp
+focus = { 
+id = HUN_monarchy
+icon = GFX_fkgp
+x = 46
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_torgyan } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+#Focus for Support Fkgp
+focus = { 
+id = HUN_buyzakarpattia
+icon = GFX_fkgp
+x = 46
+y = 8
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_monarchy } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+ 
+#Focus for Support Fkgp
+focus = { 
+id = HUN_unitewithpoland
+icon = GFX_fkgp
+x = 45
+y = 9
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_buyzakarpattia } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+#Focus for Support Fkgp
+focus = { 
+id = HUN_staysovereign
+icon = GFX_fkgp
+x = 47
+y = 9
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_buyzakarpattia } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
 
 #Focus for Invest in Slovak Buisnesses
 focus = { 
 id = HUN_investinslovakbuisnesses
 icon = GFX_goal_generic_production2
 x = 15
-y = 16
+y = 18
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_strenghtenbondswithslovakia } 
@@ -274,7 +377,7 @@ focus = {
 id = HUN_hungarianslovakianmilitarycoalition
 icon = GFX_goal_generic_military_deal
 x = 17
-y = 16
+y = 18
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_strenghtenbondswithslovakia } 
@@ -293,7 +396,7 @@ focus = {
 id = HUN_hungarianpropagandainslovakia
 icon = GFX_goal_unknown
 x = 19
-y = 16
+y = 18
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_strenghtenbondswithslovakia } 
@@ -569,7 +672,7 @@ add_ideas = { idea_hun_privatisation }
    # Focus for LIBERALS
 focus = { 
 id = HUN_gaymarriage
-icon = GFX_hunprivatisation
+icon = GFX_lgbt_flag
 x = 3
 y = 9
 cost = 10
@@ -649,7 +752,7 @@ focus = {
 id = HUN_coalitionintheeu
 icon = GFX_goal_unknown
 x = 27
-y = 16
+y = 18
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_polishhungarianfriendship } 
@@ -664,7 +767,7 @@ focus = {
 id = HUN_strenghtenbondswithslovakia
 icon = GFX_goal_unknown
 x = 18
-y = 15
+y = 17
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_commongoals } 
@@ -679,7 +782,7 @@ focus = {
 id = HUN_fundslovakhighways
 icon = GFX_goal_generic_construct_infrastructure
 x = 21
-y = 16
+y = 18
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_strenghtenbondswithslovakia } 
@@ -703,7 +806,7 @@ focus = {
 id = HUN_influenceslovakia
 icon = GFX_goal_generic_territory_or_war
 x = 18
-y = 17
+y = 19
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_fundslovakhighways } 
@@ -724,7 +827,7 @@ focus = {
 id = HUN_drawclosertobrussels
 icon = GFX_eudiplomacy
 x = 12
-y = 11
+y = 13
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_eu1 }
@@ -785,7 +888,7 @@ x = 68
 y = 4
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_pathofequality } 
+prerequisite = { focus = HUN_alliancewithmszp focus = HUN_withoutmszp } 
 ai_will_do = { 
  factor = 1
  } 
@@ -833,7 +936,7 @@ set_party_name = {
  focus = { 
 id = HUN_glorykadar
 icon = GFX_path_of_equality
-x = 66
+x = 68
 y = 2
 cost = 10
 available_if_capitulated = yes 
@@ -849,60 +952,37 @@ popularity = 0.05
  }
  }
  
-  focus = { 
-id = HUN_demandelection
-icon = GFX_election
-x = 70
-y = 2
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_pathofequality }
-ai_will_do = { 
- factor = 1
- }
-available = { communist > 0.2 }
-mutually_exclusive = { focus = HUN_preparethecoup }
-completion_reward = { 
-add_popularity = {
-ideology = communist
-popularity = 0.05
-}
- }
- }
- 
-  focus = { 
-id = HUN_preparethecoup
-icon = GFX_elections_suspended
-x = 72
-y = 2
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_pathofequality }
-ai_will_do = { 
- factor = 1
- }
-available = { communist > 0.2 }
-mutually_exclusive = { focus = HUN_demandelection }
-completion_reward = { 
-add_popularity = {
-ideology = communist
-popularity = 0.05
-}
- }
- }
- 
-  focus = { 
-id = HUN_securethecountryside
-icon = GFX_elections_suspended
-x = 72
+ focus = { 
+id = HUN_alliancewithmszp
+icon = GFX_mszp
+x = 67
 y = 3
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_preparethecoup }
+mutually_exclusive = { focus = HUN_withoutmszp }
+prerequisite = { focus = HUN_pathofequality }
 ai_will_do = { 
  factor = 1
  }
-available = { communist > 0.2 }
+completion_reward = { 
+add_popularity = {
+ideology = communist
+popularity = 0.05
+}
+ }
+ }
+
+ focus = { 
+id = HUN_bribesocdems
+icon = GFX_hun_unificationtalks
+x = 66
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_alliancewithmszp }
+ai_will_do = { 
+ factor = 1
+ }
 completion_reward = { 
 add_popularity = {
 ideology = communist
@@ -911,19 +991,212 @@ popularity = 0.05
  }
  }
  
+ focus = { 
+id = HUN_promoteleftistunity
+icon = GFX_com_media
+x = 64
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_alliancewithmszp }
+ai_will_do = { 
+ factor = 1
+ }
+completion_reward = { 
+add_popularity = {
+ideology = communist
+popularity = 0.05
+}
+ }
+ }
+
+ focus = { 
+id = HUN_mergetheparties
+icon = GFX_mergetheparties
+x = 65
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_bribesocdems }
+prerequisite = { focus = HUN_promoteleftistunity }
+ai_will_do = { 
+ factor = 1
+ }
+completion_reward = { 
+add_popularity = {
+ideology = communist
+popularity = 0.05
+}
+ }
+ }
+
+ focus = { 
+id = HUN_reformtheparty
+icon = GFX_mszmp
+x = 63
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_mergetheparties }
+ai_will_do = { 
+ factor = 1
+ }
+completion_reward = { 
+add_popularity = {
+ideology = communist
+popularity = 0.05
+}
+ }
+ }
  
-  focus = { 
-id = HUN_ignitetheconflict
+ focus = { 
+id = HUN_winsupport
+icon = GFX_hun_popular_support
+x = 62
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_reformtheparty }
+ai_will_do = { 
+ factor = 1
+ }
+completion_reward = { 
+add_popularity = {
+ideology = communist
+popularity = 0.05
+}
+ }
+ }
+ 
+ focus = { 
+id = HUN_fightcorruption
+icon = GFX_bribery
+x = 64
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_reformtheparty }
+ai_will_do = { 
+ factor = 1
+ }
+completion_reward = { 
+add_popularity = {
+ideology = communist
+popularity = 0.05
+}
+ }
+ }
+ 
+focus = { 
+id = HUN_effectivecampaigns
+icon = GFX_election
+x = 65
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_mergetheparties }
+ai_will_do = { 
+ factor = 1
+ }
+mutually_exclusive = { focus = HUN_cheatonelections }
+completion_reward = { 
+add_popularity = {
+ideology = communist
+popularity = 0.05
+}
+ }
+ }
+ 
+ focus = { 
+id = HUN_cheatonelections
 icon = GFX_elections_suspended
+x = 67
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_mergetheparties }
+ai_will_do = { 
+ factor = 1
+ }
+mutually_exclusive = { focus = HUN_effectivecampaigns }
+completion_reward = { 
+add_popularity = {
+ideology = communist
+popularity = 0.05
+}
+ }
+ }
+ 
+focus = { 
+id = HUN_socialistdawn
+icon = GFX_hun_socialist_dawn
+x = 66
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_effectivecampaigns focus = HUN_cheatonelections }
+ai_will_do = { 
+ factor = 1
+ }
+mutually_exclusive = { focus = HUN_cheatonelections }
+completion_reward = { 
+add_popularity = {
+ideology = communist
+popularity = 0.05
+}
+ }
+ }
+ 
+ focus = { 
+id = HUN_withoutmszp
+icon = GFX_withoutmszp
+x = 69
+y = 3
+cost = 10
+available_if_capitulated = yes 
+mutually_exclusive = { focus = HUN_alliancewithmszp }
+prerequisite = { focus = HUN_pathofequality }
+ai_will_do = { 
+ factor = 1
+ }
+completion_reward = { 
+add_popularity = {
+ideology = communist
+popularity = 0.05
+}
+ }
+ }
+ 
+ focus = { 
+id = HUN_marxistdoctrine
+icon = GFX_marx_hoe
+x = 70
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_withoutmszp }
+ai_will_do = { 
+ factor = 1
+ }
+completion_reward = { 
+add_popularity = {
+ideology = communist
+popularity = 0.05
+}
+ }
+ }
+
+ focus = { 
+id = HUN_recruityouth
+icon = GFX_kisz
 x = 72
 y = 4
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_securethecountryside }
+prerequisite = { focus = HUN_withoutmszp }
 ai_will_do = { 
  factor = 1
  }
-available = { communist > 0.2 }
 completion_reward = { 
 add_popularity = {
 ideology = communist
@@ -932,26 +1205,44 @@ popularity = 0.05
  }
  }
  
-  focus = { 
-id = HUN_localmilitias
-icon = GFX_elections_suspended
-x = 72
+ focus = { 
+id = HUN_mobilisetheworkers
+icon = GFX_communist_uprising
+x = 71
 y = 5
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_ignitetheconflict }
+prerequisite = { focus = HUN_withoutmszp }
 ai_will_do = { 
  factor = 1
  }
-available = { communist > 0.2 }
 completion_reward = { 
 add_popularity = {
 ideology = communist
 popularity = 0.05
 }
  }
- } 
-
+ }
+ 
+ focus = { 
+id = HUN_partymilitias
+icon = GFX_communist_garda
+x = 73
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_mobilisetheworkers }
+ai_will_do = { 
+ factor = 1
+ }
+completion_reward = { 
+add_popularity = {
+ideology = communist
+popularity = 0.05
+}
+ }
+ }
+ 
  #################
  ###Monarchy####
  #################
@@ -965,7 +1256,7 @@ popularity = 0.05
 focus = { 
 id = HUN_militaryfac1
 icon = GFX_factories
-x = 80
+x = 75
 y = 1
 cost = 10
 available_if_capitulated = yes 
@@ -991,7 +1282,7 @@ add_building_construction = {
 focus = { 
 id = HUN_militaryfac2
 icon = GFX_factories
-x = 80
+x = 75
 y = 2
 cost = 10
 available_if_capitulated = yes 
@@ -1017,7 +1308,7 @@ add_building_construction = {
 focus = { 
 id = HUN_honvedseg
 icon = GFX_honvedseg
-x = 82
+x = 77
 y = 0
 cost = 10
 available_if_capitulated = yes 
@@ -1034,7 +1325,7 @@ army_experience = 40
 focus = { 
 id = HUN_honvedseg2
 icon = GFX_honvedseg
-x = 82
+x = 77
 y = 1
 cost = 10
 available_if_capitulated = yes 
@@ -1052,7 +1343,7 @@ army_experience = 15
 focus = { 
 id = HUN_honvedseg3
 icon = GFX_honvedseg
-x = 82
+x = 77
 y = 2
 cost = 10
 available_if_capitulated = yes 
@@ -1071,7 +1362,7 @@ add_research_slot = 1
 focus = { 
 id = HUN_warplans
 icon = GFX_goal_unknown
-x = 84
+x = 79
 y = 1
 cost = 10
 available_if_capitulated = yes 
@@ -1093,7 +1384,7 @@ focus = {
 id = HUN_polishhungarianfriendship
 icon = GFX_goal_unknown
 x = 25
-y = 15
+y = 17
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_commongoals } 
@@ -1109,7 +1400,7 @@ focus = {
 id = HUN_polishhungariantrade
 icon = GFX_goal_unknown
 x = 23
-y = 16
+y = 18
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_polishhungarianfriendship } 
@@ -1124,7 +1415,7 @@ focus = {
 id = HUN_polishhungarianmilitary
 icon = GFX_goal_unknown
 x = 25
-y = 16
+y = 18
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_polishhungarianfriendship } 
@@ -1139,7 +1430,7 @@ focus = {
 id = HUN_polishhungarianunion
 icon = GFX_polandfriend
 x = 25
-y = 17
+y = 19
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_polishhungarianmilitary }
@@ -1155,7 +1446,7 @@ ai_will_do = {
 focus = { 
 id = HUN_familyaid
 icon = GFX_goal_unknown
-x = 27
+x = 31
 y = 7
 cost = 10
 available_if_capitulated = yes 
@@ -1174,7 +1465,7 @@ ai_will_do = {
 focus = { 
 id = HUN_patriotism
 icon = GFX_goal_unknown
-x = 23
+x = 27
 y = 7
 cost = 10
 available_if_capitulated = yes 
@@ -1189,7 +1480,7 @@ ai_will_do = {
 focus = { 
 id = HUN_borderfence
 icon = GFX_goal_unknown
-x = 25
+x = 29
 y = 9
 cost = 10
 available_if_capitulated = yes 
@@ -1204,7 +1495,7 @@ ai_will_do = {
 focus = { 
 id = HUN_antiimmigrant
 icon = GFX_goal_unknown
-x = 25
+x = 29
 y = 8
 cost = 10
 available_if_capitulated = yes 
@@ -1234,7 +1525,7 @@ ai_will_do = {
 focus = { 
 id = HUN_army1
 icon = GFX_goal_unknown
-x = 21
+x = 25
 y = 8
 cost = 10
 available_if_capitulated = yes 
@@ -1249,7 +1540,7 @@ ai_will_do = {
 focus = { 
 id = HUN_recruitment
 icon = GFX_goal_unknown
-x = 21
+x = 25
 y = 9
 cost = 10
 available_if_capitulated = yes 
@@ -1264,7 +1555,7 @@ ai_will_do = {
 focus = { 
 id = HUN_hunminorities
 icon = GFX_goal_unknown
-x = 23
+x = 27
 y = 8
 cost = 10
 available_if_capitulated = yes 
@@ -1278,8 +1569,8 @@ ai_will_do = {
           #Focus for Help minorities
 focus = { 
 id = HUN_szekely
-icon = GFX_goal_unknown
-x = 23
+icon = GFX_hunlang
+x = 27
 y = 9
 cost = 10
 available_if_capitulated = yes 
@@ -1297,8 +1588,8 @@ add_state_core = 45
           #Focus for Help minorities
 focus = { 
 id = HUN_votingrights
-icon = GFX_goal_unknown
-x = 22
+icon = GFX_hunlang
+x = 26
 y = 10
 cost = 10
 available_if_capitulated = yes 
@@ -1314,8 +1605,8 @@ increase_reactionary_influence_by_2 = yes
           #Focus for Help minorities
 focus = { 
 id = HUN_crossborderprojects
-icon = GFX_goal_unknown
-x = 24
+icon = GFX_hunlang
+x = 28
 y = 10
 cost = 10
 available_if_capitulated = yes 
@@ -1332,11 +1623,11 @@ completion_reward = {
 focus = { 
 id = HUN_conservativeconst
 icon = GFX_goal_unknown
-x = 30
+x = 29
 y = 6
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_supportfidesz focus = HUN_fideszmiep }
+prerequisite = { focus = HUN_supportfidesz focus = HUN_supportfkgp }
 ai_will_do = { 
  factor = 1
  } 
@@ -1356,7 +1647,7 @@ increase_reactionary_influence_by_2 = yes
 focus = { 
 id = HUN_god
 icon = GFX_goal_unknown
-x = 19
+x = 23
 y = 7
 cost = 10
 available_if_capitulated = yes 
@@ -1371,7 +1662,7 @@ ai_will_do = {
 focus = { 
 id = HUN_work
 icon = GFX_goal_unknown
-x = 29
+x = 33
 y = 7
 cost = 10
 available_if_capitulated = yes 
@@ -1386,7 +1677,7 @@ ai_will_do = {
 focus = { 
 id = HUN_schools
 icon = GFX_hun_education
-x = 28
+x = 32
 y = 8
 cost = 10
 available_if_capitulated = yes 
@@ -1401,7 +1692,7 @@ ai_will_do = {
 focus = { 
 id = HUN_schools2
 icon = GFX_hun_education
-x = 28
+x = 32
 y = 10
 cost = 10
 available_if_capitulated = yes 
@@ -1416,7 +1707,7 @@ ai_will_do = {
 focus = { 
 id = HUN_schools3
 icon = GFX_hun_education
-x = 28
+x = 32
 y = 11
 cost = 10
 available_if_capitulated = yes 
@@ -1431,7 +1722,7 @@ ai_will_do = {
 focus = { 
 id = HUN_family1
 icon = GFX_hun_education
-x = 27
+x = 31
 y = 9
 cost = 10
 available_if_capitulated = yes 
@@ -1446,7 +1737,7 @@ ai_will_do = {
 focus = { 
 id = HUN_family2
 icon = GFX_hun_education
-x = 26
+x = 30
 y = 10
 cost = 10
 available_if_capitulated = yes 
@@ -1461,7 +1752,7 @@ ai_will_do = {
 focus = { 
 id = HUN_work1
 icon = GFX_hun_education
-x = 29
+x = 33
 y = 9
 cost = 10
 available_if_capitulated = yes 
@@ -1477,7 +1768,7 @@ ai_will_do = {
 focus = { 
 id = HUN_solidifypower
 icon = GFX_goal_unknown
-x = 31
+x = 35
 y = 7
 cost = 10
 available_if_capitulated = yes 
@@ -1495,7 +1786,7 @@ add_stability = 0.05
 focus = { 
 id = HUN_scatteropposition
 icon = GFX_goal_unknown
-x = 31
+x = 35
 y = 8
 cost = 10
 available_if_capitulated = yes 
@@ -1515,7 +1806,7 @@ decrease_social_democrat_influence_by_2 = yes
 focus = { 
 id = HUN_influencemedia
 icon = GFX_goal_unknown
-x = 31
+x = 35
 y = 9
 cost = 10
 available_if_capitulated = yes 
@@ -1530,7 +1821,7 @@ completion_reward = { add_stability = 0.10 }
 focus = { 
 id = HUN_pm4life
 icon = GFX_pm4life
-x = 30
+x = 34
 y = 11
 cost = 10
 available_if_capitulated = yes 
@@ -1549,7 +1840,7 @@ elections_allowed = no
 focus = { 
 id = HUN_termlimit
 icon = GFX_pm4life
-x = 30
+x = 34
 y = 10
 cost = 10
 available_if_capitulated = yes 
@@ -1641,7 +1932,7 @@ focus = {
 id = HUN_befriendgermany
 icon = GFX_goal_unknown
 x = 16
-y = 12
+y = 14
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_drawclosertobrussels }
@@ -1657,7 +1948,7 @@ focus = {
 id = HUN_befriendfrance
 icon = GFX_goal_unknown
 x = 14
-y = 12
+y = 14
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_drawclosertobrussels }
@@ -1672,7 +1963,7 @@ focus = {
 id = HUN_visegradunion
 icon = GFX_goal_unknown
 x = 25
-y = 18
+y = 20
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_polishhungarianunion focus = HUN_influenceslovakia }
@@ -1973,6 +2264,25 @@ y = 9
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_gyurcsanypack }
+mutually_exclusive = { focus = HUN_gyurcsany3 }
+ai_will_do = { 
+ factor = 1
+ } 
+ completion_reward = {
+add_political_power = 50
+}
+ }
+ 
+     #Focus for The Gyurcsány 2
+focus = { 
+id = HUN_gyurcsany3
+icon = GFX_gyurcsanysgov
+x = 20
+y = 9
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_gyurcsanypack }
+mutually_exclusive = { focus = HUN_gyurcsany2 }
 ai_will_do = { 
  factor = 1
  } 
@@ -2004,7 +2314,7 @@ add_ideas = { the_euro }
 focus = { 
 id = HUN_bleachindustry
 icon = GFX_generic_euro
-x = 18
+x = 17
 y = 10
 cost = 13
 available_if_capitulated = yes 
@@ -2022,7 +2332,7 @@ random_owned_controlled_state = { add_extra_state_shared_building_slots = 2 add_
 focus = { 
 id = HUN_tariff1
 icon = GFX_generic_euro
-x = 18
+x = 16
 y = 11
 cost = 13
 available_if_capitulated = yes 
@@ -2038,6 +2348,220 @@ popularity = -0.02
 }
 }
  } 
+ 
+       #Focus for Tariffs
+focus = { 
+id = HUN_crackdown
+icon = GFX_2006_crackdown
+x = 20
+y = 10
+cost = 13
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_gyurcsany2 focus = HUN_gyurcsany3 }
+ai_will_do = { 
+ factor = 1
+ } 
+ completion_reward = {
+random_owned_controlled_state = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
+add_popularity = {
+ideology = social_democrat
+popularity = -0.02
+}
+}
+ } 
+ 
+        #Focus for Tariffs
+focus = { 
+id = HUN_militarizepolice
+icon = GFX_generic_euro
+x = 18
+y = 11
+cost = 13
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_crackdown }
+ai_will_do = { 
+ factor = 1
+ } 
+ completion_reward = {
+random_owned_controlled_state = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
+add_popularity = {
+ideology = social_democrat
+popularity = -0.02
+}
+}
+ }
+ 
+         #Focus for Tariffs
+focus = { 
+id = HUN_hirtv
+icon = GFX_generic_euro
+x = 22
+y = 11
+cost = 13
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_crackdown }
+ai_will_do = { 
+ factor = 1
+ } 
+ completion_reward = {
+random_owned_controlled_state = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
+add_popularity = {
+ideology = social_democrat
+popularity = -0.02
+}
+}
+ }
+ 
+        #Focus for Tariffs
+focus = { 
+id = HUN_raidjobbik
+icon = GFX_generic_euro
+x = 20
+y = 11
+cost = 13
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_crackdown }
+ai_will_do = { 
+ factor = 1
+ } 
+ completion_reward = {
+random_owned_controlled_state = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
+add_popularity = {
+ideology = social_democrat
+popularity = -0.02
+}
+}
+ }
+ 
+         #Focus for Tariffs
+focus = { 
+id = HUN_republicanism
+icon = GFX_generic_euro
+x = 19
+y = 12
+cost = 13
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_raidjobbik focus = HUN_hirtv focus = HUN_militarizepolice }
+mutually_exclusive = { focus = HUN_reestablishonepartyrule }
+ai_will_do = { 
+ factor = 1
+ } 
+ completion_reward = {
+random_owned_controlled_state = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
+add_popularity = {
+ideology = social_democrat
+popularity = -0.02
+}
+}
+ }
+ 
+          #Focus for Tariffs
+focus = { 
+id = HUN_reestablishonepartyrule
+icon = GFX_generic_euro
+x = 21
+y = 12
+cost = 13
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_raidjobbik }
+prerequisite = { focus = HUN_militarizepolice }
+prerequisite = { focus = HUN_hirtv }
+mutually_exclusive = { focus = HUN_republicanism }
+ai_will_do = { 
+ factor = 1
+ } 
+ completion_reward = {
+random_owned_controlled_state = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
+add_popularity = {
+ideology = social_democrat
+popularity = -0.02
+}
+}
+ }
+ 
+          #Focus for Tariffs
+focus = { 
+id = HUN_supressradicals
+icon = GFX_generic_euro
+x = 19
+y = 13
+cost = 13
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_republicanism }
+ai_will_do = { 
+ factor = 1
+ } 
+ completion_reward = {
+random_owned_controlled_state = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
+add_popularity = {
+ideology = social_democrat
+popularity = -0.02
+}
+}
+ }
+ 
+          #Focus for Tariffs
+focus = { 
+id = HUN_holdtheelection
+icon = GFX_generic_euro
+x = 17
+y = 13
+cost = 13
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_republicanism }
+ai_will_do = { 
+ factor = 1
+ } 
+ completion_reward = {
+random_owned_controlled_state = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
+add_popularity = {
+ideology = social_democrat
+popularity = -0.02
+}
+}
+ }
+ 
+          #Focus for Tariffs
+focus = { 
+id = HUN_allythecommunists
+icon = GFX_generic_euro
+x = 21
+y = 13
+cost = 13
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_reestablishonepartyrule }
+ai_will_do = { 
+ factor = 1
+ } 
+ completion_reward = {
+random_owned_controlled_state = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
+add_popularity = {
+ideology = social_democrat
+popularity = -0.02
+}
+}
+ }
+ 
+          #Focus for Tariffs
+focus = { 
+id = HUN_ourbenevolentleader
+icon = GFX_generic_euro
+x = 23
+y = 13
+cost = 13
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_reestablishonepartyrule }
+ai_will_do = { 
+ factor = 1
+ } 
+ completion_reward = {
+random_owned_controlled_state = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
+add_popularity = {
+ideology = social_democrat
+popularity = -0.02
+}
+}
+ }
  
       #Focus for Reform the Healthcare
 focus = { 
@@ -2107,11 +2631,10 @@ ai_will_do = {
 focus = { 
 id = HUN_easternopening
 icon = GFX_corruption
-x = 33
-y = 10
+x = 90
+y = 0
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_electnationalist focus = HUN_conservativeconst }
 ai_will_do = { 
  factor = 1
  } 
@@ -2124,8 +2647,8 @@ ai_will_do = {
 focus = { 
 id = HUN_drawclosertochina
 icon = GFX_hunchina
-x = 36
-y = 11
+x = 94
+y = 1
 cost = 10
 available_if_capitulated = yes   
 prerequisite = { focus = HUN_easternopening }  
@@ -2147,7 +2670,7 @@ focus = {
 id = HUN_germaninvestors
 icon = GFX_focus_generic_strike_at_democracy2
 x = 16
-y = 13
+y = 15
 cost = 10
 available_if_capitulated = yes   
 prerequisite = { focus = HUN_befriendgermany }  
@@ -2182,158 +2705,15 @@ instant_build = yes
 ####Communism####
 #################
  
-    # Focus for Armanent effort
-focus = { 
-id = HUN_armseffort
-icon = GFX_guns
-x = 75
-y = 6
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_peoplesrepublic } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-increase_communist_influence_by_3 = yes
-add_popularity = {
-ideology = communist
-popularity = 0.2
-}
-}
- }
+
  
-     # Focus for Forradalmi Gárda
-focus = { 
-id = HUN_forradalmigarda
-icon = GFX_revguard
-x = 73
-y = 7
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_armseffort } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-increase_communist_influence_by_3 = yes
-add_popularity = {
-ideology = communist
-popularity = 0.2
-}
-}
- }
- 
-      # Focus for Arms factories
-focus = { 
-id = HUN_production1
-icon = GFX_hunarmy1
-x = 77
-y = 7
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_armseffort } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-increase_communist_influence_by_3 = yes
-add_popularity = {
-ideology = communist
-popularity = 0.2
-}
-}
- }
- 
-       # Focus for Five year plan
-focus = { 
-id = HUN_fiveyearplan
-icon = GFX_five
-x = 75
-y = 7
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_armseffort } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-increase_communist_influence_by_3 = yes
-add_popularity = {
-ideology = communist
-popularity = 0.2
-}
-}
- }
- 
-        # Focus for Reorganize the army
-focus = { 
-id = HUN_reorganizethearmy
-icon = GFX_soldier
-x = 73
-y = 8
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_forradalmigarda } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-increase_communist_influence_by_3 = yes
-add_popularity = {
-ideology = communist
-popularity = 0.2
-}
-}
- }
- 
-         # Focus for Reopen Stálinváros
-focus = { 
-id = HUN_stalinvaros
-icon = GFX_soldier
-x = 75
-y = 8
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_fiveyearplan } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-increase_communist_influence_by_3 = yes
-add_popularity = {
-ideology = communist
-popularity = 0.2
-}
-}
- }
- 
-       # Focus for Arms factories2
-focus = { 
-id = HUN_production2
-icon = GFX_armsfactory
-x = 77
-y = 8
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_production1 } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-increase_communist_influence_by_3 = yes
-add_popularity = {
-ideology = communist
-popularity = 0.2
-}
-}
- }
+
  
        # Focus for Inner reforms
 focus = { 
 id = HUN_comreforms
-icon = GFX_communism
-x = 63
+icon = GFX_communist_reform
+x = 69
 y = 6
 cost = 10
 available_if_capitulated = yes 
@@ -2351,8 +2731,8 @@ add_timed_idea = { idea = idea_hun_communism_reform days = 360 }
         # Focus for One party
 focus = { 
 id = HUN_oneparty
-icon = GFX_communism
-x = 62
+icon = GFX_elections_suspended
+x = 70
 y = 7
 cost = 10
 available_if_capitulated = yes 
@@ -2374,11 +2754,65 @@ elections_allowed = no
 }
  }
  
-         # Focus for Secret police
+         # Focus for One party
 focus = { 
-id = HUN_secretpolice
-icon = GFX_communism
-x = 65
+id = HUN_arresttraitors
+icon = GFX_imprison_rebels
+x = 71
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_mobilisetheworkers } 
+prerequisite = { focus = HUN_peoplesrepublic }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_communist_influence_by_3 = yes
+add_popularity = {
+ideology = communist
+popularity = 1
+}
+add_stability = -0.3
+set_politics = {
+ruling_party = communist
+elections_allowed = no
+}
+}
+ }
+ 
+          # Focus for One party
+focus = { 
+id = HUN_bancounterrevolutionary
+icon = GFX_banfascist
+x = 72
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_arresttraitors } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_communist_influence_by_3 = yes
+add_popularity = {
+ideology = communist
+popularity = 1
+}
+add_stability = -0.3
+set_politics = {
+ruling_party = communist
+elections_allowed = no
+}
+}
+ }
+ 
+ 
+         # Focus for One party
+focus = { 
+id = HUN_controlthemedia
+icon = GFX_com_media
+x = 71
 y = 8
 cost = 10
 available_if_capitulated = yes 
@@ -2388,16 +2822,49 @@ ai_will_do = {
  } 
 completion_reward = {
 increase_communist_influence_by_3 = yes
-add_stability = 0.15
-
+add_popularity = {
+ideology = communist
+popularity = 1
+}
+add_stability = -0.3
+set_politics = {
+ruling_party = communist
+elections_allowed = no
+}
 }
  }
  
-         # Focus for State Media
+          # Focus for One party
 focus = { 
-id = HUN_statemedia
-icon = GFX_communism
-x = 67
+id = HUN_silenceopposition
+icon = GFX_com_press
+x = 71
+y = 9
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_controlthemedia } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_communist_influence_by_3 = yes
+add_popularity = {
+ideology = communist
+popularity = 1
+}
+add_stability = -0.3
+set_politics = {
+ruling_party = communist
+elections_allowed = no
+}
+}
+ }
+ 
+          # Focus for One party
+focus = { 
+id = HUN_redarmy
+icon = GFX_communist_soldier
+x = 73
 y = 8
 cost = 10
 available_if_capitulated = yes 
@@ -2406,144 +2873,282 @@ ai_will_do = {
  factor = 1
  } 
 completion_reward = {
-add_stability = 0.20
+increase_communist_influence_by_3 = yes
+add_popularity = {
+ideology = communist
+popularity = 1
+}
+add_stability = -0.3
+set_politics = {
+ruling_party = communist
+elections_allowed = no
+}
 }
  }
  
-         # Focus for State Media
+           # Focus for One party
 focus = { 
-id = HUN_suppression
-icon = GFX_communism
-x = 66
+id = HUN_comconscription
+icon = GFX_conscription
+x = 73
 y = 9
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_statemedia focus = HUN_secretpolice } 
+prerequisite = { focus = HUN_redarmy } 
 ai_will_do = { 
  factor = 1
  } 
 completion_reward = {
-add_stability = 0.20
+increase_communist_influence_by_3 = yes
+add_popularity = {
+ideology = communist
+popularity = 1
+}
+add_stability = -0.3
+set_politics = {
+ruling_party = communist
+elections_allowed = no
+}
 }
  }
  
-         # Focus for State Media
+           # Focus for One party
 focus = { 
-id = HUN_outlawunemployment
-icon = GFX_communism
-x = 62
-y = 11
+id = HUN_armsfactories
+icon = GFX_comindustry
+x = 75
+y = 9
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_absolutecontrol focus = HUN_neokadarism } 
+prerequisite = { focus = HUN_redarmy } 
 ai_will_do = { 
  factor = 1
  } 
 completion_reward = {
-add_stability = 0.20
+increase_communist_influence_by_3 = yes
+add_popularity = {
+ideology = communist
+popularity = 1
+}
+add_stability = -0.3
+set_politics = {
+ruling_party = communist
+elections_allowed = no
+}
 }
  }
-
-         # Focus for Absolute control
+ 
+           # Focus for One party
 focus = { 
-id = HUN_absolutecontrol
+id = HUN_militaryinterventions
 icon = GFX_communism
-x = 60
+x = 75
 y = 10
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_collectivisation2 } 
+prerequisite = { focus = HUN_armsfactories } 
+prerequisite = { focus = HUN_comconscription } 
 ai_will_do = { 
  factor = 1
  } 
 completion_reward = {
-add_stability = 0.20
+increase_communist_influence_by_3 = yes
+add_popularity = {
+ideology = communist
+popularity = 1
 }
- }  
- 
-          # Focus for collectivisation
-focus = { 
-id = HUN_collectivisation
-icon = GFX_comindustry
-x = 62
-y = 8
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_oneparty } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-random_owned_controlled_state = {
-add_extra_state_shared_building_slots = 2
-add_building_construction = {
-    type = industrial_complex
-    level = 2
-    instant_build = yes
-}
+add_stability = -0.3
+set_politics = {
+ruling_party = communist
+elections_allowed = no
 }
 }
  }
  
-           # Focus for collectivisation2
+             # Focus for One party
 focus = { 
-id = HUN_collectivisation2
-icon = GFX_comindustry
-x = 61
-y = 9
+id = HUN_internationalism
+icon = GFX_redworld
+x = 76
+y = 11
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_collectivisation } 
-mutually_exclusive = { focus = HUN_socialistmarketeconomy } 
+prerequisite = { focus = HUN_militaryinterventions } 
+mutually_exclusive = { focus = HUN_revanchism }
 ai_will_do = { 
  factor = 1
  } 
 completion_reward = {
-random_owned_controlled_state = {
-add_extra_state_shared_building_slots = 3
-add_building_construction = {
-    type = industrial_complex
-    level = 3
-    instant_build = yes
-}
-}
+set_cosmetic_tag = HUN_SOV
 }
  }
  
-           # Focus for collectivisation2
+             # Focus for One party
 focus = { 
-id = HUN_socialistmarketeconomy
-icon = GFX_comindustry
-x = 63
-y = 9
+id = HUN_revanchism
+icon = GFX_communism
+x = 78
+y = 11
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_collectivisation } 
-mutually_exclusive = { focus = HUN_collectivisation2 }
+prerequisite = { focus = HUN_militaryinterventions } 
+mutually_exclusive = { focus = HUN_internationalism }
 ai_will_do = { 
  factor = 1
  } 
 completion_reward = {
-random_owned_controlled_state = {
-add_extra_state_shared_building_slots = 3
-add_building_construction = {
-    type = industrial_complex
-    level = 3
-    instant_build = yes
-}
-}
+set_cosmetic_tag = HUN_SOV
 }
  }
+ 
+            # Focus for One party
+focus = { 
+id = HUN_kunstradition
+icon = GFX_fegyverbe
+x = 77
+y = 12
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_internationalism focus = HUN_revanchism } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+set_cosmetic_tag = HUN_SOV
+}
+ }
+ 
+ 
+            # Focus for One party
+focus = { 
+id = HUN_expansionism
+icon = GFX_hunlang
+x = 78
+y = 13
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_revanchism } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+SLO = { set_cosmetic_tag = SLO_SOV }
+TRS = { set_cosmetic_tag = TRS_SOV }
+VOJ = { set_cosmetic_tag = VOJ_SOV }
+RUT = { set_cosmetic_tag = RUT_SOV }
+}
+ }
+ 
+           # Focus for One party
+focus = { 
+id = HUN_newunion
+icon = GFX_comeurope
+x = 76
+y = 13
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_internationalism } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+set_cosmetic_tag = HUN_UNION
+}
+ }
+ 
+            # Focus for One party
+focus = { 
+id = HUN_joinchina
+icon = GFX_hunchina
+x = 74
+y = 11
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_militaryinterventions } 
+ai_will_do = { 
+ factor = 1
+ } 
+mutually_exclusive = { focus = HUN_joinrussia }
+completion_reward = {
+increase_communist_influence_by_3 = yes
+add_popularity = {
+ideology = communist
+popularity = 1
+}
+add_stability = -0.3
+set_politics = {
+ruling_party = communist
+elections_allowed = no
+}
+
+ }
+
+}
+
+            # Focus for One party
+focus = { 
+id = HUN_joinrussia
+icon = GFX_hunrussia
+x = 72
+y = 11
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_militaryinterventions } 
+ai_will_do = { 
+ factor = 1
+ } 
+mutually_exclusive = { focus = HUN_joinchina }
+completion_reward = {
+increase_communist_influence_by_3 = yes
+add_popularity = {
+ideology = communist
+popularity = 1
+}
+add_stability = -0.3
+set_politics = {
+ruling_party = communist
+elections_allowed = no
+}
+
+ }
+
+}
+ 
 
            # Focus for collectivisation2
 focus = { 
 id = HUN_neokadarism
-icon = GFX_comindustry
-x = 64
-y = 10
+icon = GFX_comindustry2
+x = 68
+y = 7
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_socialistmarketeconomy } 
+prerequisite = { focus = HUN_peoplesrepublic } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+random_owned_controlled_state = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+    type = industrial_complex
+    level = 3
+    instant_build = yes
+}
+}
+}
+ } 
+  
+ 
+              # Focus for collectivisation2
+focus = { 
+id = HUN_expandwelfare
+icon = GFX_comwelfare
+x = 63
+y = 8
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_neokadarism } 
 ai_will_do = { 
  factor = 1
  } 
@@ -2559,29 +3164,320 @@ add_building_construction = {
 }
  } 
  
-            # Focus for collectivisation3
+               # Focus for collectivisation2
 focus = { 
-id = HUN_collectivisation3
-icon = GFX_comindustry
-x = 62
-y = 10
+id = HUN_abolishunemployment
+icon = GFX_communist_food
+x = 65
+y = 9
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_collectivisation2 focus = HUN_socialistmarketeconomy } 
+prerequisite = { focus = HUN_expandwelfare } 
 ai_will_do = { 
  factor = 1
  } 
 completion_reward = {
 random_owned_controlled_state = {
-add_extra_state_shared_building_slots = 4
+add_extra_state_shared_building_slots = 3
 add_building_construction = {
     type = industrial_complex
-    level = 4
+    level = 3
+    instant_build = yes
+}
+}
+}
+ } 
+ 
+                # Focus for collectivisation2
+focus = { 
+id = HUN_nationalprojects
+icon = GFX_comindustry
+x = 66
+y = 10
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_nationaliseheavyindustry } 
+prerequisite = { focus = HUN_abolishunemployment }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+random_owned_controlled_state = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+    type = industrial_complex
+    level = 3
     instant_build = yes
 }
 }
 }
  }
+
+                # Focus for collectivisation2
+focus = { 
+id = HUN_highway1
+icon = GFX_highway
+x = 66
+y = 11
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_nationalprojects } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+random_owned_controlled_state = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+    type = industrial_complex
+    level = 3
+    instant_build = yes
+}
+}
+}
+ }  
+ 
+                # Focus for collectivisation2
+focus = { 
+id = HUN_statues
+icon = GFX_comindustry
+x = 64
+y = 11
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_nationalprojects } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+random_owned_controlled_state = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+    type = industrial_complex
+    level = 3
+    instant_build = yes
+}
+}
+}
+ } 
+ 
+               # Focus for collectivisation2
+focus = { 
+id = HUN_statemandatedflats
+icon = GFX_communist_buildings
+x = 68
+y = 11
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_nationalisehousing } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+random_owned_controlled_state = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+    type = industrial_complex
+    level = 3
+    instant_build = yes
+}
+}
+}
+ }
+ 
+               # Focus for collectivisation2
+focus = { 
+id = HUN_lowertaxes
+icon = GFX_bribery
+x = 61
+y = 9
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_expandwelfare } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+random_owned_controlled_state = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+    type = industrial_complex
+    level = 3
+    instant_build = yes
+}
+}
+}
+ }
+ 
+                # Focus for collectivisation2
+focus = { 
+id = HUN_nationaliseuniversity
+icon = GFX_hoe_communist_science
+x = 62
+y = 10
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_lowertaxes } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+random_owned_controlled_state = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+    type = industrial_complex
+    level = 3
+    instant_build = yes
+}
+}
+}
+ }
+ 
+                # Focus for collectivisation2
+focus = { 
+id = HUN_nationalisehealthcare
+icon = GFX_hun_healthcare
+x = 60
+y = 10
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_lowertaxes } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+random_owned_controlled_state = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+    type = industrial_complex
+    level = 3
+    instant_build = yes
+}
+}
+}
+ }
+ 
+            # Focus for collectivisation2
+focus = { 
+id = HUN_nationaliseindustry
+icon = GFX_comindustry
+x = 68
+y = 8
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_neokadarism } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+random_owned_controlled_state = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+    type = industrial_complex
+    level = 3
+    instant_build = yes
+}
+}
+}
+ } 
+
+            # Focus for collectivisation2
+focus = { 
+id = HUN_nationalisebanks
+icon = GFX_bank
+x = 69
+y = 9
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_nationaliseindustry } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+random_owned_controlled_state = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+    type = industrial_complex
+    level = 3
+    instant_build = yes
+}
+}
+}
+ } 
+ 
+            # Focus for collectivisation2
+focus = { 
+id = HUN_nationaliseheavyindustry
+icon = GFX_communist_factories
+x = 67
+y = 9
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_nationaliseindustry } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+random_owned_controlled_state = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+    type = industrial_complex
+    level = 3
+    instant_build = yes
+}
+}
+}
+ }
+ 
+            # Focus for collectivisation2
+focus = { 
+id = HUN_nationalisehousing
+icon = GFX_communist_housing
+x = 68
+y = 10
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_nationaliseheavyindustry } 
+prerequisite = { focus = HUN_nationalisebanks } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+random_owned_controlled_state = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+    type = industrial_complex
+    level = 3
+    instant_build = yes
+}
+}
+}
+ }
+
+            # Focus for collectivisation2
+focus = { 
+id = HUN_forcedintegration
+icon = GFX_gypsies_bad
+x = 70
+y = 11
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_nationalisehousing } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+random_owned_controlled_state = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+    type = industrial_complex
+    level = 3
+    instant_build = yes
+}
+}
+}
+ }
+
  
 
 ###########################
@@ -2592,7 +3488,7 @@ add_building_construction = {
 focus = { 
 id = HUN_madl
 icon = GFX_fidesz
-x = 15
+x = 25
 y = 2
 cost = 10
 available_if_capitulated = yes 
@@ -2600,6 +3496,7 @@ prerequisite = { focus = HUN_pathoftherepublic }
 ai_will_do = { 
  factor = 1
  } 
+mutually_exclusive = { focus = HUN_appointotto }
 completion_reward = {
 add_stability = 0.04
 add_political_power = 50
@@ -2611,11 +3508,12 @@ add_ideas = { ferenc_madl }
 focus = { 
 id = HUN_appointotto
 icon = GFX_habsburg
-x = 17
+x = 27
 y = 2
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_pathoftherepublic }
+mutually_exclusive = { focus = HUN_madl }
 ai_will_do = { 
  factor = 1
  } 
@@ -2631,11 +3529,11 @@ add_ideas = { idea_hun_otto_von_habsburg }
 focus = { 
 id = HUN_fkgpcoalition
 icon = GFX_fidesz
-x = 16
+x = 26
 y = 3
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_madl }
+prerequisite = { focus = HUN_madl focus = HUN_appointotto }
 ai_will_do = { 
  factor = 1
  } 
@@ -2654,7 +3552,7 @@ popularity = 0.04
 focus = { 
 id = HUN_usurpmdf
 icon = GFX_fidesz
-x = 16
+x = 24
 y = 4
 cost = 10
 available_if_capitulated = yes 
@@ -2680,7 +3578,7 @@ popularity = 0.05
 focus = { 
 id = HUN_fkgpleads
 icon = GFX_fidesz
-x = 14
+x = 28
 y = 4
 cost = 10
 available_if_capitulated = yes 
@@ -2688,6 +3586,7 @@ prerequisite = { focus = HUN_fkgpcoalition }
 ai_will_do = { 
  factor = 1
  } 
+mutually_exclusive = { focus = HUN_fideszleads }
 completion_reward = {
 add_political_power = -25
 add_popularity = {
@@ -2704,9 +3603,36 @@ add_ideas = { fkgp_lead }
 
              # Empire reunited
 focus = { 
+id = HUN_fideszleads
+icon = GFX_fidesz
+x = 26
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_fkgpcoalition }
+ai_will_do = { 
+ factor = 1
+ } 
+mutually_exclusive = { focus = HUN_fkgpleads }
+completion_reward = {
+add_political_power = -25
+add_popularity = {
+ideology = conservative
+popularity = 0.08
+}
+add_popularity = {
+ideology = reactionary
+popularity = -0.08
+}
+add_ideas = { fidesz_lead }
+}
+ }
+
+             # Empire reunited
+focus = { 
 id = HUN_cammszp
 icon = GFX_glorymonarchy
-x = 26
+x = 16
 y = 2
 cost = 10
 available_if_capitulated = yes 
@@ -2720,23 +3646,6 @@ add_political_power = 120
 }
  }
  
-              # Empire reunited
-focus = { 
-id = HUN_cammiep
-icon = GFX_glorymonarchy
-x = 36
-y = 2
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_pathoftherepublic }
-mutually_exclusive = { focus = HUN_jobbik1 }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-
-}
- }
  
 ############################
 ######   NATIONALISM  ######
@@ -2746,11 +3655,11 @@ completion_reward = {
 focus = { 
 id = HUN_discreditmszp
 icon = GFX_attack_democracy
-x = 43
+x = 40
 y = 3
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_jobbik1 focus = HUN_cammiep }
+prerequisite = { focus = HUN_jobbik focus = HUN_fkgpmiep }
 ai_will_do = { 
  factor = 1
  } 
@@ -2764,16 +3673,35 @@ decrease_social_democrat_influence_by_2 = yes
 }
 	} 
  
-               # Empire reunited
+ 
+                # Empire reunited
 focus = { 
-id = HUN_jobbik1
-icon = GFX_fascism
+id = HUN_fkgpmiep
+icon = GFX_agreement
+x = 36
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_pathoftherepublic }
+mutually_exclusive = { focus = HUN_jobbik }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+country_event = hungary.24
+}
+ }
+ 
+                 # Empire reunited
+focus = { 
+id = HUN_jobbik
+icon = GFX_hun_fascism
 x = 44
 y = 2
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_pathoftherepublic }
-mutually_exclusive = { focus = HUN_cammiep }
+mutually_exclusive = { focus = HUN_fkgpmiep }
 ai_will_do = { 
  factor = 1
  } 
@@ -2790,46 +3718,6 @@ create_country_leader = {
 	ideology = fascist_ideology
 	}
 }
- }
- 
-                # Empire reunited
-focus = { 
-id = HUN_fideszmiep
-icon = GFX_agreement
-x = 42
-y = 4
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_cammiep }
-mutually_exclusive = { focus = HUN_jobbik }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-country_event = hungary.24
-}
- }
- 
-                 # Empire reunited
-focus = { 
-id = HUN_jobbik
-icon = GFX_hun_fascism
-x = 44
-y = 4
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_jobbik1 }
-mutually_exclusive = { focus = HUN_fideszmiep }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_popularity = {
-ideology = fascist
-popularity = 0.08
-
-}
-}
 	}
 
  
@@ -2838,11 +3726,11 @@ popularity = 0.08
 focus = { 
 id = HUN_electnationalist
 icon = GFX_hun_nationalist
-x = 42
+x = 46
 y = 5
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_2002election focus = HUN_fideszmiep }
+prerequisite = { focus = HUN_2002election focus = HUN_fkgpmiep }
 mutually_exclusive = { focus = HUN_electfascist }
 ai_will_do = { 
  factor = 1
@@ -2857,7 +3745,7 @@ add_political_power = 120
 focus = { 
 id = HUN_electfascist
 icon = GFX_hun_fascism
-x = 44
+x = 54
 y = 5
 cost = 10
 available_if_capitulated = yes 
@@ -2876,7 +3764,7 @@ add_political_power = 120
 focus = { 
 id = HUN_nationalunity
 icon = GFX_hun_nationalist
-x = 41
+x = 51
 y = 6
 cost = 10
 available_if_capitulated = yes 
@@ -2894,7 +3782,7 @@ decrease_progressive_influence_by_2 = yes
 focus = { 
 id = HUN_assemblethegarda
 icon = GFX_turul
-x = 47
+x = 57
 y = 6
 cost = 10
 available_if_capitulated = yes 
@@ -2912,7 +3800,7 @@ decrease_progressive_influence_by_2 = yes
 focus = { 
 id = HUN_ourownweapons
 icon = GFX_army1
-x = 49
+x = 59
 y = 7
 cost = 10
 available_if_capitulated = yes 
@@ -2930,7 +3818,7 @@ decrease_progressive_influence_by_2 = yes
 focus = { 
 id = HUN_youthindoctrination
 icon = GFX_hun_education
-x = 42
+x = 52
 y = 7
 cost = 10
 available_if_capitulated = yes 
@@ -2948,7 +3836,7 @@ decrease_progressive_influence_by_2 = yes
 focus = { 
 id = HUN_youthindoctrination2
 icon = GFX_homophobia
-x = 42
+x = 52
 y = 9
 cost = 10
 available_if_capitulated = yes 
@@ -2966,7 +3854,7 @@ decrease_progressive_influence_by_2 = yes
 focus = { 
 id = HUN_repurposeindustry
 icon = GFX_fash_industry
-x = 48
+x = 58
 y = 8
 cost = 10
 available_if_capitulated = yes 
@@ -3000,7 +3888,7 @@ instant_build = yes
 focus = { 
 id = HUN_mobilewarfare
 icon = GFX_modern_hussars
-x = 48
+x = 58
 y = 9
 cost = 10
 available_if_capitulated = yes 
@@ -3018,7 +3906,7 @@ decrease_progressive_influence_by_2 = yes
 focus = { 
 id = HUN_nationalpurity
 icon = GFX_hun_united
-x = 40
+x = 50
 y = 9
 cost = 10
 available_if_capitulated = yes 
@@ -3035,7 +3923,7 @@ add_ideas = idea_hun_homogen_nation
 focus = { 
 id = HUN_christianvalues
 icon = GFX_hunchristian
-x = 43
+x = 53
 y = 6
 cost = 10
 available_if_capitulated = yes 
@@ -3053,7 +3941,7 @@ add_ideas = idea_radical_christianity
 focus = { 
 id = HUN_neopaganism
 icon = GFX_csodaszarvas
-x = 45
+x = 55
 y = 6
 cost = 10
 available_if_capitulated = yes 
@@ -3071,7 +3959,7 @@ add_ideas = idea_taltosism
 focus = { 
 id = HUN_isten
 icon = GFX_turul
-x = 44
+x = 55
 y = 9
 cost = 10
 available_if_capitulated = yes 
@@ -3090,7 +3978,7 @@ army_experience = 50
 focus = { 
 id = HUN_schoolprayer
 icon = GFX_christian_shcool
-x = 45
+x = 55
 y = 8
 cost = 10
 available_if_capitulated = yes 
@@ -3108,7 +3996,7 @@ decrease_progressive_influence_by_2 = yes
 focus = { 
 id = HUN_conscription
 icon = GFX_conscription
-x = 46
+x = 56
 y = 9
 cost = 10
 available_if_capitulated = yes 
@@ -3127,7 +4015,7 @@ add_ideas = {extensive_conscription}
 focus = { 
 id = HUN_gypsies1
 icon = GFX_gypsies_bad
-x = 40
+x = 50
 y = 7
 cost = 10
 available_if_capitulated = yes 
@@ -3147,7 +4035,7 @@ remove_ideas = idea_gypsies_1
 focus = { 
 id = HUN_releasethehorde
 icon = GFX_hun_horde
-x = 45
+x = 55
 y = 10
 cost = 10
 available_if_capitulated = yes 
@@ -3226,7 +4114,7 @@ create_unit = {
 focus = { 
 id = HUN_taltoschurch
 icon = GFX_taltosism
-x = 45
+x = 55
 y = 7
 cost = 10
 available_if_capitulated = yes 
@@ -3246,7 +4134,7 @@ swap_ideas = {
 focus = { 
 id = HUN_worshiphadur
 icon = GFX_hadur
-x = 45
+x = 55
 y = 8
 cost = 10
 available_if_capitulated = yes 
@@ -3266,11 +4154,11 @@ swap_ideas = {
 focus = { 
 id = HUN_turks
 icon = GFX_turanism
-x = 41
-y = 12
+x = 88
+y = 2
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_drawclosertorussia focus = HUN_drawclosertochina focus = HUN_turanism }
+prerequisite = { focus = HUN_drawclosertorussia focus = HUN_drawclosertochina }
 ai_will_do = { 
  factor = 1
  } 
@@ -3284,8 +4172,8 @@ set_cosmetic_tag = HUN_TURAN
 focus = { 
 id = HUN_befriendkorea
 icon = GFX_south_korea
-x = 43
-y = 12
+x = 92
+y = 2
 cost = 10
 available_if_capitulated = yes 
 prerequisite = {focus = HUN_drawclosertochina }
@@ -3302,8 +4190,8 @@ add_political_power = 100
 focus = { 
 id = HUN_joincsto
 icon = GFX_csto
-x = 33
-y = 12
+x = 86
+y = 3
 cost = 10
 available_if_capitulated = yes 
 prerequisite = {focus = HUN_drawclosertorussia }
@@ -3320,7 +4208,7 @@ SOV = { add_to_faction = HUN }
 focus = { 
 id = HUN_turanism
 icon = GFX_turanism
-x = 41
+x = 51
 y = 8
 cost = 10
 available_if_capitulated = yes 
@@ -3338,7 +4226,7 @@ add_political_power = 100
 focus = { 
 id = HUN_secondhonfoglalas
 icon = GFX_honfoglalas
-x = 46
+x = 56
 y = 11
 cost = 10
 available_if_capitulated = yes 
@@ -3356,7 +4244,7 @@ create_wargoal = { type = annex_everything target = SLO }
 focus = { 
 id = HUN_danubianhegemony
 icon = GFX_austria_conquest
-x = 44
+x = 54
 y = 11
 cost = 10
 available_if_capitulated = yes 
@@ -3373,7 +4261,7 @@ create_wargoal = { type = annex_everything target = AUS }
 focus = { 
 id = HUN_karpatia
 icon = GFX_arpadsav
-x = 45
+x = 55
 y = 12
 cost = 10
 available_if_capitulated = yes 
@@ -3425,7 +4313,7 @@ completion_reward = {
 focus = { 
 id = HUN_divideetimpera
 icon = GFX_arpadsav
-x = 44
+x = 54
 y = 13
 cost = 10
 available_if_capitulated = yes 
@@ -3444,7 +4332,7 @@ completion_reward = {
 focus = { 
 id = HUN_dividemoldavia
 icon = GFX_arpadsav
-x = 43
+x = 53
 y = 14
 cost = 10
 available_if_capitulated = yes 
@@ -3463,7 +4351,7 @@ MDV = {
 focus = { 
 id = HUN_integratemoldavia
 icon = GFX_arpadsav
-x = 43
+x = 53
 y = 15
 cost = 10
 available_if_capitulated = yes 
@@ -3481,7 +4369,7 @@ completion_reward = {
 focus = { 
 id = HUN_csango
 icon = GFX_arpadsav
-x = 43
+x = 53
 y = 16
 cost = 10
 available_if_capitulated = yes 
@@ -3498,7 +4386,7 @@ MDV = {
 focus = { 
 id = HUN_dividewallachia
 icon = GFX_arpadsav
-x = 45
+x = 55
 y = 14
 cost = 10
 available_if_capitulated = yes 
@@ -3518,7 +4406,7 @@ WLL = { transfer_state = 46
 focus = { 
 id = HUN_integratewallachia
 icon = GFX_arpadsav
-x = 45
+x = 55
 y = 15
 cost = 10
 available_if_capitulated = yes 
@@ -3536,7 +4424,7 @@ completion_reward = {
 focus = { 
 id = HUN_restructurebucharest
 icon = GFX_arpadsav
-x = 45
+x = 55
 y = 16
 cost = 10
 available_if_capitulated = yes 
@@ -3554,7 +4442,7 @@ completion_reward = {
 focus = { 
 id = HUN_magyarization
 icon = GFX_arpadsav
-x = 44
+x = 54
 y = 17
 cost = 10
 available_if_capitulated = yes 
@@ -3572,7 +4460,7 @@ completion_reward = {
 focus = { 
 id = HUN_rulebyfear
 icon = GFX_oppression
-x = 47
+x = 57
 y = 13
 cost = 10
 available_if_capitulated = yes 
@@ -3591,7 +4479,7 @@ completion_reward = {
 focus = { 
 id = HUN_bansymbols
 icon = GFX_arpadsav
-x = 47
+x = 57
 y = 14
 cost = 10
 available_if_capitulated = yes 
@@ -3609,7 +4497,7 @@ completion_reward = {
 focus = { 
 id = HUN_oppressionbyforce
 icon = GFX_arpadsav
-x = 47
+x = 57
 y = 15
 cost = 10
 available_if_capitulated = yes 
@@ -3627,7 +4515,7 @@ completion_reward = {
 focus = { 
 id = HUN_banlanguage
 icon = GFX_arpadsav
-x = 47
+x = 57
 y = 16
 cost = 10
 available_if_capitulated = yes 
@@ -3645,7 +4533,7 @@ completion_reward = {
 focus = { 
 id = HUN_aggressiveintegration
 icon = GFX_arpadsav
-x = 47
+x = 57
 y = 17
 cost = 10
 available_if_capitulated = yes 

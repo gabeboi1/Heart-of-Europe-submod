@@ -35,8 +35,8 @@
  hungary.15.d:0 "Magyar Nemzet, a hungarian newsletter has shared the files of a former government secret agent, who has turned out to be non other, than our beloved prime minister, Péter Medgyessy. Many files indicate a connection to the former communist party itself, and some people have started speculating that he reported directly to the Soviet Union. Medgyessy has confirmed that he was indeed, a government agent, though he says he only worked in counter espionage, defending the homeland from foreign spies. The poeple are skeptical nontheless. This event has left the party and Medgyessy in the center of public outrage."
  hungary.15.a:0 "Medgyessy would never do such things."
  hungary.16.t:0 "The speech of Őszöd"
- hungary.16.d:0 "'We f#cked up, big time', started prime minister Ferenc Gyurcsány on a private government meeting in the town of Baladonőszöd last night. 'It's obvious, we've lied though the last one-and-a-half year. It was clear, that what we were saying was completely untrue.' he followed. It was clear, that our prime minister had a bit of a reality check after too many bottles of pálinka. His ranting continued, getting wilder and increasingly profane, while a member of the audience got it on video. The recordings spread like wildfire through the media. The opposition, of course, instantly started organising protests."
- hungary.16.a:0 "Let's hope it doesn't spiral out of control"
+ hungary.16.d:0 "'We f#cked up, not a little, but a whole lot', stated prime minister Ferenc Gyurcsány on a private government meeting in the town of Baladonőszöd last night. 'It's obvious, we've lied though the last one-and-a-half year. It was clear, that what we were saying was completely untrue.' he followed. It was clear, that our prime minister had a bit of an awakening after too many bottles of pálinka. His ranting continued, getting wilder and increasingly profane, while a secret recording was being made. The audio spread like wildfire through the media. The opposition, of course, instantly started organising protests. This could get bad for the MSZP."
+ hungary.16.a:0 "He was a bit too honest there."
  hungary.17.t:0 "Fate restored in Medgyessy"
  hungary.17.d:0 "After years of hard work and successfully joining the Europen Union, our prime minister is slowly regaining the trust of the people."
  hungary.17.a:0 "Let's hope he doesn't get himself into a controversy again"
@@ -51,4 +51,9 @@
  hungary.20.a:0 "Oh no"
  hungary.21.t:0 "FIDESZ moves to the right"
  hungary.21.d:0 "It has been a trend, ever since the Fidesz party got beaten by the socialists on the 2002 elections, that members of the party are using more and more extreme and radical tacticts, in order to win extra supporters. Now, the party has little in common with the western conservatives of Germany or France."
- hungary.21.a:0 "We hope they stop eventualy."
+ hungary.21.a:0 "Let us hope they'll stop eventualy."
+ hungary_news.1.t:0 "The University of Kaposvár Opens"
+ hungary_news.1.d:0 "The city of Kaposvár, capital of Somogy County, started off the millennium with opening its own independent university by combining two exiting institutions. This will surely help the region to prosper and develop further."
+ hungary_news.1.a:0 "Good to see our nation develop."
+
+ 

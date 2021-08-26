@@ -10,6 +10,6 @@ tags={
 dependencies={
 	"Millennium Dawn Classic"
 }
-path="mod/HeartsofEurope/"
+path="D:/heartofeurope"
 picture="thumbnail.png"
 supported_version="1.9.3"

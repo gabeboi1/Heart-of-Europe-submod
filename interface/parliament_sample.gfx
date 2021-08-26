@@ -10,5 +10,10 @@ spriteTypes = {
 		textureFile = "/gfx/interface/parliament_sample/parliament_seat.dds"
 		noOfFrames = 13
 	}
+	
+	spriteType = {
+		name = "GFX_open_menu"
+		textureFile = "/gfx/interface/parliament_sample/menu_open_button.dds"
+	}
 
 }

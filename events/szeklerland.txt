@@ -7,15 +7,15 @@ country_event = {
 
 	fire_only_once = yes
         mean_time_to_happen = { days = 1 }
-	is_triggered_only = no
-	trigger = { tag = SEK }
+	is_triggered_only = yes
+	trigger = { tag = SEK NOT = { ROM = { has_country_flag = vadim_alive } } }
 	
 		option = {
 		ai_chance = { factor = 1 }
 		name = sek.1.a
 			add_ideas = idea_sek_nationalism
 			create_country_leader = {
-				name = SEK_bela_marko
+				name = "Béla Markó"
 				picture = "marko_bela.dds"
 				ideology = counter_progressive_democrat
 						}
@@ -23,3 +23,196 @@ country_event = {
 			}
 	
 		}
+
+country_event = {
+	id = sek.2
+        title = sek.2.t
+        desc = sek.2.d
+
+	fire_only_once = yes
+        mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+	trigger = { tag = SEK ROM = { has_country_flag = vadim_alive } SEK =  { NOT = { has_cosmetic_flag = TRS } } }
+	
+		option = {
+		ai_chance = { factor = 1 }
+		name = sek.1.a
+			create_country_leader = {
+				name = "Corneliu Vadim Tudor"
+				picture = "tudor.dds"
+				ideology = oligarchist
+						}
+			set_cosmetic_tag = TRS_TUDOR
+			load_focus_tree = { tree = tudor_1 keep_completed = no }
+				
+			}
+	
+		}
+		
+country_event = {
+	id = sek.3
+        title = sek.3.t
+        desc = sek.3.d
+
+	fire_only_once = yes
+        mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+	trigger = { tag = SEK }
+	
+		option = {
+		ai_chance = { factor = 1 }
+		name = sek.3.a
+}
+	
+		}
+
+
+country_event = {
+	id = sek.4
+        title = sek.4.t
+        desc = sek.4.d
+
+	fire_only_once = yes
+        mean_time_to_happen = { days = 3 }
+	is_triggered_only = yes
+	trigger = { tag = SEK }
+	
+		option = {
+		ai_chance = { factor = 1 }
+		name = sek.3.a
+		division_template = {
+	name = "Székely Militia"
+	template_counter = 3
+	is_locked = no
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+	}
+	support = {
+		field_hospital = { x = 0 y = 0 }
+	}
+
+}
+		set_state_controller = 919
+					919 = { create_unit = {
+    division = "name = \"Székely Militia\" division_template = \"Székely Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+    owner = SEK
+}
+create_unit = {
+    division = "name = \"Székely Militia\" division_template = \"Székely Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+    owner = SEK
+} 
+create_unit = {
+    division = "name = \"Székely Militia\" division_template = \"Székely Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+    owner = SEK
+}
+create_unit = {
+    division = "name = \"Székely Militia\" division_template = \"Székely Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+    owner = SEK
+}
+}
+			SEK = { 
+			
+			declare_war_on = {
+    target = ROM
+    type = annex_everything
+}
+declare_war_on = {
+    target = XXY
+    type = annex_everything
+}
+			}
+}
+	
+		}		
+
+country_event = {
+	id = sek.5
+        title = sek.5.t
+        desc = sek.5.d
+
+	fire_only_once = yes
+        mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+	trigger = { tag = SEK }
+	
+		option = {
+		ai_chance = { factor = 1 }
+		name = sek.5.a
+			950 = { create_unit = {
+    division = "name = \"Székely Militia\" division_template = \"Székely Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+    owner = SEK
+}
+create_unit = {
+    division = "name = \"Székely Militia\" division_template = \"Székely Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+    owner = SEK
+} 
+
+}
+}
+	
+		}
+		
+country_event = {
+	id = sek.6
+        title = sek.6.t
+        desc = sek.6.d
+
+	fire_only_once = yes
+        mean_time_to_happen = { days = 1 }
+	is_triggered_only = no
+	trigger = { tag = SEK 46 = { is_owned_and_controlled_by = SEK } }
+	
+		option = {
+		ai_chance = { factor = 1 }
+		name = sek.6.a
+ set_cosmetic_tag = ROM_TUDOR
+		add_state_core = 46
+		add_state_core = 81
+		add_state_core = 928
+		add_state_core = 899
+		add_state_core = 929
+		add_state_core = 79
+		add_state_core = 927
+		add_state_core = 76
+		add_state_core = 922
+		add_state_core = 950
+		add_state_core = 83
+		add_state_core = 82
+		add_state_core = 937
+		add_state_core = 84
+	set_capital = 46
+}
+	
+		}
+		
+country_event = {
+	id = sek.7
+        title = sek.7.t
+        desc = sek.7.d
+
+	fire_only_once = yes
+        mean_time_to_happen = { days = 1 }
+	is_triggered_only = yes
+	trigger = { tag = SEK }
+	
+		option = {
+		ai_chance = { factor = 1 }
+		name = sek.7.a
+		set_state_controller = 76
+			76 = { create_unit = {
+    division = "name = \"Székely Militia\" division_template = \"Székely Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+    owner = SEK
+}
+create_unit = {
+    division = "name = \"Székely Militia\" division_template = \"Székely Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+    owner = SEK
+} 
+
+}
+}
+	
+		}		
+		

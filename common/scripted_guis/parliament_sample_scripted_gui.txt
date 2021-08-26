@@ -30,7 +30,31 @@ scripted_gui = {
 		effects = {
 			refresh_button_click = {
 				SAMPLE_init_parliament = yes
+			} 
+			open_window_button_click = {
+				set_country_flag = coalition_window_opened
+			}
+			communist_coalition_button_click = {
+				Coalition_Reactionary = yes
+			}
+		}
+	}
+		coalition_partner_scripted_gui = {
+		window_name = "coalition_partner_gui"
+		context_type = player_context
+
+		visible = {
+			
+		has_country_flag = coalition_window_opened
+		}
+
+		
+
+		effects = {
+			close_window_button_click = {
+				clr_country_flag = coalition_window_opened
 			}
 		}
 	}
 }
+

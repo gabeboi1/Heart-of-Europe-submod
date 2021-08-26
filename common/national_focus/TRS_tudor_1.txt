@@ -1,0 +1,246 @@
+focus_tree = {
+	id = tudor_1
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = SEK
+		}
+	}
+	
+	
+	#Focus for 
+	focus = {
+		id = SEK_deal_with_the_devil
+		icon = GFX_focus_uneasy_alliance
+		x = 8
+		y = 0
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 300
+		}
+	}
+	
+	#Focus for 
+	focus = {
+		id = SEK_romanian_focus
+		icon = GFX_goal_unknown
+		x = 3
+		y = 1
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = { focus = SEK_deal_with_the_devil }
+		mutually_exclusive = { focus = SEK_hungarian_focus focus = SEK_balanced_focus }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_cosmetic_tag = TRS_ROM
+		}
+	}
+	
+	#Focus for 
+	focus = {
+		id = SEK_hungarian_focus
+		icon = GFX_goal_unknown
+		x = 13
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SEK_deal_with_the_devil }
+		mutually_exclusive = { focus = SEK_romanian_focus focus = SEK_balanced_focus }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_cosmetic_tag = TRS_SEK
+		}
+	}
+	
+		#Focus for 
+	focus = {
+		id = SEK_balanced_focus
+		icon = GFX_goal_unknown
+		x = 8
+		y = 1
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = { focus = SEK_deal_with_the_devil }
+		mutually_exclusive = { focus = SEK_hungarian_focus focus = SEK_romanian_focus }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_cosmetic_tag = TRS_TUDOR
+		}
+	}
+	
+			#Focus for 
+	focus = {
+		id = SEK_hungarian_militias
+		icon = GFX_goal_unknown
+		x = 11
+		y = 3
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = { focus = SEK_hungarian_focus focus = SEK_balanced_focus }
+		mutually_exclusive = { focus = SEK_romanian_militias }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			SEK = { division_template = {
+	name = "Székely Militia"
+	template_counter = 3
+	is_locked = no
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+	}
+	support = {
+		field_hospital = { x = 0 y = 0 }
+	}
+
+} }
+
+
+		919 = { create_unit = {
+    division = "name = \"Székely Militia\" division_template = \"Székely Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+    owner = SEK
+}
+create_unit = {
+    division = "name = \"Székely Militia\" division_template = \"Székely Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+    owner = SEK
+} 
+
+}
+
+				
+			
+		}
+	}
+	
+				#Focus for 
+	focus = {
+		id = SEK_satumare
+		icon = GFX_goal_unknown
+		x = 10
+		y = 4
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = { focus = SEK_hungarian_militias }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		transfer_state = 950
+			SEK = { division_template = {
+	name = "Székely Militia"
+	template_counter = 3
+	is_locked = no
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+	}
+	support = {
+		field_hospital = { x = 0 y = 0 }
+	}
+
+} }
+add_state_core = 950
+country_event = { id = sek.5 days = 1 }
+
+
+				
+			
+		}
+	}
+	
+			#Focus for 
+	focus = {
+		id = SEK_romanian_militias
+		icon = GFX_goal_unknown
+		x = 5
+		y = 3
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = { focus = SEK_balanced_focus focus = SEK_romanian_focus }
+		mutually_exclusive = { focus = SEK_hungarian_militias }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			SEK = { division_template = {
+	name = "Transylvanian Militia"
+	is_locked = no
+	template_counter = 3
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+	}
+	support = {
+		field_hospital = { x = 0 y = 0 }
+	}
+
+} }
+		76 = { 
+	create_unit = {
+    division = "name = \"Transylvanian Militia 1\" division_template = \"Transylvanian Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+    owner = SEK
+}
+create_unit = {
+    division = "name = \"Transylvanian Militia 2\" division_template = \"Transylvanian Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+    owner = SEK
+}
+
+}
+				
+			
+		}
+	}
+
+				#Focus for 
+	focus = {
+		id = SEK_oradea
+		icon = GFX_goal_unknown
+		x = 7
+		y = 4
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = { focus = SEK_romanian_militias }
+		available = { SEK = { is_controller_of = 922 } }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+add_state_core = 922
+		922 = { 
+	create_unit = {
+    division = "name = \"Transylvanian Militia 1\" division_template = \"Transylvanian Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+    owner = SEK
+}
+create_unit = {
+    division = "name = \"Transylvanian Militia 2\" division_template = \"Transylvanian Militia\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+    owner = SEK
+}
+
+}
+
+				
+			
+		}
+	}
+
+#End of focuses 
+ }

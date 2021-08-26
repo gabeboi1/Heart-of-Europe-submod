@@ -60,12 +60,42 @@ DAC = {
 	color_ui = rgb { 229 141 15 }
 }
 
+TRS = {
+	color = rgb { 218 153 64 }
+	color_ui = rgb { 198 133 44 }
+}
+
+TRS_TUDOR = {
+	color = rgb { 44 96 151 }
+	color_ui = rgb { 86 78 144 }
+}
+
+ROM_TUDOR = {
+	color = rgb { 44 96 151 }
+	color_ui = rgb { 86 78 144 }
+}
+
 CARP = {
 	color = rgb { 161 112 80   }
 	color_ui = rgb { 229 141 15 }
 }
 
 SLO_HUN = {
+	color = rgb { 127 172 83 }
+	color_ui = rgb { 105 244 67 }
+}
+
+VOJ_HUN = {
+	color = rgb { 127 172 83 }
+	color_ui = rgb { 105 244 67 }
+}
+
+RUT_HUN = {
+	color = rgb { 127 172 83 }
+	color_ui = rgb { 105 244 67 }
+}
+
+CRO_HUN = {
 	color = rgb { 127 172 83 }
 	color_ui = rgb { 105 244 67 }
 }
@@ -101,7 +131,12 @@ MRV_AUS = {
 }
 
 HUNPOL = {
-	color = rgb { 166 110 153 }
+	color = rgb { 176 131 200 }
+	color_ui = rgb { 196 142 234 }
+}
+
+VISEGRAD = {
+	color = rgb { 196 85 135 }
 	color_ui = rgb { 196 142 234 }
 }
 
@@ -128,6 +163,42 @@ WLL_ROM = {
 HUN_GYPSY = {
 	color = rgb { 205 92 92 }
 	color_ui = rgb { 205 92 92 }
+}
+
+HUN_SOV = {
+	color = rgb { 194 58 58 }
+	color_ui = rgb { 162 64 64 }
+
+}
+
+SLO_SOV = {
+	color = rgb { 194 58 58 }
+	color_ui = rgb { 162 64 64 }
+
+}
+
+TRS_SOV = {
+	color = rgb { 194 58 58 }
+	color_ui = rgb { 162 64 64 }
+
+}
+
+VOJ_SOV = {
+	color = rgb { 194 58 58 }
+	color_ui = rgb { 162 64 64 }
+
+}
+
+RUT_SOV = {
+	color = rgb { 194 58 58 }
+	color_ui = rgb { 162 64 64 }
+
+}
+
+HUN_UNION = {
+	color = rgb { 194 58 58 }
+	color_ui = rgb { 162 64 64 }
+
 }
 
 AUS_NOT_WHITE = {	
