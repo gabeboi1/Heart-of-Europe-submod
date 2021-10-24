@@ -451,6 +451,23 @@ ideas = {
 			market_liberal_drift = 0.03
 			}
 				}
+			
+													galvanised_right = {
+			picture = mdf
+		
+			allowed = { has_government = social_democrat }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			
+			modifier = {
+			social_democrat_drift = -0.04
+			market_liberal_drift = -0.03
+			conservative_drift = 0.01
+			national_conservative_drift = 0.04
+			nationalist_drift = 0.03
+			
+			}
+				}
 		}
 		
 

@@ -8,6 +8,7 @@ state={
 		owner = BOS
 		add_core_of = BOS
 		add_core_of = SRP
+		add_claim = SER
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 1

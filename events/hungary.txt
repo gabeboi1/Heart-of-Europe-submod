@@ -543,8 +543,7 @@ country_event = {
 	option = {
 	ai_chance = { factor = 1 }
 	name = hungary.18.a
-	increase_social_democrat_influence_by_3 = yes
-	decrease_conservative_influence_by_2 = yes
+
 }
 	}
 	
@@ -558,34 +557,25 @@ country_event = {
 	fire_only_once = yes
     mean_time_to_happen = { days = 20 }
 	is_triggered_only = no
-	trigger = { AND {
+	trigger = {
 	tag = HUN 
 	ruling_party = social_democrat
 	has_country_leader = {
     name = "Ferenc Gyurcsány"
-    ruling_only = yes } }
-	OR {
-	count_triggers = {
-    amount = 1
-	date > 2006.08.01
+    ruling_only = yes }
+	date > 2006.05.01
 	}
 	
-	}
-}
 	
 	option = {
 	ai_chance = { factor = 1 }
 	name = hungary.19.a
-	add_popularity = {
-    ideology = social_democrat
-    popularity = -0.05
-}
-	decrease_social_democrat_influence_by_2 = yes
-	increase_reactionary_influence_by_2 = yes
-	add_stability = -0.075
-	}
+
+
 	
 		}
+		}
+		
 		
 		
 
@@ -615,23 +605,19 @@ country_event = {
 		option = {
 	ai_chance = { factor = 1 }
 	name = hungary.20.a
+
 	add_popularity = {
     ideology = social_democrat
-    popularity = -0.07
+    popularity = -0.05
 }
 	add_popularity = {
-    ideology = reactionary
-    popularity = 0.05
+    ideology = market_liberal
+    popularity = -0.05
 }
-	add_popularity = {
-    ideology = nationalist
-    popularity = 0.02
-}
-	decrease_social_democrat_influence_by_4 = yes
-	increase_reactionary_influence_by_2 = yes
-	increase_nationalist_influence_by_2 = yes
-	add_stability = -0.12
-	}
+	add_stability = -0.075
+	
+ add_ideas = { galvanised_right }
+		}
 	
 		}
 

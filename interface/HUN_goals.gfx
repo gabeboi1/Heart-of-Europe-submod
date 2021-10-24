@@ -1,7 +1,16 @@
 spriteTypes = {
+
 	SpriteType = {
 	name = "GFX_oppression"
 	texturefile = "gfx/interface/goals/oppression.dds"
+	}
+	SpriteType = {
+	name = "GFX_thirdway"
+	texturefile = "gfx/interface/goals/thirdway.dds"
+	}
+	SpriteType = {
+	name = "GFX_threepartyalliance"
+	texturefile = "gfx/interface/goals/3party.dds"
 	}
 	SpriteType = {
 	name = "GFX_comeurope"
@@ -32,9 +41,14 @@ spriteTypes = {
 	texturefile = "gfx/interface/goals/turanism.dds"
 	}
 	SpriteType = {
+	name = "GFX_trolling"
+	texturefile = "gfx/interface/goals/trolling.dds"
+	}
+	SpriteType = {
 	name = "GFX_arpadsav"
 	texturefile = "gfx/interface/goals/carpathia.dds"
 	}
+	SpriteType = {
 	name = "GFX_lgbt_flag"
 	texturefile = "gfx/interface/goals/lgbt_flag.dds"
 	}

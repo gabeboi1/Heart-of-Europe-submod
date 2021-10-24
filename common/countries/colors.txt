@@ -311,8 +311,8 @@ RAJ = {
 }
 
 CRO = {
-	color = rgb { 206 106 214 }
-	color_ui = rgb { 255 255 122 }
+	color = rgb { 204 83 160 }
+	color_ui = rgb { 206 106 214 }
 }
 
 PRC = {
@@ -369,7 +369,7 @@ BLR = {
 	color_ui = rgb { 196 174 201 }
 }
 MAC = {
-	color = rgb { 163 67 1 }
+	color = rgb { 177 120 56 }
 	color_ui = rgb { 220  60  0 }
 }
 MDV = {

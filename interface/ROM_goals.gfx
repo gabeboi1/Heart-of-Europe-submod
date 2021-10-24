@@ -5,3 +5,45 @@ spriteTypes = {
 	}
 	
  }
+ 
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_focus_rom_vadim_tudor"
+	texturefile = "gfx/interface/goals/rom_vadim_tudor.dds"
+	}
+	
+ }
+ 
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_focus_rom_parliament"
+	texturefile = "gfx/interface/goals/romania_parliament.dds"
+	}
+	
+ }
+ 
+  
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_focus_rom_funar"
+	texturefile = "gfx/interface/goals/rom_funar.dds"
+	}
+	
+ }
+ 
+   
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_focus_rom_government"
+	texturefile = "gfx/interface/goals/rom_govrestructuring.dds"
+	}
+	
+ }
+ 
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_focus_rom_monarchyquestion"
+	texturefile = "gfx/interface/goals/rom_monarchyquestion.dds"
+	}
+	
+ }

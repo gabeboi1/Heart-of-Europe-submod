@@ -119,18 +119,19 @@ add_stability= 0.15
 
  } 
  
-
+#################
+#### FIDESZ ####
+###############
 #Focus for Support FIDESZ
 focus = { 
 id = HUN_supportfidesz
 icon = GFX_fidesz
-x = 25
-y = 5
+x = 29
+y = 2
 cost = 10
 available_if_capitulated = yes 
 available = { always = no }
-prerequisite = { focus = HUN_2002election } 
-prerequisite = { focus = HUN_fideszleads }
+prerequisite = { focus = HUN_pathoftherepublic } 
 ai_will_do = { 
  factor = 1
  } 
@@ -141,21 +142,642 @@ ideology = conservative
 popularity = 0.1
 }
 }
-bypass = { HUN = { has_government = reactionary } }
 
  } 
  
+#Focus for FKGP coalition negotiations
+focus = { 
+id = HUN_fideszfkgp
+icon = GFX_fidesz
+x = 30
+y = 3
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_supportfidesz } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+ 
+ #Focus for Merge With KDNP
+focus = { 
+id = HUN_mergewithkdnp
+icon = GFX_fidesz
+x = 28
+y = 3
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_supportfidesz } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+ 
+ #Focus for We lead
+focus = { 
+id = HUN_fideszleads
+icon = GFX_fidesz
+x = 28
+y = 4
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_mergewithkdnp } 
+mutually_exclusive = { focus = HUN_fkgpleads focus = HUN_demandourleadership }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+ 
+ #Focus for Let them lead
+focus = { 
+id = HUN_fkgpleads
+icon = GFX_fkgp
+x = 30
+y = 4
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_fideszfkgp } 
+mutually_exclusive = { focus = HUN_fideszleads focus = HUN_demandourleadership }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+ 
+  #Focus for Elect a president
+focus = { 
+id = HUN_electapresident
+icon = GFX_fidesz
+x = 29
+y = 5
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_fideszleads focus = HUN_fkgpleads focus = HUN_demandourleadership } 
+mutually_exclusive = { focus = HUN_leavethecoalition }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+ 
+  #Focus for Mádl
+focus = { 
+id = HUN_madl
+icon = GFX_fidesz
+x = 28
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_fideszleads }
+prerequisite = { focus = HUN_electapresident }
+ai_will_do = { 
+ factor = 1
+ } 
+mutually_exclusive = { focus = HUN_appointotto }
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+remove_ideas = { arpad_goncz }
+add_ideas = { ferenc_madl }
+}
+ }
+ 
+	#Foxus for Otto von Habsburg
+focus = { 
+id = HUN_appointotto
+icon = GFX_habsburg
+x = 30
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_fkgpleads }
+prerequisite = { focus = HUN_electapresident }
+mutually_exclusive = { focus = HUN_madl }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+remove_ideas = { arpad_goncz }
+add_ideas = { idea_hun_otto_von_habsburg }
+}
+ } 
+ 
+#Second Orbán Government 
+ 
+ focus = { 
+id = HUN_secondorbangovernment
+icon = GFX_fidesz
+x = 28
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_appointotto focus = HUN_madl }
+prerequisite = { focus = HUN_facetheelections }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ }
+ 
+ #Habsburgs in the government
+ 
+ focus = { 
+id = HUN_habsburgsinthegovernment
+icon = GFX_fidesz
+x = 30
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_appointotto }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ }
+ 
+ #Monarchy Referendum
+ 
+ focus = { 
+id = HUN_monarchyreferendum
+icon = GFX_fidesz
+x = 30
+y = 8
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_habsburgsinthegovernment }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ } 
+ 
+ #continue our work
+ 
+ focus = { 
+id = HUN_continueourwork
+icon = GFX_fidesz
+x = 28
+y = 8
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_secondorbangovernment }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ } 
+ 
+ #First Orbán Government
+ 
+ focus = { 
+id = HUN_firstorbangovernment
+icon = GFX_fidesz
+x = 25
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_supportfidesz }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ }  
+ 
+  #Widen family subsidies
+ 
+ focus = { 
+id = HUN_widenfamilysubsidies
+icon = GFX_fidesz
+x = 26
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_firstorbangovernment }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ }
+ 
+   #Tax Cuts for Families
+ 
+ focus = { 
+id = HUN_taxcutsforfamilies
+icon = GFX_fidesz
+x = 26
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_widenfamilysubsidies }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ }
+ 
+   #Tackle National Debt
+ 
+ focus = { 
+id = HUN_tacklenationaldebt
+icon = GFX_fidesz
+x = 24
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_firstorbangovernment }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ }
+ 
+   #Crack down on healthcare corruption
+ 
+ focus = { 
+id = HUN_healthcarecorruption
+icon = GFX_fidesz
+x = 24
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_tacklenationaldebt }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ } 
+
+  #Face the elections
+ 
+ focus = { 
+id = HUN_facetheelections
+icon = GFX_fidesz
+x = 25
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_taxcutsforfamilies }
+prerequisite = { focus = HUN_healthcarecorruption }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ }
+ 
+   #In Opposition
+ 
+ focus = { 
+id = HUN_inopposition
+icon = GFX_fidesz
+x = 26
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_facetheelections }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ }
+ 
+ focus = { 
+id = HUN_changeindoctrine
+icon = GFX_fidesz
+x = 26
+y = 8
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_inopposition }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ } 
+ 
+  focus = { 
+id = HUN_fordoublecitizenship
+icon = GFX_fidesz
+x = 26
+y = 9
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_changeindoctrine }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ } 
+ 
+  focus = { 
+id = HUN_forcethereferendum
+icon = GFX_fidesz
+x = 26
+y = 10
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_fordoublecitizenship }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ }  
+ 
+   focus = { 
+id = HUN_joinepp
+icon = GFX_fidesz
+x = 24
+y = 9
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_changeindoctrine }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ } 
+ 
+    focus = { 
+id = HUN_getreadyfor2006
+icon = GFX_fidesz
+x = 22
+y = 10
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_joinepp }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ }
+ 
+     focus = { 
+id = HUN_failiure
+icon = GFX_fidesz
+x = 21
+y = 11
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_getreadyfor2006 }
+mutually_exclusive = { focus = HUN_viktory }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ }
+ 
+      focus = { 
+id = HUN_thespeech
+icon = GFX_fidesz
+x = 21
+y = 12
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_failiure }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ }
+ 
+       focus = { 
+id = HUN_marchonbudapest
+icon = GFX_fidesz
+x = 20
+y = 13
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_thespeech }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ }
+ 
+        focus = { 
+id = HUN_rallytheright
+icon = GFX_fidesz
+x = 22
+y = 13
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_thespeech }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ }
+ 
+         focus = { 
+id = HUN_demandhisresignation
+icon = GFX_fidesz
+x = 21
+y = 14
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_rallytheright }
+prerequisite = { focus = HUN_marchonbudapest }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ }
+ 
+          focus = { 
+id = HUN_wintheelection
+icon = GFX_fidesz
+x = 23
+y = 15
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_demandhisresignation focus = HUN_viktory }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ }
+ 
+           focus = { 
+id = HUN_newdawnforhungary
+icon = GFX_fidesz
+x = 23
+y = 16
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_wintheelection }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ }
+ 
+      focus = { 
+id = HUN_viktory
+icon = GFX_fidesz
+x = 23
+y = 11
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_getreadyfor2006 }
+mutually_exclusive = { focus = HUN_failiure }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_stability = 0.04
+add_political_power = 50
+
+}
+ }
+##############
+#### FKGP ####
+##############
 #Focus for Support Fkgp
 focus = { 
 id = HUN_supportfkgp
 icon = GFX_fkgp
-x = 36
-y = 5
+x = 34
+y = 2
 cost = 10
 available_if_capitulated = yes 
 available = { always = no }
-prerequisite = { focus = HUN_2002election } 
-prerequisite = { focus = HUN_fkgpleads }
+prerequisite = { focus = HUN_pathoftherepublic } 
 ai_will_do = { 
  factor = 1
  } 
@@ -166,16 +788,14 @@ ideology = conservative
 popularity = 0.1
 }
 }
-bypass = { HUN = { has_government = reactionary } }
 
  }
-
-#Focus for Support Fkgp
+ 
 focus = { 
-id = HUN_torgyan
+id = HUN_assertourposition
 icon = GFX_fkgp
-x = 42
-y = 6
+x = 34
+y = 3
 cost = 10
 available_if_capitulated = yes 
 prerequisite = { focus = HUN_supportfkgp } 
@@ -192,15 +812,36 @@ popularity = 0.1
 
  } 
  
-#Focus for Support Fkgp
 focus = { 
-id = HUN_agriculture
+id = HUN_workonpublicimage
 icon = GFX_fkgp
-x = 38
-y = 7
+x = 34
+y = 4
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_torgyan } 
+prerequisite = { focus = HUN_assertourposition } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+
+focus = { 
+id = HUN_demandourleadership
+icon = GFX_fkgp
+x = 32
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_assertourposition } 
+mutually_exclusive = { focus = HUN_fkgpleads focus = HUN_fideszleads }
 ai_will_do = { 
  factor = 1
  } 
@@ -214,16 +855,126 @@ popularity = 0.1
 
  } 
  
-  
-#Focus for Support Fkgp
 focus = { 
-id = HUN_peace
+id = HUN_makesomefriends
 icon = GFX_fkgp
-x = 41
-y = 7
+x = 36
+y = 4
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_torgyan } 
+prerequisite = { focus = HUN_assertourposition } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+ 
+focus = { 
+id = HUN_leavethecoalition
+icon = GFX_fkgp
+x = 33
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_demandourleadership } 
+mutually_exclusive = { focus = HUN_electapresident }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }  
+
+focus = { 
+id = HUN_befriendmiep
+icon = GFX_fkgp
+x = 35
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_makesomefriends } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }  
+
+focus = { 
+id = HUN_onourown
+icon = GFX_fkgp
+x = 33
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_leavethecoalition } 
+mutually_exclusive = { focus = HUN_traditionalliance focus = HUN_threepartyalliance }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }  
+ 
+focus = { 
+id = HUN_traditionalliance
+icon = GFX_fkgp
+x = 35
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = HUN_leavethecoalition } 
+prerequisite = { focus = HUN_befriendmiep }
+prerequisite = { focus = HUN_strikeadealwithtorgyan }
+mutually_exclusive = { focus = HUN_threepartyalliance focus = HUN_onourown }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+
+#Focus for Support MIÉP
+focus = { 
+id = HUN_supportmiep
+icon = GFX_fkgp
+x = 39
+y = 2
+cost = 0
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_pathoftherepublic } 
 ai_will_do = { 
  factor = 1
  } 
@@ -237,15 +988,1193 @@ popularity = 0.1
 
  }
  
-#Focus for Support Fkgp
 focus = { 
-id = HUN_war
+id = HUN_keepcsurka
 icon = GFX_fkgp
+x = 38
+y = 3
+cost = 0
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_supportmiep } 
+mutually_exclusive = { focus = HUN_makehimretire }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_makehimretire
+icon = GFX_fkgp
+x = 40
+y = 3
+cost = 0
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_supportmiep } 
+mutually_exclusive = { focus = HUN_keepcsurka }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+
+focus = { 
+id = HUN_shenanigans
+icon = GFX_fkgp
+x = 38
+y = 4
+cost = 0
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_keepcsurka } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+ 
+focus = { 
+id = HUN_onefight
+icon = GFX_fkgp
+x = 40
+y = 4
+cost = 0
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_makehimretire } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+
+focus = { 
+id = HUN_strikeadealwithtorgyan
+icon = GFX_fkgp
+x = 37
+y = 5
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_keepcsurka } 
+prerequisite = { focus = HUN_makesomefriends }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+ 
+focus = { 
+id = HUN_threepartyalliance
+icon = GFX_threepartyalliance
+x = 37
+y = 6
+cost = 10
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_befriendmiep }
+prerequisite = { focus = HUN_thirdway }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+
+focus = { 
+id = HUN_ontherighttrack
+icon = GFX_fkgp
+x = 34
+y = 7
+cost = 10
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_onourown focus = HUN_threepartyalliance focus = HUN_traditionalliance }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+
+focus = { 
+id = HUN_formthegovernment
+icon = GFX_fkgp
+x = 33
+y = 8
+cost = 10
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_ontherighttrack }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_buyzakarpattia
+icon = GFX_fkgp
+x = 32
+y = 9
+cost = 10
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_formthegovernment }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+ 
+focus = { 
+id = HUN_unitetheparties
+icon = GFX_fkgp
+x = 34
+y = 9
+cost = 10
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_formthegovernment focus = HUN_weneedtosticktogether }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_externalaffairs
+icon = GFX_fkgp
+x = 33
+y = 10
+cost = 10
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_formthegovernment focus = HUN_continueourwork }
+prerequisite = { focus = HUN_unitetheparties focus = HUN_continueourwork }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_conserveourculture
+icon = GFX_fkgp
+x = 28
+y = 10
+cost = 10
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_formthegovernment focus = HUN_continueourwork }
+prerequisite = { focus = HUN_unitetheparties focus = HUN_continueourwork }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+ 
+ focus = { 
+id = HUN_patrioticeducation
+icon = GFX_hun_education
+x = 27
+y = 11
+cost = 10
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_conserveourculture }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+ 
+  focus = { 
+id = HUN_bolsternationalpride
+icon = GFX_hun_united
+x = 27
+y = 12
+cost = 10
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_patrioticeducation }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+ 
+  focus = { 
+id = HUN_birthrate
+icon = GFX_hun_healthcare
+x = 25
+y = 11
+cost = 10
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_conserveourculture }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+
+  focus = { 
+id = HUN_stopimmigration
+icon = GFX_hun_united
+x = 25
+y = 12
+cost = 10
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_birthrate }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+ 
+   focus = { 
+id = HUN_votingrights
+icon = GFX_hun_united
+x = 26
+y = 13
+cost = 10
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_stopimmigration }
+prerequisite = { focus = HUN_bolsternationalpride }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+ 
+focus = { 
+id = HUN_alignwithrussia
+icon = GFX_fkgp
+x = 32
+y = 11
+cost = 10
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_externalaffairs }
+mutually_exclusive = { focus = HUN_alignwiththewest }
+mutually_exclusive = { focus = HUN_stayneutral }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_stayneutral
+icon = GFX_fkgp
+x = 34
+y = 11
+cost = 10
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_externalaffairs }
+mutually_exclusive = { focus = HUN_alignwiththewest }
+mutually_exclusive = { focus = HUN_alignwithrussia }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_leavenato
+icon = GFX_fkgp
+x = 33
+y = 12
+cost = 10
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_alignwithrussia focus = HUN_stayneutral }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_joincsto
+icon = GFX_hunrussia
+x = 32
+y = 13
+cost = 10
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_alignwithrussia }
+prerequisite = { focus = HUN_leavenato }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_homedefence
+icon = GFX_fkgp
+x = 34
+y = 13
+cost = 10
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_stayneutral }
+prerequisite = { focus = HUN_leavenato }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_befriendturkey
+icon = GFX_fkgp
+x = 30
+y = 13
+cost = 10
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_leavenato focus = HUN_strenghtennato }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_turanism
+icon = GFX_turanism
+x = 30
+y = 14
+cost = 10
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_befriendturkey }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_alignwiththewest
+icon = GFX_fkgp
+x = 30
+y = 11
+cost = 0
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_conserveourculture }
+mutually_exclusive = { focus = HUN_alignwithrussia }
+mutually_exclusive = { focus = HUN_stayneutral }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_eureferendum
+icon = GFX_fkgp
+x = 31
+y = 12
+cost = 0
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_alignwiththewest }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_strenghtennato
+icon = GFX_fkgp
+x = 29
+y = 12
+cost = 0
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_alignwiththewest }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_westernarmsproduction
+icon = GFX_fkgp
+x = 28
+y = 13
+cost = 0
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_strenghtennato }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_borderadjustments
+icon = GFX_fkgp
+x = 33
+y = 14
+cost = 0
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_joincsto focus = HUN_homedefence }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_negotiatewithserbia
+icon = GFX_fkgp
+x = 33
+y = 15
+cost = 0
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_borderadjustments }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_carpathianincident
+icon = GFX_fkgp
+x = 35
+y = 15
+cost = 0
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_borderadjustments }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_pressureslovakia
+icon = GFX_fkgp
+x = 31
+y = 15
+cost = 0
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_borderadjustments }
+prerequisite = { focus = HUN_joincsto }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_romanianissue
+icon = GFX_fkgp
+x = 33
+y = 16
+cost = 0
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_pressureslovakia }
+prerequisite = { focus = HUN_negotiatewithserbia }
+prerequisite = { focus = HUN_carpathianincident }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_wellwinnexttime
+icon = GFX_fkgp
+x = 36
+y = 7
+cost = 0
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_onourown focus = HUN_threepartyalliance focus = HUN_traditionalliance }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+
+focus = { 
+id = HUN_weneedtosticktogether
+icon = GFX_fkgp
+x = 35
+y = 8
+cost = 0
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_wellwinnexttime }
+mutually_exclusive = { focus = HUN_endtheunhappymarriage }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_endtheunhappymarriage
+icon = GFX_fkgp
+x = 37
+y = 8
+cost = 0
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_wellwinnexttime }
+mutually_exclusive = { focus = HUN_weneedtosticktogether }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_underourbanner
+icon = GFX_fkgp
+x = 37
+y = 9
+cost = 0
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_endtheunhappymarriage }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_undervona
+icon = GFX_fkgp
+x = 39
+y = 9
+cost = 0
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_endtheunhappymarriage }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_formthegarda
+icon = GFX_fkgp
+x = 37
+y = 10
+cost = 0
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_underourbanner }
+prerequisite = { focus = HUN_undervona }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_waitforanopportunity
+icon = GFX_fkgp
+x = 36
+y = 11
+cost = 0
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_formthegarda focus = HUN_remainamajorfactor }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+
+focus = { 
+id = HUN_remainamajorfactor
+icon = GFX_fkgp
+x = 35
+y = 10
+cost = 0
+available_if_capitulated = yes 
+available = { always = no } 
+prerequisite = { focus = HUN_unitetheparties }
+prerequisite = { focus = HUN_weneedtosticktogether }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+###################
+#### Hungarism ####
+###################
+#Focus for new dawn
+focus = { 
+id = HUN_newdawn
+icon = GFX_fkgp
+x = 43
+y = 2
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_pathoftherepublic } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_dawnofjobbik
+icon = GFX_fkgp
+x = 42
+y = 3
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_newdawn } 
+mutually_exclusive = { focus = HUN_extremeism }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+ 
+
+focus = { 
+id = HUN_csurkasvision
+icon = GFX_fkgp
+x = 42
+y = 4
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_dawnofjobbik } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+
+focus = { 
+id = HUN_thirdway
+icon = GFX_thirdway
+x = 41
+y = 5
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_csurkasvision } 
+prerequisite = { focus = HUN_onefight }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+
+focus = { 
+id = HUN_extremeism
+icon = GFX_hun_fascism
+x = 44
+y = 3
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_newdawn } 
+ai_will_do = { 
+ factor = 1
+ } 
+mutually_exclusive = { focus = HUN_dawnofjobbik }
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+
+focus = { 
+id = HUN_hunpplswelfarealliance
+icon = GFX_hun_fascism
+x = 45
+y = 4
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_extremeism } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_szalasitoszabo
+icon = GFX_hun_fascism
+x = 45
+y = 5
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_hunpplswelfarealliance } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_hungaristmarches
+icon = GFX_hun_fascism
+x = 43
+y = 5
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_hunpplswelfarealliance } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_builduppartystructure
+icon = GFX_hun_fascism
+x = 47
+y = 5
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_hunpplswelfarealliance } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_hungarismlives
+icon = GFX_turul
+x = 45
+y = 6
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_builduppartystructure } 
+prerequisite = { focus = HUN_hungaristmarches }
+prerequisite = { focus = HUN_szalasitoszabo }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_formmilitias
+icon = GFX_turul
+x = 45
+y = 7
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_hungarismlives } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_warchest
+icon = GFX_turul
 x = 43
 y = 7
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_torgyan } 
+available = { always = no }
+prerequisite = { focus = HUN_hungarismlives } 
 ai_will_do = { 
  factor = 1
  } 
@@ -257,17 +2186,17 @@ popularity = 0.1
 }
 }
 
- } 
- 
-#Focus for Support Fkgp
+ }
+
 focus = { 
-id = HUN_monarchy
-icon = GFX_fkgp
-x = 46
+id = HUN_expandrecruitment
+icon = GFX_turul
+x = 47
 y = 7
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_torgyan } 
+available = { always = no }
+prerequisite = { focus = HUN_hungarismlives } 
 ai_will_do = { 
  factor = 1
  } 
@@ -281,15 +2210,15 @@ popularity = 0.1
 
  }
 
-#Focus for Support Fkgp
 focus = { 
-id = HUN_buyzakarpattia
-icon = GFX_fkgp
-x = 46
+id = HUN_allyskinheads
+icon = GFX_turul
+x = 47
 y = 8
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_monarchy } 
+available = { always = no }
+prerequisite = { focus = HUN_expandrecruitment } 
 ai_will_do = { 
  factor = 1
  } 
@@ -302,16 +2231,63 @@ popularity = 0.1
 }
 
  }
- 
-#Focus for Support Fkgp
+
 focus = { 
-id = HUN_unitewithpoland
-icon = GFX_fkgp
+id = HUN_illegalarmsdeals
+icon = GFX_turul
+x = 45
+y = 8
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_formmilitias } 
+prerequisite = { focus = HUN_warchest }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_takedonations
+icon = GFX_turul
+x = 43
+y = 8
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_expandrecruitment } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_thespark
+icon = GFX_turul
 x = 45
 y = 9
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_buyzakarpattia } 
+available = { always = no }
+prerequisite = { focus = HUN_takedonations } 
+prerequisite = { focus = HUN_allyskinheads } 
+prerequisite = { focus = HUN_illegalarmsdeals }
 ai_will_do = { 
  factor = 1
  } 
@@ -325,15 +2301,15 @@ popularity = 0.1
 
  }
 
-#Focus for Support Fkgp
 focus = { 
-id = HUN_staysovereign
-icon = GFX_fkgp
-x = 47
-y = 9
+id = HUN_solidifytheregime
+icon = GFX_turul
+x = 45
+y = 10
 cost = 10
 available_if_capitulated = yes 
-prerequisite = { focus = HUN_buyzakarpattia } 
+available = { always = no }
+prerequisite = { focus = HUN_thespark } 
 ai_will_do = { 
  factor = 1
  } 
@@ -346,6 +2322,747 @@ popularity = 0.1
 }
 
  }
+
+focus = { 
+id = HUN_nationalguardarmy
+icon = GFX_csodaszarvas
+x = 53
+y = 11
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_solidifytheregime } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_soprondeployment
+icon = GFX_csodaszarvas
+x = 51
+y = 12
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_nationalguardarmy } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+ 
+focus = { 
+id = HUN_alfolddeployment
+icon = GFX_csodaszarvas
+x = 53
+y = 12
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_nationalguardarmy } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_northerndeployment
+icon = GFX_csodaszarvas
+x = 55
+y = 12
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_nationalguardarmy } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_repurposefactories
+icon = GFX_csodaszarvas
+x = 53
+y = 13
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_northerndeployment }
+prerequisite = { focus = HUN_soprondeployment }
+prerequisite = { focus = HUN_alfolddeployment } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+ 
+focus = { 
+id = HUN_stealwesterndesigns
+icon = GFX_army1
+x = 52
+y = 14
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_repurposefactories }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_prisonerlabour
+icon = GFX_army1
+x = 54
+y = 14
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_repurposefactories }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_fortifybudapest
+icon = GFX_army1
+x = 53
+y = 15
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_prisonerlabour }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_expandtherailways
+icon = GFX_army1
+x = 55
+y = 15
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_prisonerlabour }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_repurposefactories
+icon = GFX_csodaszarvas
+x = 53
+y = 13
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_nationalguardarmy } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+
+focus = { 
+id = HUN_homogenoussociety
+icon = GFX_hun_united
+x = 48
+y = 11
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_solidifytheregime } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_deportgypsies
+icon = GFX_gypsies_bad
+x = 47
+y = 12
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_homogenoussociety } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_deportjews
+icon = GFX_trolling
+x = 49
+y = 12
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_homogenoussociety } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+
+focus = { 
+id = HUN_transylvaniarepopulation
+icon = GFX_transylvania
+x = 48
+y = 13
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_homogenoussociety } 
+prerequisite = { focus = HUN_vlachs }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }
+ 
+focus = { 
+id = HUN_upperhungaryrepopulation
+icon = GFX_hun_nationalist
+x = 47
+y = 14
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_transylvaniarepopulation } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+
+focus = { 
+id = HUN_vojvodinarepopulation
+icon = GFX_hun_nationalist
+x = 49
+y = 14
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_transylvaniarepopulation } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+ 
+focus = { 
+id = HUN_pacifyrebels
+icon = GFX_hun_nationalist
+x = 48
+y = 15
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_vojvodinarepopulation } 
+prerequisite = { focus = HUN_upperhungaryrepopulation }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+ 
+focus = { 
+id = HUN_ultimatumtoslovakia
+icon = GFX_hun_united
+x = 45
+y = 11
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_solidifytheregime } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+ 
+focus = { 
+id = HUN_nonagressionpactwithpoland
+icon = GFX_polandfriend
+x = 45
+y = 12
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_ultimatumtoslovakia } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }  
+ 
+focus = { 
+id = HUN_fortifyeasternborder
+icon = GFX_hun_united
+x = 43
+y = 11
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_solidifytheregime } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }  
+ 
+ focus = { 
+id = HUN_vlachs
+icon = GFX_hun_united
+x = 43
+y = 12
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_fortifyeasternborder } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+ 
+ focus = { 
+id = HUN_carpathianconflict
+icon = GFX_hun_united
+x = 43
+y = 13
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_vlachs } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }  
+ 
+ focus = { 
+id = HUN_arpadline
+icon = GFX_hun_united
+x = 43
+y = 14
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_carpathianconflict } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+ 
+ focus = { 
+id = HUN_fortresshungaria
+icon = GFX_arpadsav
+x = 43
+y = 15
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_arpadline } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }  
+ 
+focus = { 
+id = HUN_expandthesouthernflank
+icon = GFX_hun_united
+x = 39
+y = 11
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_solidifytheregime } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+ 
+focus = { 
+id = HUN_croatfriendship
+icon = GFX_hun_united
+x = 40
+y = 12
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_expandthesouthernflank } 
+mutually_exclusive = { focus = HUN_adriaticisours }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }  
+ 
+focus = { 
+id = HUN_adriaticisours
+icon = GFX_hun_united
+x = 38
+y = 12
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_expandthesouthernflank } 
+mutually_exclusive = { focus = HUN_croatfriendship } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }  
+  
+ focus = { 
+id = HUN_buylands
+icon = GFX_hun_united
+x = 40
+y = 13
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_croatfriendship } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }  
+ 
+ focus = { 
+id = HUN_splitslovenia
+icon = GFX_hun_united
+x = 40
+y = 14
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_buylands } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+ 
+ focus = { 
+id = HUN_deploygarrisons
+icon = GFX_hun_united
+x = 38
+y = 13
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_adriaticisours } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }  
+ 
+ focus = { 
+id = HUN_subdueslovenia
+icon = GFX_hun_united
+x = 38
+y = 14
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_deploygarrisons } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+ 
+ focus = { 
+id = HUN_expandtothealps
+icon = GFX_austria_conquest
+x = 39
+y = 15
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_subdueslovenia focus = HUN_splitslovenia } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ }  
+ 
+focus = { 
+id = HUN_preparefortheonslaught
+icon = GFX_army1
+x = 48
+y = 16
+cost = 10
+available_if_capitulated = yes 
+available = { always = no }
+prerequisite = { focus = HUN_expandtothealps }
+prerequisite = { focus = HUN_fortresshungaria }
+prerequisite = { focus = HUN_fortifybudapest }
+prerequisite = { focus = HUN_expandtherailways }
+prerequisite = { focus = HUN_pacifyrebels }
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+increase_conservative_influence_by_2 = yes
+add_popularity = {
+ideology = conservative
+popularity = 0.1
+}
+}
+
+ } 
+ 
+##########
+#Visegrad#
+##########
 
 #Focus for Invest in Slovak Buisnesses
 focus = { 
@@ -409,7 +3126,7 @@ ai_will_do = {
 focus = { 
 id = HUN_supportmszp
 icon = GFX_mszp
-x = 16
+x = 13
 y = 5
 cost = 10
 available_if_capitulated = yes 
@@ -436,7 +3153,7 @@ bypass = { HUN = { has_government = social_democrat } }
 focus = { 
 id = HUN_electszdsz
 icon = GFX_szdsz
-x = 6
+x = 3
 y = 5
 cost = 10
 available_if_capitulated = yes 
@@ -456,7 +3173,7 @@ bypass = { HUN = { has_government = market_liberal } }
 focus = { 
 id = HUN_freshstart
 icon = GFX_szdsz
-x = 4
+x = 1
 y = 6
 cost = 10
 available_if_capitulated = yes 
@@ -476,7 +3193,7 @@ ai_will_do = {
 focus = { 
 id = HUN_privatisation1
 icon = GFX_ancap
-x = 8
+x = 5
 y = 6
 cost = 10
 available_if_capitulated = yes 
@@ -500,7 +3217,7 @@ add_ideas = { idea_hun_privatisation }
 focus = { 
 id = HUN_market_anarchism_1
 icon = GFX_ancap
-x = 7
+x = 2
 y = 7
 cost = 10
 available_if_capitulated = yes 
@@ -524,7 +3241,7 @@ add_ideas = { idea_hun_privatisation }
 focus = { 
 id = HUN_market_anarchism_2
 icon = GFX_ancap
-x = 9
+x = 5
 y = 7
 cost = 10
 available_if_capitulated = yes 
@@ -548,7 +3265,7 @@ add_ideas = { idea_hun_privatisation }
 focus = { 
 id = HUN_market_anarchism_3
 icon = GFX_ancap
-x = 8
+x = 5
 y = 8
 cost = 10
 available_if_capitulated = yes 
@@ -573,7 +3290,7 @@ add_ideas = { idea_hun_privatisation }
 focus = { 
 id = HUN_liberalism
 icon = GFX_hunprivatisation
-x = 3
+x = 0
 y = 7
 cost = 10
 available_if_capitulated = yes 
@@ -598,7 +3315,7 @@ add_ideas = { idea_hun_privatisation }
 focus = { 
 id = HUN_antinationalism
 icon = GFX_hunprivatisation
-x = 5
+x = 2
 y = 7
 cost = 10
 available_if_capitulated = yes 
@@ -623,7 +3340,7 @@ add_ideas = { idea_hun_privatisation }
 focus = { 
 id = HUN_civilliberties
 icon = GFX_hunprivatisation
-x = 2
+x = 0
 y = 8
 cost = 10
 available_if_capitulated = yes 
@@ -648,7 +3365,7 @@ add_ideas = { idea_hun_privatisation }
 focus = { 
 id = HUN_drugs
 icon = GFX_hunprivatisation
-x = 1
+x = 0
 y = 9
 cost = 10
 available_if_capitulated = yes 
@@ -673,7 +3390,7 @@ add_ideas = { idea_hun_privatisation }
 focus = { 
 id = HUN_gaymarriage
 icon = GFX_lgbt_flag
-x = 3
+x = 2
 y = 9
 cost = 10
 available_if_capitulated = yes 
@@ -698,7 +3415,7 @@ add_ideas = { idea_hun_privatisation }
 focus = { 
 id = HUN_immigration
 icon = GFX_hunprivatisation
-x = 5
+x = 4
 y = 9
 cost = 10
 available_if_capitulated = yes 
@@ -723,7 +3440,7 @@ add_ideas = { idea_hun_privatisation }
 focus = { 
 id = HUN_westerndemocracy
 icon = GFX_hunprivatisation
-x = 3
+x = 1
 y = 10
 cost = 10
 available_if_capitulated = yes 
@@ -1442,490 +4159,7 @@ ai_will_do = {
 
  } 
 
-   #Focus for Family Programs
-focus = { 
-id = HUN_familyaid
-icon = GFX_goal_unknown
-x = 31
-y = 7
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_conservativeconst }
-ai_will_do = { 
- factor = 1
- } 
 
- }
- 
-
- 
- 
- 
-      #Focus for Patriotism
-focus = { 
-id = HUN_patriotism
-icon = GFX_goal_unknown
-x = 27
-y = 7
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_conservativeconst }
-ai_will_do = { 
- factor = 1
- } 
-
- }
- 
-       #Focus for Border Fence
-focus = { 
-id = HUN_borderfence
-icon = GFX_goal_unknown
-x = 29
-y = 9
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_antiimmigrant }
-ai_will_do = { 
- factor = 1
- } 
-
- }
- 
-        #Focus for Anti-Immigrant policy
-focus = { 
-id = HUN_antiimmigrant
-icon = GFX_goal_unknown
-x = 29
-y = 8
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_patriotism }
-ai_will_do = { 
- factor = 1
- } 
-
- }
- 
-        #Focus for Stop the population decline
-focus = { 
-id = HUN_population1
-icon = GFX_goal_unknown
-x = 19
-y = 3
-cost = 15
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_orbangov1 }
-ai_will_do = { 
- factor = 1
- } 
-
- }
- 
-         #Focus for Expand the Army
-focus = { 
-id = HUN_army1
-icon = GFX_goal_unknown
-x = 25
-y = 8
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_patriotism }
-ai_will_do = { 
- factor = 1
- } 
-
- }
- 
-          #Focus for Recruitment programs
-focus = { 
-id = HUN_recruitment
-icon = GFX_goal_unknown
-x = 25
-y = 9
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_army1 }
-ai_will_do = { 
- factor = 1
- } 
-
- }
- 
-          #Focus for Help minorities
-focus = { 
-id = HUN_hunminorities
-icon = GFX_goal_unknown
-x = 27
-y = 8
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_patriotism }
-ai_will_do = { 
- factor = 1
- } 
-
- }
- 
-          #Focus for Help minorities
-focus = { 
-id = HUN_szekely
-icon = GFX_hunlang
-x = 27
-y = 9
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_hunminorities }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_state_core = 919
-add_state_core = 73
-add_state_core = 45
-}
- }
- 
-          #Focus for Help minorities
-focus = { 
-id = HUN_votingrights
-icon = GFX_hunlang
-x = 26
-y = 10
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_szekely }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-increase_reactionary_influence_by_2 = yes
-}
- }
- 
-          #Focus for Help minorities
-focus = { 
-id = HUN_crossborderprojects
-icon = GFX_hunlang
-x = 28
-y = 10
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_szekely }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-
-}
- } 
- 
-           #Focus for A New Constitution
-focus = { 
-id = HUN_conservativeconst
-icon = GFX_goal_unknown
-x = 29
-y = 6
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_supportfidesz focus = HUN_supportfkgp }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-set_cosmetic_tag = HUN_NEWCON
-add_political_power = 120
-add_stability = 0.07
-decrease_social_democrat_influence_by_2 = yes
-decrease_progressive_influence_by_2 = yes
-increase_conservative_influence_by_2 = yes
-increase_reactionary_influence_by_2 = yes
- }
- 
- }
- 
-           #Focus for God
-focus = { 
-id = HUN_god
-icon = GFX_goal_unknown
-x = 23
-y = 7
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_conservativeconst }
-ai_will_do = { 
- factor = 1
- } 
-
- }
- 
-            #Focus for Work
-focus = { 
-id = HUN_work
-icon = GFX_goal_unknown
-x = 33
-y = 7
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_conservativeconst }
-ai_will_do = { 
- factor = 1
- } 
-
- }
- 
-             #Focus for Expand School system
-focus = { 
-id = HUN_schools
-icon = GFX_hun_education
-x = 32
-y = 8
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_familyaid focus = HUN_work }
-ai_will_do = { 
- factor = 1
- } 
-
- }
- 
-             #Focus for free textbooks
-focus = { 
-id = HUN_schools2
-icon = GFX_hun_education
-x = 32
-y = 10
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_schools }
-ai_will_do = { 
- factor = 1
- } 
-
- }
- 
-              #Focus for patriotic education
-focus = { 
-id = HUN_schools3
-icon = GFX_hun_education
-x = 32
-y = 11
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_schools2 }
-ai_will_do = { 
- factor = 1
- } 
-
- }
- 
-              #Focus for Vitalise motherhood
-focus = { 
-id = HUN_family1
-icon = GFX_hun_education
-x = 31
-y = 9
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_familyaid }
-ai_will_do = { 
- factor = 1
- } 
-
- } 
- 
-               #Focus for Vitalise motherhood
-focus = { 
-id = HUN_family2
-icon = GFX_hun_education
-x = 30
-y = 10
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_family1 }
-ai_will_do = { 
- factor = 1
- } 
-
- }
-
-              #Focus for Start the nationalization of key industries
-focus = { 
-id = HUN_work1
-icon = GFX_hun_education
-x = 33
-y = 9
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_work }
-prerequisite = { focus = HUN_solidifypower }
-ai_will_do = { 
- factor = 1
- }
-
- } 
- 
-            #Focus for Work
-focus = { 
-id = HUN_solidifypower
-icon = GFX_goal_unknown
-x = 35
-y = 7
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_conservativeconst }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { 
-increase_reactionary_influence_by_2 = yes
-add_stability = 0.05
- }
- }
-
-             #Focus for Work
-focus = { 
-id = HUN_scatteropposition
-icon = GFX_goal_unknown
-x = 35
-y = 8
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_solidifypower }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { 
-increase_reactionary_influence_by_1 = yes
-increase_social_liberal_influence_by_2 = yes
-decrease_social_democrat_influence_by_2 = yes
-
- }
- }
- 
-              #Focus for Work
-focus = { 
-id = HUN_influencemedia
-icon = GFX_goal_unknown
-x = 35
-y = 9
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_scatteropposition }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { add_stability = 0.10 }
- }
- 
-              #Focus for Work
-focus = { 
-id = HUN_pm4life
-icon = GFX_pm4life
-x = 34
-y = 11
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_termlimit }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-set_politics {
-ruling_party = reactionary
-elections_allowed = no
-}
- }
-	}
-	
-focus = { 
-id = HUN_termlimit
-icon = GFX_pm4life
-x = 34
-y = 10
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_influencemedia }
-prerequisite = { focus = HUN_work1 }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_political_power = 105
-add_popularity = {
-ideology = reactionary
-popularity = -0.07
-}
- }
-	}
- 
- 
-           #Focus for The First Orbán Government
-focus = { 
-id = HUN_orbangov1
-icon = GFX_orbangov
-x = 21
-y = 2
-cost = 15
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_pathoftherepublic}
-ai_will_do = { 
- factor = 1
- } 
-
- }
- 
-            #Focus for The election of 2002
-focus = { 
-id = HUN_2002election
-icon = GFX_election
-x = 21
-y = 4
-cost = 20
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_combatinflation }
-prerequisite = { focus = HUN_population1 }
-prerequisite = { focus = HUN_freeeducation }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { add_political_power = 120 
-create_country_leader = {
-	name = "Péter Medgyessy"
-	picture = "Medgyessy_Peter.dds"
-	ideology = social_democrat_ideology
-	}
-}
-
- }
- 
-             #Focus for Free education
-focus = { 
-id = HUN_freeeducation
-icon = GFX_goal_unknown
-x = 21
-y = 3
-cost = 15
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_orbangov1 }
-ai_will_do = { 
- factor = 1
- } 
-
- }
- 
-              #Focus for Combat Inflation
-focus = { 
-id = HUN_combatinflation
-icon = GFX_goal_unknown
-x = 23
-y = 3
-cost = 15
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_orbangov1 }
-ai_will_do = { 
- factor = 1
- } 
-}
  
                #Focus for Befriend Germany
 focus = { 
@@ -1982,7 +4216,7 @@ ai_will_do = {
 focus = { 
 id = HUN_welfare
 icon = GFX_mszp
-x = 11
+x = 8
 y = 6
 cost = 15
 available_if_capitulated = yes 
@@ -2008,7 +4242,7 @@ swap_ideas = {
 focus = { 
 id = HUN_eu1
 icon = GFX_eu_generic
-x = 12
+x = 9
 y = 9
 cost = 30
 available_if_capitulated = yes 
@@ -2029,7 +4263,7 @@ add_ideas = idea_eu_member
 focus = { 
 id = HUN_welfarestate
 icon = GFX_mszp
-x = 14
+x = 11
 y = 10
 cost = 30
 available_if_capitulated = yes 
@@ -2054,7 +4288,7 @@ swap_ideas = { remove_idea = idea_welfare_reform
 focus = { 
 id = HUN_euboon
 icon = GFX_eupay
-x = 10
+x = 7
 y = 10
 cost = 18
 available_if_capitulated = yes 
@@ -2074,7 +4308,7 @@ swap_ideas = {
 focus = { 
 id = HUN_euboongypsy
 icon = GFX_gypsies
-x = 10
+x = 7
 y = 11
 cost = 18
 available_if_capitulated = yes 
@@ -2094,7 +4328,7 @@ swap_ideas = {
 focus = { 
 id = HUN_100dayprogram1
 icon = GFX_100days1
-x = 11
+x = 8
 y = 7
 cost = 14
 available_if_capitulated = yes 
@@ -2118,7 +4352,7 @@ add_political_power = 100
 focus = { 
 id = HUN_100dayprogram2
 icon = GFX_100days2
-x = 11
+x = 8
 y = 8
 cost = 14
 available_if_capitulated = yes 
@@ -2145,7 +4379,7 @@ swap_ideas = {
 focus = { 
 id = HUN_gyurcsany
 icon = GFX_gyurcsanysgov
-x = 17
+x = 14
 y = 6
 cost = 10
 available_if_capitulated = yes 
@@ -2171,7 +4405,7 @@ add_stability = -0.04
 focus = { 
 id = HUN_medgyessy
 icon = GFX_medgyessy
-x = 14
+x = 11
 y = 6
 cost = 10
 available_if_capitulated = yes 
@@ -2192,7 +4426,7 @@ add_stability = -0.1
 focus = { 
 id = HUN_medgyessyreform
 icon = GFX_reorganise
-x = 14
+x = 11
 y = 8
 cost = 10
 available_if_capitulated = yes 
@@ -2214,7 +4448,7 @@ popularity = 0.03
 focus = { 
 id = HUN_100steps
 icon = GFX_100steps
-x = 17
+x = 14
 y = 7
 cost = 21
 available_if_capitulated = yes 
@@ -2237,7 +4471,7 @@ random_owned_controlled_state = { add_extra_state_shared_building_slots = 2 add_
 focus = { 
 id = HUN_gyurcsanypack
 icon = GFX_gyurcsanypack
-x = 17
+x = 14
 y = 8
 cost = 10
 available_if_capitulated = yes 
@@ -2259,7 +4493,7 @@ add_political_power = 105
 focus = { 
 id = HUN_gyurcsany2
 icon = GFX_gyurcsanysgov
-x = 18
+x = 15
 y = 9
 cost = 10
 available_if_capitulated = yes 
@@ -2277,7 +4511,7 @@ add_political_power = 50
 focus = { 
 id = HUN_gyurcsany3
 icon = GFX_gyurcsanysgov
-x = 20
+x = 17
 y = 9
 cost = 10
 available_if_capitulated = yes 
@@ -2295,7 +4529,7 @@ add_political_power = 50
 focus = { 
 id = HUN_euro
 icon = GFX_generic_euro
-x = 8
+x = 5
 y = 10
 cost = 10
 available_if_capitulated = yes 
@@ -2314,7 +4548,7 @@ add_ideas = { the_euro }
 focus = { 
 id = HUN_bleachindustry
 icon = GFX_generic_euro
-x = 17
+x = 14
 y = 10
 cost = 13
 available_if_capitulated = yes 
@@ -2332,7 +4566,7 @@ random_owned_controlled_state = { add_extra_state_shared_building_slots = 2 add_
 focus = { 
 id = HUN_tariff1
 icon = GFX_generic_euro
-x = 16
+x = 13
 y = 11
 cost = 13
 available_if_capitulated = yes 
@@ -2353,7 +4587,7 @@ popularity = -0.02
 focus = { 
 id = HUN_crackdown
 icon = GFX_2006_crackdown
-x = 20
+x = 17
 y = 10
 cost = 13
 available_if_capitulated = yes 
@@ -2374,7 +4608,7 @@ popularity = -0.02
 focus = { 
 id = HUN_militarizepolice
 icon = GFX_generic_euro
-x = 18
+x = 15
 y = 11
 cost = 13
 available_if_capitulated = yes 
@@ -2395,7 +4629,7 @@ popularity = -0.02
 focus = { 
 id = HUN_hirtv
 icon = GFX_generic_euro
-x = 22
+x = 19
 y = 11
 cost = 13
 available_if_capitulated = yes 
@@ -2416,7 +4650,7 @@ popularity = -0.02
 focus = { 
 id = HUN_raidjobbik
 icon = GFX_generic_euro
-x = 20
+x = 17
 y = 11
 cost = 13
 available_if_capitulated = yes 
@@ -2437,7 +4671,7 @@ popularity = -0.02
 focus = { 
 id = HUN_republicanism
 icon = GFX_generic_euro
-x = 19
+x = 16
 y = 12
 cost = 13
 available_if_capitulated = yes 
@@ -2459,7 +4693,7 @@ popularity = -0.02
 focus = { 
 id = HUN_reestablishonepartyrule
 icon = GFX_generic_euro
-x = 21
+x = 18
 y = 12
 cost = 13
 available_if_capitulated = yes 
@@ -2483,7 +4717,7 @@ popularity = -0.02
 focus = { 
 id = HUN_supressradicals
 icon = GFX_generic_euro
-x = 19
+x = 16
 y = 13
 cost = 13
 available_if_capitulated = yes 
@@ -2504,7 +4738,7 @@ popularity = -0.02
 focus = { 
 id = HUN_holdtheelection
 icon = GFX_generic_euro
-x = 17
+x = 14
 y = 13
 cost = 13
 available_if_capitulated = yes 
@@ -2525,7 +4759,7 @@ popularity = -0.02
 focus = { 
 id = HUN_allythecommunists
 icon = GFX_generic_euro
-x = 21
+x = 18
 y = 13
 cost = 13
 available_if_capitulated = yes 
@@ -2542,32 +4776,12 @@ popularity = -0.02
 }
  }
  
-          #Focus for Tariffs
-focus = { 
-id = HUN_ourbenevolentleader
-icon = GFX_generic_euro
-x = 23
-y = 13
-cost = 13
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_reestablishonepartyrule }
-ai_will_do = { 
- factor = 1
- } 
- completion_reward = {
-random_owned_controlled_state = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
-add_popularity = {
-ideology = social_democrat
-popularity = -0.02
-}
-}
- }
  
       #Focus for Reform the Healthcare
 focus = { 
 id = HUN_healthcarereform
 icon = GFX_hun_healthcare
-x = 14
+x = 11
 y = 9
 cost = 10
 available_if_capitulated = yes 
@@ -2589,7 +4803,7 @@ add_stability = 0.025
 focus = { 
 id = HUN_educationreform
 icon = GFX_hun_education
-x = 16
+x = 13
 y = 9
 cost = 10
 available_if_capitulated = yes 
@@ -3484,1068 +5698,7 @@ add_building_construction = {
 ######Campaigns############
 ###########################
 
-             # Empire reunited
-focus = { 
-id = HUN_madl
-icon = GFX_fidesz
-x = 25
-y = 2
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_pathoftherepublic }
-ai_will_do = { 
- factor = 1
- } 
-mutually_exclusive = { focus = HUN_appointotto }
-completion_reward = {
-add_stability = 0.04
-add_political_power = 50
-remove_ideas = { arpad_goncz }
-add_ideas = { ferenc_madl }
-}
- }
  
-focus = { 
-id = HUN_appointotto
-icon = GFX_habsburg
-x = 27
-y = 2
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_pathoftherepublic }
-mutually_exclusive = { focus = HUN_madl }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_stability = 0.04
-add_political_power = 50
-remove_ideas = { arpad_goncz }
-add_ideas = { idea_hun_otto_von_habsburg }
-}
- }
- 
-             # Empire reunited
-focus = { 
-id = HUN_fkgpcoalition
-icon = GFX_fidesz
-x = 26
-y = 3
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_madl focus = HUN_appointotto }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_stability = 0.04
-add_political_power = 50
-add_popularity = {
-ideology = conservative
-popularity = 0.04
-}
-}
- }
- 
- 
-             # Empire reunited
-focus = { 
-id = HUN_usurpmdf
-icon = GFX_fidesz
-x = 24
-y = 4
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_fkgpcoalition }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_political_power = -25
-add_popularity = {
-ideology = national_conservative
-popularity = -0.05
-}
-remove_ideas = { mdf_scandal }
-add_popularity = {
-ideology = conservative
-popularity = 0.05
-}
-}
- } 
- 
-             # Empire reunited
-focus = { 
-id = HUN_fkgpleads
-icon = GFX_fidesz
-x = 28
-y = 4
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_fkgpcoalition }
-ai_will_do = { 
- factor = 1
- } 
-mutually_exclusive = { focus = HUN_fideszleads }
-completion_reward = {
-add_political_power = -25
-add_popularity = {
-ideology = conservative
-popularity = -0.08
-}
-add_popularity = {
-ideology = reactionary
-popularity = 0.08
-}
-add_ideas = { fkgp_lead }
-}
- }
-
-             # Empire reunited
-focus = { 
-id = HUN_fideszleads
-icon = GFX_fidesz
-x = 26
-y = 4
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_fkgpcoalition }
-ai_will_do = { 
- factor = 1
- } 
-mutually_exclusive = { focus = HUN_fkgpleads }
-completion_reward = {
-add_political_power = -25
-add_popularity = {
-ideology = conservative
-popularity = 0.08
-}
-add_popularity = {
-ideology = reactionary
-popularity = -0.08
-}
-add_ideas = { fidesz_lead }
-}
- }
-
-             # Empire reunited
-focus = { 
-id = HUN_cammszp
-icon = GFX_glorymonarchy
-x = 16
-y = 2
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_pathoftherepublic }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_stability = 0.15
-add_political_power = 120
-}
- }
- 
- 
-############################
-######   NATIONALISM  ######
-############################
- 
-                 # Empire reunited
-focus = { 
-id = HUN_discreditmszp
-icon = GFX_attack_democracy
-x = 40
-y = 3
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_jobbik focus = HUN_fkgpmiep }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_popularity = {
-ideology = social_democrat
-popularity = -0.07
-
-}
-decrease_social_democrat_influence_by_2 = yes
-}
-	} 
- 
- 
-                # Empire reunited
-focus = { 
-id = HUN_fkgpmiep
-icon = GFX_agreement
-x = 36
-y = 2
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_pathoftherepublic }
-mutually_exclusive = { focus = HUN_jobbik }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-country_event = hungary.24
-}
- }
- 
-                 # Empire reunited
-focus = { 
-id = HUN_jobbik
-icon = GFX_hun_fascism
-x = 44
-y = 2
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_pathoftherepublic }
-mutually_exclusive = { focus = HUN_fkgpmiep }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_ideas = national_radicalisation
-set_party_name = {
-ideology = fascist
-name = "Jobbik"
-long_name = "Jobbik"
-}
-create_country_leader = {
-	name = "Dávid Kovács"
-	picture = "Kovacs_David.dds"
-	ideology = fascist_ideology
-	}
-}
-	}
-
- 
- 
-                  # Empire reunited
-focus = { 
-id = HUN_electnationalist
-icon = GFX_hun_nationalist
-x = 46
-y = 5
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_2002election focus = HUN_fkgpmiep }
-mutually_exclusive = { focus = HUN_electfascist }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_stability = 0.15
-add_political_power = 120
-}
- }
- 
-                   # Empire reunited
-focus = { 
-id = HUN_electfascist
-icon = GFX_hun_fascism
-x = 54
-y = 5
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_2002election focus = HUN_jobbik }
-mutually_exclusive = { focus = HUN_electnationalist }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_stability = 0.15
-add_political_power = 120
-}
- }
- 
-                  # National Unity
-focus = { 
-id = HUN_nationalunity
-icon = GFX_hun_nationalist
-x = 51
-y = 6
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_electfascist }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_stability = 0.10
-decrease_progressive_influence_by_2 = yes
-}
- }
- 
-                  # National Unity
-focus = { 
-id = HUN_assemblethegarda
-icon = GFX_turul
-x = 57
-y = 6
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_electfascist }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_stability = 0.10
-decrease_progressive_influence_by_2 = yes
-}
- }
- 
-                   # National Unity
-focus = { 
-id = HUN_ourownweapons
-icon = GFX_army1
-x = 59
-y = 7
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_assemblethegarda }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_stability = 0.10
-decrease_progressive_influence_by_2 = yes
-}
- }
- 
-                    # National Unity
-focus = { 
-id = HUN_youthindoctrination
-icon = GFX_hun_education
-x = 52
-y = 7
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_electnationalist focus = HUN_electfascist }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_stability = 0.10
-decrease_progressive_influence_by_2 = yes
-}
- }
- 
-                     # National Unity
-focus = { 
-id = HUN_youthindoctrination2
-icon = GFX_homophobia
-x = 52
-y = 9
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_youthindoctrination }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_stability = 0.10
-decrease_progressive_influence_by_2 = yes
-}
- }
- 
-                     # National Unity
-focus = { 
-id = HUN_repurposeindustry
-icon = GFX_fash_industry
-x = 58
-y = 8
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_ourownweapons }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-random_owned_controlled_state = { 
-add_extra_state_shared_building_slots = 2
-add_building_construction = {
-type = arms_factory
-level = 2
-instant_build = yes
-
-}
- }
-random_owned_controlled_state = { 
-add_extra_state_shared_building_slots = 2
-add_building_construction = {
-type = arms_factory
-level = 2
-instant_build = yes
-
-}
- }
-}
- }
- 
-                      # National Unity
-focus = { 
-id = HUN_mobilewarfare
-icon = GFX_modern_hussars
-x = 58
-y = 9
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_repurposeindustry }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_stability = 0.10
-decrease_progressive_influence_by_2 = yes
-}
- }
- 
-                     # National Unity
-focus = { 
-id = HUN_nationalpurity
-icon = GFX_hun_united
-x = 50
-y = 9
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_gypsies1 }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_ideas = idea_hun_homogen_nation
-}
- } 
- 
-                      # National Unity
-focus = { 
-id = HUN_christianvalues
-icon = GFX_hunchristian
-x = 53
-y = 6
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_electnationalist }
-mutually_exclusive = { focus = HUN_neopaganism }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_ideas = idea_radical_christianity
-}
- }
- 
-                      # National Unity
-focus = { 
-id = HUN_neopaganism
-icon = GFX_csodaszarvas
-x = 55
-y = 6
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_electfascist }
-mutually_exclusive = { focus = HUN_christianvalues }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_ideas = idea_taltosism
-}
- } 
- 
-                       # National Unity
-focus = { 
-id = HUN_isten
-icon = GFX_turul
-x = 55
-y = 9
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_neopaganism focus = HUN_christianvalues }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_stability = 0.04
-add_political_power = 120
-army_experience = 50
-}
- }
- 
-                      # National Unity
-focus = { 
-id = HUN_schoolprayer
-icon = GFX_christian_shcool
-x = 55
-y = 8
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_youthindoctrination }
-prerequisite = { focus = HUN_christianvalues }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-decrease_progressive_influence_by_2 = yes
-}
- } 
- 
-                       # National Unity
-focus = { 
-id = HUN_conscription
-icon = GFX_conscription
-x = 56
-y = 9
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_assemblethegarda }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_ideas = {extensive_conscription}
-}
- } 
- 
- 
- 
-                  # National Unity
-focus = { 
-id = HUN_gypsies1
-icon = GFX_gypsies_bad
-x = 50
-y = 7
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_nationalunity }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_stability = -0.08
-add_political_power = -100
-add_threat = 3
-remove_ideas = idea_gypsies_1
-}
- }
- 
-                       # National Unity
-focus = { 
-id = HUN_releasethehorde
-icon = GFX_hun_horde
-x = 55
-y = 10
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_conscription }
-prerequisite = { focus = HUN_isten }
-prerequisite = { focus = HUN_youthindoctrination2 }
-prerequisite = { focus = HUN_mobilewarfare }
-prerequisite = { focus = HUN_nationalpurity }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-division_template = {
-						name = "Hussar"
-						template_counter = 4
-						division_names_group = HUN_MOT_01
-						regiments = {
-							motorized = { x = 0 y = 0 }
-							motorized = { x = 0 y = 1 }
-							motorized = { x = 0 y = 2 }
-							motorized = { x = 1 y = 0 }
-							motorized = { x = 1 y = 1 }
-							motorized = { x = 1 y = 2 }
-							motorized = { x = 2 y = 0 }
-						}
-					}
-					43 = {
-create_unit = {
-    division = "name = \"Motorized Hussar\" division_template = \"Hussar\" start_experience_factor = 0.5 start_equipment_factor = 1"
-    owner = HUN
-}
-create_unit = {
-    division = "name = \"Motorized Hussar\" division_template = \"Hussar\" start_experience_factor = 0.5 start_equipment_factor = 1"
-    owner = HUN
-}
-create_unit = {
-    division = "name = \"Motorized Hussar\" division_template = \"Hussar\" start_experience_factor = 0.5 start_equipment_factor = 1"
-    owner = HUN
-}
-
-}
-			154 = {
-create_unit = {
-    division = "name = \"Motorized Hussar\" division_template = \"Hussar\" start_experience_factor = 0.5 start_equipment_factor = 1"
-    owner = HUN
-}			
-create_unit = {
-    division = "name = \"Motorized Hussar\" division_template = \"Hussar\" start_experience_factor = 0.5 start_equipment_factor = 1"
-    owner = HUN
-}			
-			}
-			934 = {
-create_unit = {
-    division = "name = \"Motorized Hussar\" division_template = \"Hussar\" start_experience_factor = 0.5 start_equipment_factor = 1"
-    owner = HUN
-}			
-create_unit = {
-    division = "name = \"Motorized Hussar\" division_template = \"Hussar\" start_experience_factor = 0.5 start_equipment_factor = 1"
-    owner = HUN
-}			
-			}
-			920 = {
-create_unit = {
-    division = "name = \"Motorized Hussar\" division_template = \"Hussar\" start_experience_factor = 0.5 start_equipment_factor = 1"
-    owner = HUN
-}			
-create_unit = {
-    division = "name = \"Motorized Hussar\" division_template = \"Hussar\" start_experience_factor = 0.5 start_equipment_factor = 1"
-    owner = HUN
-}			
-			}
-}
- } 
- 
-                        # National Unity
-focus = { 
-id = HUN_taltoschurch
-icon = GFX_taltosism
-x = 55
-y = 7
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_neopaganism }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-swap_ideas = {
-    remove_idea = idea_taltosism
-    add_idea = idea_taltosism_2
-}
-}
- }
- 
-                        # National Unity
-focus = { 
-id = HUN_worshiphadur
-icon = GFX_hadur
-x = 55
-y = 8
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_taltoschurch }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-swap_ideas = {
-    remove_idea = idea_taltosism_2
-    add_idea = idea_taltosism_3
-}
-}
- }
-
-                   # National Unity
-focus = { 
-id = HUN_turks
-icon = GFX_turanism
-x = 88
-y = 2
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_drawclosertorussia focus = HUN_drawclosertochina }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_stability = 0.03
-set_cosmetic_tag = HUN_TURAN
-}
- }
- 
-                   # National Unity
-focus = { 
-id = HUN_befriendkorea
-icon = GFX_south_korea
-x = 92
-y = 2
-cost = 10
-available_if_capitulated = yes 
-prerequisite = {focus = HUN_drawclosertochina }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_stability = 0.03
-add_political_power = 100
-}
- }
- 
-                   # CSTO
-focus = { 
-id = HUN_joincsto
-icon = GFX_csto
-x = 86
-y = 3
-cost = 10
-available_if_capitulated = yes 
-prerequisite = {focus = HUN_drawclosertorussia }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-SOV = { add_to_faction = HUN }
-}
- } 
- 
- 
-                    # National Unity
-focus = { 
-id = HUN_turanism
-icon = GFX_turanism
-x = 51
-y = 8
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_nationalunity }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-add_stability = 0.03
-add_political_power = 100
-}
- } 
- 
-                        # National Unity
-focus = { 
-id = HUN_secondhonfoglalas
-icon = GFX_honfoglalas
-x = 56
-y = 11
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_releasethehorde }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-create_wargoal = { type = annex_everything target = ROM }
-create_wargoal = { type = annex_everything target = SLO }
-}
- } 
- 
-                         # National Unity
-focus = { 
-id = HUN_danubianhegemony
-icon = GFX_austria_conquest
-x = 54
-y = 11
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_releasethehorde }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-create_wargoal = { type = annex_everything target = AUS }
-}
- } 
- 
-                          # National Unity
-focus = { 
-id = HUN_karpatia
-icon = GFX_arpadsav
-x = 55
-y = 12
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_secondhonfoglalas }
-prerequisite = { focus = HUN_danubianhegemony }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-
-	add_state_core = 82
-	add_state_core = 83
-	add_state_core = 922
-	add_state_core = 937
-	add_state_core = 76
-	add_state_core = 919
-	add_state_core = 84
-	add_state_core = 81
-	add_state_core = 46
-	add_state_core = 927
-	add_state_core = 79
-	add_state_core = 929
-	add_state_core = 928
-	add_state_core = 899
-	add_state_core = 664
-	add_state_core = 931
-	add_state_core = 73
-	add_state_core = 70
-	add_state_core = 71
-	add_state_core = 932
-	add_state_core = 924
-	add_state_core = 925
-	add_state_core = 923
-	add_state_core = 943
-	add_state_core = 45
-	add_state_core = 918
-	add_state_core = 926
-	add_state_core = 77
-	add_state_core = 806
-	add_state_core = 78
-	add_state_core = 80
-	add_state_core = 89
-
-	set_cosmetic_tag = CARP
-}
- }
-
-                          # National Unity
-focus = { 
-id = HUN_divideetimpera
-icon = GFX_arpadsav
-x = 54
-y = 13
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_karpatia }
-mutually_exclusive = { focus = HUN_rulebyfear }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-
-	set_cosmetic_tag = CARP
-}
- } 
-
-                          # National Unity
-focus = { 
-id = HUN_dividemoldavia
-icon = GFX_arpadsav
-x = 53
-y = 14
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_divideetimpera }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-MDV = {
-	set_cosmetic_tag = MOL_CARP
-}
-}
- } 
- 
-                           # National Unity
-focus = { 
-id = HUN_integratemoldavia
-icon = GFX_arpadsav
-x = 53
-y = 15
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_dividemoldavia }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-
-	set_cosmetic_tag = CARP
-}
- } 
- 
-                           # National Unity
-focus = { 
-id = HUN_csango
-icon = GFX_arpadsav
-x = 53
-y = 16
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_integratemoldavia }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-MDV = {
-	set_cosmetic_tag = MOL_CSANGO
-} }
- }  
-                          # National Unity
-focus = { 
-id = HUN_dividewallachia
-icon = GFX_arpadsav
-x = 55
-y = 14
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_divideetimpera }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-WLL = { transfer_state = 46
-		transfer_state = 81
-		transfer_state = 899
-		transfer_state = 928 }
-}
- }
-
-                          # National Unity
-focus = { 
-id = HUN_integratewallachia
-icon = GFX_arpadsav
-x = 55
-y = 15
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_dividewallachia }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-
-	set_cosmetic_tag = CARP
-}
- }
- 
-                           # National Unity
-focus = { 
-id = HUN_restructurebucharest
-icon = GFX_arpadsav
-x = 55
-y = 16
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_integratewallachia }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-
-	set_cosmetic_tag = CARP
-}
- }
- 
-                            # National Unity
-focus = { 
-id = HUN_magyarization
-icon = GFX_arpadsav
-x = 54
-y = 17
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_restructurebucharest }
-prerequisite = { focus = HUN_csango }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-
-	set_cosmetic_tag = CARP
-}
- }
-                          # National Unity
-focus = { 
-id = HUN_rulebyfear
-icon = GFX_oppression
-x = 57
-y = 13
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_karpatia }
-mutually_exclusive = { focus = HUN_divideetimpera }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-
-	set_cosmetic_tag = CARP
-}
- }  
- 
-                           # National Unity
-focus = { 
-id = HUN_bansymbols
-icon = GFX_arpadsav
-x = 57
-y = 14
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_rulebyfear }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-
-	set_cosmetic_tag = CARP
-}
- } 
-
-                           # National Unity
-focus = { 
-id = HUN_oppressionbyforce
-icon = GFX_arpadsav
-x = 57
-y = 15
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_bansymbols }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-
-	set_cosmetic_tag = CARP
-}
- }  
- 
-                            # National Unity
-focus = { 
-id = HUN_banlanguage
-icon = GFX_arpadsav
-x = 57
-y = 16
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_oppressionbyforce }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-
-	set_cosmetic_tag = CARP
-}
- }  
- 
-                            # National Unity
-focus = { 
-id = HUN_aggressiveintegration
-icon = GFX_arpadsav
-x = 57
-y = 17
-cost = 10
-available_if_capitulated = yes 
-prerequisite = { focus = HUN_banlanguage }
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = {
-
-	set_cosmetic_tag = CARP
-}
- } 
  
 #End of focuses 
  }

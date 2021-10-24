@@ -9,6 +9,7 @@ state={
 		owner = BOS
 		add_core_of = SRP
 		add_core_of = BOS
+		add_claim = SER
 		victory_points = { 6983 3 }
 		buildings = {
 			infrastructure = 4
