@@ -35,6 +35,15 @@ zapadoslava = {
      icon = generic_prospect_for_resources
      available = { }
 }
+vlachobulgaria = {
+     icon = generic_prospect_for_resources
+     available = {
+OR = { 
+	tag = BUL
+	tag = ROM
+     }
+	 }
+}
 carpathia = {
      icon = generic_prospect_for_resources
      available = {

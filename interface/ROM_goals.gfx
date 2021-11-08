@@ -42,8 +42,137 @@ spriteTypes = {
  
 spriteTypes = {
 	SpriteType = {
+	name = "GFX_repeal_royal_law"
+	texturefile = "gfx/interface/goals/repealroyallaw.dds"
+	}
+	
+ } 
+ 
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_rom_focus_vadim_conducator"
+	texturefile = "gfx/interface/goals/rom_vadim_conducator.dds"
+	}
+	
+ } 
+ 
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_rom_focus_rccm"
+	texturefile = "gfx/interface/goals/rom_rccm.dds"
+	}
+	
+ }
+ 
+ spriteTypes = {
+	SpriteType = {
+	name = "GFX_rom_focus_nicolae"
+	texturefile = "gfx/interface/goals/rom_nicolae.dds"
+	}
+	
+ }
+ 
+spriteTypes = {
+	SpriteType = {
 	name = "GFX_focus_rom_monarchyquestion"
 	texturefile = "gfx/interface/goals/rom_monarchyquestion.dds"
 	}
 	
  }
+ 
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_focus_rom_paul_phillipe"
+	texturefile = "gfx/interface/goals/rom_paul_phillipe.dds"
+	}
+	
+ }
+ 
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_focus_rom_prm_pop"
+	texturefile = "gfx/interface/goals/rom_prm_pops.dds"
+	}
+	
+ } 
+ 
+ spriteTypes = {
+	SpriteType = {
+	name = "GFX_focus_rom_break_alliance_with_nd"
+	texturefile = "gfx/interface/goals/rom_breakalliancewithnd.dds"
+	}
+	
+ } 
+ 
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_focus_rom_executeionescu"
+	texturefile = "gfx/interface/goals/rom_executeionescu.dds"
+	}
+	
+ }
+ 
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_focus_rom_denounceionescu"
+	texturefile = "gfx/interface/goals/rom_denounceionescu.dds"
+	}
+	
+ }
+ 
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_focus_rom_expandpopsupport"
+	texturefile = "gfx/interface/goals/rom_expandpopsupport.dds"
+	}
+	
+ }
+ 
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_focus_rom_backtotheroots"
+	texturefile = "gfx/interface/goals/rom_backtotheroots.dds"
+	}
+	
+ }
+ 
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_focus_rom_crownmichael"
+	texturefile = "gfx/interface/goals/rom_crownmichael.dds"
+	}
+	
+ }
+
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_focus_rom_firstcrowncouncil"
+	texturefile = "gfx/interface/goals/rom_firstcrowncouncil.dds"
+	}
+	
+ }
+
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_focus_rom_royal_house"
+	texturefile = "gfx/interface/goals/rom_royal_house.dds"
+	}
+	
+}	
+
+
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_focus_rom_pntcd"
+	texturefile = "gfx/interface/goals/pntcd.dds"
+	}
+
+}
+
+spriteTypes = {
+	SpriteType = {
+	name = "GFX_constitutional_monarchy"
+	texturefile = "gfx/interface/goals/constitutionalmonarchy.dds"
+	}
+	
+ } 

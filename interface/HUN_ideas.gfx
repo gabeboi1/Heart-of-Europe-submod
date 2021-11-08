@@ -25,7 +25,7 @@ SpriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_idea_gypsies"
-		texturefile = "gfx/interface/ideas/hungary/hun_gypsies.dds"
+		texturefile = "gfx/interface/ideas/hungary/generic_gypsies.dds"
 	}
 	spriteType = {
 		name = "GFX_idea_corruption"
@@ -54,5 +54,14 @@ SpriteTypes = {
 	spriteType = {
 		name = "GFX_idea_szekelyland"
 		texturefile = "gfx/interface/ideas/szekelyland.dds"
-	}		
+	}	
+	spriteType = {
+		name = "GFX_idea_rom_martial_law"
+		texturefile = "gfx/interface/ideas/rom_martial_law.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_rom_martial_law_2"
+		texturefile = "gfx/interface/ideas/rom_martial_law_2.dds"
+	}	
+	
 }	

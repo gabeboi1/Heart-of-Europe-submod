@@ -102,7 +102,7 @@ completion_reward = { add_political_power = 120
 focus = { 
 id = ROM_prn_coalition
 icon = GFX_election
-x = 19
+x = 21
 y = 2
 cost = 20
 available_if_capitulated = yes 
@@ -159,7 +159,7 @@ completion_reward = { add_political_power = 120
                   #Focus for PNL
 focus = { 
 id = ROM_corneliu_vadim_tudor
-icon = GFX_focus_rom_vadim_tudor
+icon = GFX_focus_rom_break_alliance_with_nd
 x = 16
 y = 2
 cost = 20
@@ -252,7 +252,7 @@ completion_reward = { add_political_power = 120
                    #Focus for PNL
 focus = { 
 id = ROM_backtotheroots
-icon = GFX_election
+icon = GFX_focus_rom_backtotheroots
 x = 17
 y = 5
 cost = 20
@@ -271,7 +271,7 @@ completion_reward = { add_political_power = 120
                     #Focus for PNL
 focus = { 
 id = ROM_movingonwards
-icon = GFX_election
+icon = GFX_rom_nationalist
 x = 15
 y = 5
 cost = 20
@@ -290,7 +290,7 @@ completion_reward = { add_political_power = 120
                      #Focus for PNL
 focus = { 
 id = ROM_executeionescu
-icon = GFX_election
+icon = GFX_focus_rom_executeionescu
 x = 15
 y = 7
 cost = 20
@@ -309,7 +309,7 @@ completion_reward = { add_political_power = 120
 focus = { 
 id = ROM_unthinkablecomromise
 icon = GFX_election
-x = 20
+x = 21
 y = 6
 cost = 20
 available_if_capitulated = yes 
@@ -326,7 +326,7 @@ completion_reward = { add_political_power = 120
                       #Focus for PNL
 focus = { 
 id = ROM_crownmichael
-icon = GFX_election
+icon = GFX_focus_rom_crownmichael
 x = 17
 y = 7
 cost = 20
@@ -346,7 +346,7 @@ completion_reward = { add_political_power = 120
                       #Focus for PNL
 focus = { 
 id = ROM_firstcrowncouncil
-icon = GFX_election
+icon = GFX_focus_rom_firstcrowncouncil
 x = 17
 y = 8
 cost = 20
@@ -364,7 +364,7 @@ completion_reward = { add_political_power = 120
                      #Focus for PNL
 focus = { 
 id = ROM_denounceionescu
-icon = GFX_election
+icon = GFX_focus_rom_denounceionescu
 x = 15
 y = 6
 cost = 20
@@ -382,7 +382,7 @@ completion_reward = { add_political_power = 120
                       #Focus for PNL
 focus = { 
 id = ROM_expandpopularsupport
-icon = GFX_election
+icon = GFX_focus_rom_expandpopsupport
 x = 15
 y = 8
 cost = 20
@@ -397,28 +397,11 @@ completion_reward = { add_political_power = 120
 
  }
  
-                       #Focus for PNL
-focus = { 
-id = ROM_expandpopularsupport
-icon = GFX_election
-x = 15
-y = 8
-cost = 20
-available_if_capitulated = yes 
-prerequisite = { focus = ROM_executeionescu } 
-ai_will_do = { 
- factor = 1
- } 
-completion_reward = { add_political_power = 120 
-
-}
-
- }
  
                        #Focus for PNL
 focus = { 
 id = ROM_vadimpm
-icon = GFX_election
+icon = GFX_focus_rom_vadim_tudor
 x = 16
 y = 9
 cost = 20
@@ -436,7 +419,7 @@ completion_reward = { add_political_power = 120 }
                        #Focus for PNL
 focus = { 
 id = ROM_strenghtenprm
-icon = GFX_election
+icon = GFX_focus_rom_prm_pop
 x = 16
 y = 10
 cost = 20
@@ -452,7 +435,7 @@ completion_reward = { add_political_power = 120 }
                        #Focus for PNL
 focus = { 
 id = ROM_mattersoftheroyalhouse
-icon = GFX_election
+icon = GFX_focus_rom_royal_house
 x = 16
 y = 11
 cost = 20
@@ -468,7 +451,7 @@ completion_reward = { add_political_power = 120 }
                        #Focus for PNL
 focus = { 
 id = ROM_pntcdleads
-icon = GFX_election
+icon = GFX_focus_rom_pntcd
 x = 18
 y = 9
 cost = 20
@@ -485,7 +468,7 @@ completion_reward = { add_political_power = 120 }
                        #Focus for PNL
 focus = { 
 id = ROM_constitutionalmonarchy
-icon = GFX_election
+icon = GFX_constitutional_monarchy
 x = 18
 y = 10
 cost = 20
@@ -501,7 +484,7 @@ completion_reward = { add_political_power = 120 }
                        #Focus for PNL
 focus = { 
 id = ROM_britishsystem
-icon = GFX_election
+icon = GFX_britain_flag
 x = 18
 y = 11
 cost = 20
@@ -517,13 +500,13 @@ completion_reward = { add_political_power = 120 }
                        #Focus for PNL
 focus = { 
 id = ROM_paul-phillipe
-icon = GFX_election
+icon = GFX_focus_rom_paul_phillipe
 x = 19
 y = 12
 cost = 20
 available_if_capitulated = yes 
 prerequisite = { focus = ROM_britishsystem focus = ROM_mattersoftheroyalhouse } 
-mutually_exclusive = { focus = ROM_repealthesalliclaw }
+mutually_exclusive = { focus = ROM_repealthesaliclaw }
 mutually_exclusive = { focus = ROM_makenicolaeheir }
 ai_will_do = { 
  factor = 1
@@ -534,8 +517,8 @@ completion_reward = { add_political_power = 120 }
 
                        #Focus for PNL
 focus = { 
-id = ROM_repealthesalliclaw
-icon = GFX_election
+id = ROM_repealthesaliclaw
+icon = GFX_repeal_royal_law
 x = 17
 y = 12
 cost = 20
@@ -553,13 +536,13 @@ completion_reward = { add_political_power = 120 }
                        #Focus for PNL
 focus = { 
 id = ROM_makenicolaeheir
-icon = GFX_election
+icon = GFX_rom_focus_nicolae
 x = 15
 y = 12
 cost = 20
 available_if_capitulated = yes 
 prerequisite = { focus = ROM_britishsystem focus = ROM_mattersoftheroyalhouse } 
-mutually_exclusive = { focus = ROM_repealthesalliclaw }
+mutually_exclusive = { focus = ROM_repealthesaliclaw }
 mutually_exclusive = { focus = ROM_paul-phillipe }
 ai_will_do = { 
  factor = 1
@@ -572,7 +555,7 @@ completion_reward = { add_political_power = 120 }
                        #Focus for PNL
 focus = { 
 id = ROM_conducator
-icon = GFX_election
+icon = GFX_rom_focus_vadim_conducator
 x = 14
 y = 10
 cost = 20
@@ -591,7 +574,7 @@ completion_reward = { add_political_power = 120 }
                         #Focus for PNL
 focus = { 
 id = ROM_rccm
-icon = GFX_election
+icon = GFX_rom_focus_rccm
 x = 14
 y = 11
 cost = 20
@@ -600,7 +583,7 @@ prerequisite = { focus = ROM_conducator }
 ai_will_do = { 
  factor = 1
  } 
-completion_reward = { add_political_power = 120 }
+completion_reward = { add_ideas = { idea_rom_martial_law } }
 
 }
  

@@ -117,6 +117,10 @@ spriteTypes = {
 	texturefile = "gfx/interface/goals/taltosism.dds"
 	}
 	SpriteType = {
+	name = "GFX_britain_flag"
+	texturefile = "gfx/interface/goals/britain_flag.dds"
+	}
+	SpriteType = {
 	name = "GFX_honfoglalas"
 	texturefile = "gfx/interface/goals/honfoglalas.dds"
 	}

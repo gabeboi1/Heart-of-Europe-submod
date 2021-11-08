@@ -1,0 +1,43 @@
+vlachobulgaria = {
+
+	vlachobulgaria = 
+	{ fire_only_once = yes
+	 available =
+	{ 
+		if = {
+			limit = { tag = BUL }	
+			ROM = { is_puppet_of = BUL }
+}
+
+		if = {
+			limit = { tag = ROM }	
+			BUL = { is_puppet_of = ROM }
+}
+
+
+	}
+	
+	visible = { OR = { tag = BUL tag = ROM } has_government = monarchist }
+	 complete_effect = { 
+	 if= {
+	 limit = { tag = ROM }
+	annex_country = { target = BUL transfer_troops = yes }
+	every_state = { limit = { is_core_of = BUL } ROM = { add_state_core = PREV } }
+	set_cosmetic_tag = BUL_ROM
+	}
+	if= {
+	 limit = { tag = BUL }
+	annex_country = { target = ROM transfer_troops = yes }
+	every_state = { limit = { is_core_of = ROM } BUL = { add_state_core = PREV } }
+	set_cosmetic_tag = BUL_ROM
+	}
+}	
+	}
+
+	
+
+
+
+
+
+}
