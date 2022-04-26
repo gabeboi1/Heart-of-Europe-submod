@@ -335,7 +335,7 @@ prerequisite = { focus = ROM_backtotheroots focus = ROM_unthinkablecomromise }
 ai_will_do = { 
  factor = 1
  } 
-completion_reward = { add_political_power = 120 
+completion_reward = { add_ideas = { idea_rom_king_michael_i } 
 
 }
 
@@ -355,7 +355,7 @@ prerequisite = { focus = ROM_crownmichael }
 ai_will_do = { 
  factor = 1
  } 
-completion_reward = { add_political_power = 120 
+completion_reward = { add_ideas = { idea_rom_crown_council_aftermath } 
 
 }
 

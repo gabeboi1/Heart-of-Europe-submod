@@ -8,7 +8,7 @@ tags={
 	"Map"
 }
 dependencies={
-	"Millennium Dawn Classic"
+	"Novum Vexillum"
 }
 path="D:/heartofeurope"
 picture="thumbnail.png"
